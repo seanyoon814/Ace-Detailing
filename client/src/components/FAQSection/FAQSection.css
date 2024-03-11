@@ -1,0 +1,34 @@
+.Collapsible:first-of-type {
+    margin-top: 1em;
+}
+
+.Collapsible {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    width: 75%;
+    height: fit-content;
+    border: 1px solid #E6E6E6;
+    border-bottom: none;
+    font-size: 1.5em;
+    background-color: #E6E6E6;
+}
+
+.Collapsible:last-of-type {
+    border-bottom: 1px solid #E6E6E6;
+}
+
+.Collapsible__trigger {
+    margin: 0.5em;
+}
+
+.Collapsible__contentInner {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    padding: 0.5em;
+    border-top: 1px solid #E6E6E6;
+    background-color: white;
+}

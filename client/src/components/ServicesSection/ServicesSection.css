@@ -1,0 +1,32 @@
+.App > section > .swiper {
+    width: 80%;
+    margin-top: 1.5em;
+}
+
+.App > section > .swiper header {
+    width: 100%;
+    height: 100%;
+}
+
+.App > section > .swiper .swiper-slide {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 30em;
+    height: 35em;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 25px;
+}
+
+.App > section > .swiper .swiper-slide > img {
+    aspect-ratio: 1 / 1;
+    width: 65%;
+    background-color: black;
+    border-radius: 25px;
+}
+
+.App > section > .swiper .swiper-slide > h3 {
+    margin-bottom: 0;
+}
