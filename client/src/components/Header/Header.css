@@ -1,0 +1,51 @@
+.navbar-nav {
+    display: inline-block;
+}
+
+.main-navbar {
+    opacity: 0.8;
+    background-color: #7b0202;
+    border-bottom: 1px solid #71706e;
+}
+.header-sidebar-title{
+    font-size: 2em;
+    color:white;
+    font-weight:300;
+}
+.header-sidebar-subtitle{
+    font-size: 1em;
+    font-weight:300;
+    color:white;
+}
+.header-sidebar{
+    float:right;
+    list-style-type: none;
+}
+.navbar>.container-fluid{
+    display:block !important;
+}
+a{
+    color: ghostwhite;
+    font-weight:bolder;
+}
+
+.nav-item{
+    
+    display:inline-block;
+}
+.nav-item:nth-child(n+2){
+   padding-left:8vw;
+}
+
+.navbar-nav .nav-link{
+    color:white;
+}
+
+.navbar-nav .nav-link:hover {
+    color: rgba(255, 255, 255, 0.75); /* Adjust link color on hover */
+}
+
+.car-pic{
+    max-width: 200px;
+    max-height: auto;
+}

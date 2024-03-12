@@ -5,14 +5,18 @@ import FAQSection from '../FAQSection/FAQSection';
 import ContactsSection from '../ContactsSection/ContactsSection';
 import BlogSection from '../BlogSection/BlogSection';
 import AboutSection from '../AboutSection/AboutSection';
-
+import Header from '../Header/Header';
 function Main() {
     return (
         <>
-            <header>
-                <h1>Ace Detailing</h1>
-            </header>
-            
+            <div className='container-fluid image-section d-flex justify-content-center align-items-center'>
+                <div className='row'>
+                    <h1 className='col-12 text-center title lato-light'>ACE DETAILING</h1>
+                    <h2 className='col-12 mt-3 text-center subtitle lato-light'>CREATING CHARACTER THROUGH PASSION AND VISUALS.</h2>
+                </div>
+            </div>
+
+            <Header/>
             <AboutSection />
             <ServicesSection />
             <BlogSection />
