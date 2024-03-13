@@ -1,9 +1,12 @@
 const express = require("express");
-const router = express.Router();
 const { ObjectId } = require("mongoose").Types;
 
-const Vehicle = require("../models/Vehicle");
 const logger = require("../utils/logger");
+const multerConfig = require("../config/multer");
+const Vehicle = require("../models/Vehicle");
+const { uploadImage } = require("../utils/cloudStorageHelper");
+
+const router = express.Router();
 
 router.get("/", async (req, res, next) => {
     logger.info("Retrieving all vehicles.");
@@ -18,8 +21,12 @@ router.get("/", async (req, res, next) => {
     }
 });
 
-router.post("/", async (req, res, next) => {
-    const document = new Vehicle(req.body);
+router.post("/", multerConfig.array("images"), async (req, res, next) => {
+    const imageUrls = await Promise.all(req.files.map(file => uploadImage(file)));
+    const document = new Vehicle({
+        ...req.body,
+        imageUrls
+    });
 
     logger.info("Inserting new vehicle %O.", document);
 

@@ -1,5 +1,5 @@
-const express = require('express');
 const cors = require('cors');
+const express = require('express');
 
 require('dotenv').config(); // env variables
 require("./services/mongodb").initConnection() // init before server start
@@ -13,8 +13,8 @@ const app = express();
 const port = process.env.PORT || 5000;
 
 // middleware
-app.use(express.json());
 app.use(cors());
+app.use(express.json());
 
 // routes
 app.use("/users", usersRoutes);

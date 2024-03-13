@@ -9,7 +9,7 @@ const VehicleSchema = new Schema({
     model: { type: String, required: true, maxLength: 50 },
     series: { type: String, required: false, maxLength: 50 },
     year: { type: Number, required: true },
-    imageUrl: { type: String, required: false, maxLength: 250 },
+    imageUrls: [{ type: String, required: false, maxLength: 250 }],
     notes: { type: String, required: false, maxLength: 1000 },
 });
 
