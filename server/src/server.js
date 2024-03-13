@@ -1,10 +1,11 @@
 const express = require('express');
-const mongoose = require('mongoose');
 const cors = require('cors');
 
-const userRoutes = require("./routes/userRoutes");
+require('dotenv').config(); // env variables
 
-require('dotenv').config(); // Env variables
+const logger = require("./utils/logger");
+
+const usersRoutes = require("./routes/users");
 
 const app = express();
 const port = process.env.PORT || 5000;
@@ -14,8 +15,8 @@ app.use(express.json());
 app.use(cors());
 
 // routes
-app.use(userRoutes);
+app.use("/users", usersRoutes);
 
 app.listen(port, () => {
-    console.log(`Server is running on port: ${port}`);
+    logger.info(`Server is running on port ${port}.`);
 });
