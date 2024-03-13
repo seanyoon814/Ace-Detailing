@@ -2,6 +2,7 @@ const express = require('express');
 const cors = require('cors');
 
 require('dotenv').config(); // env variables
+require("./services/mongodb").initConnection() // init before server start
 
 const logger = require("./utils/logger");
 
