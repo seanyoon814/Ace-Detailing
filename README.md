@@ -16,3 +16,7 @@ Setting up your environment:
 2. Create environment variables for the following:
     - MONGODB_USERNAME
     - MONGODB_PASSWORD
+    - GOOGLE_CLOUD_PROJECT_ID
+    - GOOGLE_CLOUD_BUCKET_NAME
+3. Store service account credentials at at `/server` (JSON format)
+    - To do: use application default credentials instead of keys
