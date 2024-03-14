@@ -4,8 +4,7 @@ const logger = require("../utils/logger");
 
 const username = process.env.MONGODB_USERNAME;
 const password = process.env.MONGODB_PASSWORD;
-const uri = `mongodb+srv://${username}:${password}@ace-detailing.sc1kbvv.mongodb.net/?retryWrites=true&w=majority&appName=ace-detailing`;
-const Schema = mongoose.Schema;
+const uri = `mongodb+srv://${username}:${password}@cluster.cdbm9yi.mongodb.net/?retryWrites=true&w=majority&appName=cluster`;
 
 async function initConnection() {
     try {
@@ -19,6 +18,4 @@ async function initConnection() {
 
 module.exports = {
     initConnection,
-    mongoose,
-    Schema
 };

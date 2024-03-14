@@ -1,4 +1,5 @@
-const { initConnection, mongoose, Schema } = require("../services/mongodb");
+const mongoose = require("mongoose");
+const Schema = mongoose.Schema;
 
 module.exports = class User {
     id;
