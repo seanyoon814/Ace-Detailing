@@ -5,12 +5,11 @@ const User = require("../models/User");
 
 router.use(bodyParser.urlencoded({extended : true}));
 
-router.get("/user/register", (req, res) => {
-    // TODO: redierect to user register page
-    res.send("register");
+router.get("/register", (req, res) => {
+    res.redirect("../views/register.html");
 })
 
-router.post("/user/register", (req, res) => {
+router.post("/register", (req, res) => {
     // TODO: count user id
     // TODO: confirm email address
     var id = generateUserId();
@@ -18,7 +17,7 @@ router.post("/user/register", (req, res) => {
     user.save();
 })
 
-router.get("/user/login", (req, res) => {
+router.get("/login", (req, res) => {
     res.send("login");
 })
 

@@ -17,7 +17,7 @@ app.use(cors());
 app.use(express.json());
 
 // routes
-app.use("/users", usersRoutes);
+app.use("/user", usersRoutes);
 app.use("/vehicles", vehiclesRoutes);
 
 app.listen(port, () => {
