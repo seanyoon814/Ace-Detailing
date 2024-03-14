@@ -9,14 +9,14 @@ import Header from '../Header/Header';
 function Main() {
     return (
         <>
+            <Header/>
+            <div id="hidden"></div>
             <div className='container-fluid image-section d-flex justify-content-center align-items-center'>
                 <div className='row'>
                     <h1 className='col-12 text-center title lato-light'>ACE DETAILING</h1>
                     <h2 className='col-12 mt-3 text-center subtitle lato-light'>CREATING CHARACTER THROUGH PASSION AND VISUALS.</h2>
                 </div>
             </div>
-
-            <Header/>
             <AboutSection />
             <ServicesSection />
             <BlogSection />

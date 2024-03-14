@@ -1,23 +1,9 @@
-.about-us-container {
-    display: flex;
-    width: inherit;
-    height: 80%;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.about-us-container article {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: calc(50% - 3em);
-    height: inherit;
-    margin: 3em;
-}
-
-.about-us-container img {
-    aspect-ratio: 1 / 1;
-    width: calc(50% - 3em);
-    margin: 3em;
+section{
     background-color: black;
+}
+.carousel-control-prev{
+    margin-left:2vw;
+}
+.carousel-control-next{
+    margin-right:3vw;
 }

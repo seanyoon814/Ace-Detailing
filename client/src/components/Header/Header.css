@@ -1,11 +1,26 @@
 .navbar-nav {
     display: inline-block;
 }
-
-.main-navbar {
+.navbar--fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; /* Adjust z-index as needed */
+}
+#logo, #header-sidebar-toggle{
+    transition: opacity 0.3s ease-in-out;
+    transition: opacity 0.3s ease-in-out;
+}
+#main-navbar {
     opacity: 0.8;
     background-color: #7b0202;
     border-bottom: 1px solid #71706e;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1030;
 }
 .header-sidebar-title{
     font-size: 2em;
