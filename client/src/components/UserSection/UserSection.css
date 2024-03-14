@@ -1,0 +1,19 @@
+.App {
+    display: initial;
+    flex-direction: initial;
+    align-items: initial;
+    justify-content: initial;
+    background-color: initial;
+}
+
+body {
+    margin: initial;
+    font-family: initial;
+    -webkit-font-smoothing: initial;
+    -moz-osx-font-smoothing: initial;
+}
+
+a {
+    color: initial;
+    font-weight: initial;
+}
