@@ -21,7 +21,7 @@ function Header() {
                                 <a className="nav-link" href="#">OUR SERVICES</a>
                             </li>
                             <li className="nav-item lato-light">
-                                <a className="nav-link" href="#">USER PORTAL</a>
+                                <a className="nav-link" href="/user">USER PORTAL</a>
                             </li>
                             <li className="nav-item lato-light">
                                 <a className="nav-link" href="#">CONTACT US</a>
