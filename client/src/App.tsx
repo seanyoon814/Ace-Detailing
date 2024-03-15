@@ -12,8 +12,8 @@ function App() {
             <Routes>
                 <Route index element={<Main />} />
                 <Route path="/" element={<Main />} />
-                <Route path = "/user" element = {UserSection} />
-                <Route path = "/user/register" element = {RegisterSection} />
+                <Route path = "/user" element = {<UserSection />} />
+                <Route path = "/user/register" element = {<RegisterSection />} />
             </Routes>
         </BrowserRouter>
     </div>
