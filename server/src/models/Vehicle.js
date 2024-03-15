@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+const logger = require("../utils/logger");
 
 const { ObjectId } = mongoose.Types;
 const Schema = mongoose.Schema;
@@ -58,5 +59,14 @@ const VehicleSchema = new Schema(
         timestamps: true
     },
 );
+
+VehicleSchema.pre("save", (next) => {
+    logger.info("Saving document to collection 'vehicles'.");
+    next();
+});
+
+VehicleSchema.post("save", (document) => {
+    logger.info("Saved document with id '%s' to collection 'vehicles'.", document._id);
+});
 
 module.exports = mongoose.model("vehicles", VehicleSchema);
