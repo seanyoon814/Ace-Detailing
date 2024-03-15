@@ -17,3 +17,50 @@ a {
     color: initial;
     font-weight: initial;
 }
+
+.login-background{
+    background-image: url("./car_1.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: "no-repeat";
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    /* display:flex; */
+    /* flex-direction: column; */
+    /* margin-top: "-70px"; */
+    /* font-size: "50px"; */
+}
+
+#login-heading{
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+#login-container{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#login-content{
+    /* display:flex;
+    justify-content: center;
+    align-items: center; */
+    background-color: white;
+    width: 700px;
+    height: 500px;
+}
+#login, #login-image{
+    width: 50%;
+}
+#login {
+    padding: 20px; /* Add padding for better spacing */
+}
+
+#login-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
