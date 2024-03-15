@@ -4,7 +4,7 @@ const logger = require("../utils/logger");
 
 const username = process.env.MONGODB_USERNAME;
 const password = process.env.MONGODB_PASSWORD;
-const uri = `mongodb+srv://${username}:${password}@cluster.cdbm9yi.mongodb.net/?retryWrites=true&w=majority&appName=cluster`;
+const uri = `mongodb+srv://${username}:${password}@cluster.cdbm9yi.mongodb.net/?retryWrites=true&w=majority&appName=cluster/test`;
 
 async function initConnection() {
     try {
