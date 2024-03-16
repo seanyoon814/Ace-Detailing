@@ -3,16 +3,17 @@ const { ObjectId } = require("mongoose").Types;
 
 const logger = require("../utils/logger");
 const multerConfig = require("../config/multer");
-const Vehicle = require("../models/Vehicle");
+const Report = require("../models/Report");
 const { uploadImage } = require("../utils/cloudStorageHelper");
 
 const router = express.Router();
 
+// todo: use query params to specify user/vehicle id
 router.get("/", async (req, res, next) => {
-    logger.info("Reading all documents from collection 'vehicles'.");
+    logger.info("Reading all documents from collection 'reports'.");
 
     try {
-        const documents = await Vehicle.find();
+        const documents = await Report.find();
         res.status(200).send(documents);
     }
     catch (err) {
@@ -23,7 +24,7 @@ router.get("/", async (req, res, next) => {
 
 router.post("/", multerConfig.array("images"), async (req, res, next) => {
     const imageUrls = !req.files ? [] : await Promise.all(req.files.map(file => uploadImage(file)));
-    const document = new Vehicle({
+    const document = new Report({
         ...req.body,
         imageUrls
     });
@@ -42,23 +43,8 @@ router.get("/:id", async (req, res, next) => {
     const { id } = req.params;
 
     try {
-        const document = await Vehicle.findById(id);
+        const document = await Report.findById(id);
         res.status(200).send(document);
-    }
-    catch (err) {
-        logger.error(err.message);
-        res.status(400).send(err);
-    }
-});
-
-router.post("/:id", async (req, res, next) => {
-    const { id } = req.params;
-    const filter = { _id: new ObjectId(id) };
-    const update = req.body;
-
-    try {
-        const document = await Vehicle.findOneAndUpdate(filter, update);
-        res.status(201).send(document);
     }
     catch (err) {
         logger.error(err.message);

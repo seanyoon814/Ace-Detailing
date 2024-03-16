@@ -5,35 +5,35 @@ import { useEffect } from "react";
 function RegisterSection() {
    
     return (
-        <html>
+        <html className = "RegisterSection">
             <Helmet>
                 <title>User Register</title>
             </Helmet>
-            <body>
-                <header>
-                    <a href = "/user">&#8592;User Portal</a>
+            <body className = "RegisterSection">
+                <header className = "RegisterSection">
+                    <a href = "/user" className = "RegisterSection">&#8592;User Portal</a>
                 </header>
-                <form action = "http://localhost:5000/user/register" method = "post">
-                    <table><tbody>
+                <form action = "http://localhost:5000/user/register" method = "post" className = "RegisterSection">
+                    <table className = "RegisterSection"><tbody>
                         <tr>
                             <td>Name:</td>
-                            <td><input name = "name" type = "text" placeholder = "Name" required/></td>
+                            <td><input name = "name" type = "text" placeholder = "Name"  className = "RegisterSection"required/></td>
                         </tr>
                         <tr>
                             <td>Email:</td>
-                            <td><input name = "email" type = "email" placeholder = "Email" required/></td>
+                            <td><input name = "email" type = "email" placeholder = "Email"  className = "RegisterSection"required/></td>
                         </tr>
                         <tr>
                             <td>Password:</td>
-                            <td><input name = "password" type = "password" placeholder = "Password" required/></td>
+                            <td><input name = "password" type = "password" placeholder = "Password"  className = "RegisterSection"required/></td>
                         </tr>
                         <tr>
                             <td>Confirm Password:</td>
-                            <td><input name = "confirm" type = "password" placeholder = "Confirm Password" required/></td>
+                            <td><input name = "confirm" type = "password" placeholder = "Confirm Password"  className = "RegisterSection"required/></td>
                         </tr>
                     </tbody></table>
                     
-                    <button>SUBMIT</button>
+                    <button className = "RegisterSection">SUBMIT</button>
                 </form>
 
                 <RegisterSectionScript />
