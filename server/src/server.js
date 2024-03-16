@@ -7,6 +7,7 @@ require("./services/mongodb").initConnection() // init before server start
 const logger = require("./utils/logger");
 
 const usersRoutes = require("./routes/users");
+const reportsRoutes = require("./routes/reports");
 const vehiclesRoutes = require("./routes/vehicles");
 
 const app = express();
@@ -18,6 +19,7 @@ app.use(express.json());
 
 // routes
 app.use("/user", usersRoutes);
+app.use("/reports", reportsRoutes);
 app.use("/vehicles", vehiclesRoutes);
 
 app.listen(port, () => {
