@@ -1,5 +1,5 @@
 import './Header.css';
-import testImage from './test-img.png';
+import logo from '../../images/logo.png';
 function Header() {
     return (
         <header className="navbar navbar-nav" id='main-navbar'>
@@ -8,7 +8,7 @@ function Header() {
                     <div className='col-12 text-center'>
                         <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                             <li className="nav-item lato-light">
-                                <li id="logo"><img src={testImage} style={{maxWidth: '5vw', maxHeight: 'auto'}}></img></li>
+                                <li id="logo"><img src={logo} className="logo-img"></img></li>
                                 <a className="nav-link" href="#">HOME</a>
                             </li>
                             <li className="nav-item lato-light">
@@ -30,7 +30,7 @@ function Header() {
                                 <div id="header-sidebar-toggle">
                                     <li className='header-sidebar-title lato-light'>Ace Detailing</li>
                                     <li className='header-sidebar-subtitle lato-light'>✉ acedetailing@gmail.com</li>
-                                    <li className='header-sidebar-subtitle lato-light'>&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;☏ 778-683-6543</li>
+                                    <li className='header-sidebar-subtitle lato-light mb-3'>&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;☏ 778-683-6543</li>
                                 </div>
                                 <input className="mt-3"type="text" name="query" placeholder="Search..."></input>
                             </li>

@@ -6,23 +6,15 @@ import ContactsSection from '../ContactsSection/ContactsSection';
 import BlogSection from '../BlogSection/BlogSection';
 import AboutSection from '../AboutSection/AboutSection';
 import Header from '../Header/Header';
+import HeaderImage from '../HeaderImage/HeaderImage';
 function Main() {
     return (
         <>
+            <div id='hidden'></div>
             <Header/>
-            <div id="hidden"></div>
-            <div className='container-fluid image-section d-flex justify-content-center align-items-center'>
-                <div className='row'>
-                    <h1 className='col-12 text-center title lato-light'>ACE DETAILING</h1>
-                    <h2 className='col-12 mt-3 text-center subtitle lato-light'>CREATING CHARACTER THROUGH PASSION AND VISUALS.</h2>
-                </div>
-            </div>
+            <HeaderImage />
             <AboutSection />
             <ServicesSection />
-            <BlogSection />
-            <FAQSection />
-            <ContactsSection />
-
             <footer>
                 <div>
                     <h3>Contact Information</h3>

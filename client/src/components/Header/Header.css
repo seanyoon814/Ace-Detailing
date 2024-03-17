@@ -60,7 +60,8 @@ a{
     color: rgba(255, 255, 255, 0.75); /* Adjust link color on hover */
 }
 
-.car-pic{
-    max-width: 200px;
+.logo-img{
+    max-width: 10vw;
     max-height: auto;
 }
+

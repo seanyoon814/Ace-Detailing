@@ -25,8 +25,50 @@ setTimeout(() =>{
         });
       }
 
-    const observer = new IntersectionObserver(handleIntersection);
-    observer.observe(hidden);
-}, 1000)
+    const observerReveal = new IntersectionObserver(handleIntersection);
+    observerReveal.observe(hidden);
+
+    function animateWhenVisible(entries, observer) {
+      entries.forEach(entry => {
+          if (entry.isIntersecting) {
+              entry.target.classList.add('reveal-text');
+              observer.unobserve(entry.target);
+          }
+      });
+    }
+    const observerBlock = new IntersectionObserver(animateWhenVisible, { threshold: 0.5 });
+    
+    // Observe each element
+    document.querySelectorAll('.quote').forEach(el => {
+      observerBlock.observe(el);
+    });
+    function animateLeftFadeWhenVisible(entries, observer) {
+      entries.forEach(entry => {
+          if (entry.isIntersecting) {
+              entry.target.classList.add('fade-in-left');
+              observer.unobserve(entry.target);
+          }
+      });
+    }
+    function animateRightFadeWhenVisible(entries, observer) {
+      entries.forEach(entry => {
+          if (entry.isIntersecting) {
+              entry.target.classList.add('fade-in-right');
+              observer.unobserve(entry.target);
+          }
+      });
+    }
+    const observerLeftFade = new IntersectionObserver(animateLeftFadeWhenVisible, { threshold: 0.5 });
+    const observerRightFade = new IntersectionObserver(animateRightFadeWhenVisible, { threshold: 0.5 });
+    document.querySelectorAll('.fade-left').forEach(el => {
+      observerLeftFade.observe(el);
+    });
+    document.querySelectorAll('.fade-right').forEach(el => {
+      observerRightFade.observe(el);
+    });
+
+
+}, 500)
 
 $('.carousel').carousel()
+
