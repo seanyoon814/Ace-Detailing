@@ -4,16 +4,20 @@
     align-items: initial;
     justify-content: initial;
     background-color: initial;
+} */
+
+html.RegisterSection {
+    width: 100%;
 }
 
-body {
+body.RegisterSection {
     margin: initial;
     font-family: initial;
     -webkit-font-smoothing: initial;
     -moz-osx-font-smoothing: initial;
 }
 
-form {
+form.RegisterSection {
     width: 50%;
     margin: auto;
     margin-top: 32px;
@@ -23,18 +27,18 @@ form {
     font-family: Arial, Helvetica, sans-serif;
 }
 
-table {
+table.RegisterSection {
     margin: 16px;
 }
 
-input {
+input.RegisterSection {
     margin: 8px;
     margin-right: 0px;
     height: 40px;
     width: 320px;
 }
 
-button {
+button.RegisterSection {
     background-color: white;
     color: blue;
     border: 1px solid blue;
@@ -43,7 +47,7 @@ button {
     margin: 16px;
 }
 
-a {
+a.RegisterSection {
     position: fixed;
     font-size: 32px;
 } */

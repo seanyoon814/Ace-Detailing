@@ -39,7 +39,7 @@
 .navbar>.container-fluid{
     display:block !important;
 }
-a{
+a.nav-link{
     color: ghostwhite;
     font-weight:bolder;
 }

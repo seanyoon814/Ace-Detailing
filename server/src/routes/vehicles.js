@@ -9,7 +9,7 @@ const { uploadImage } = require("../utils/cloudStorageHelper");
 const router = express.Router();
 
 router.get("/", async (req, res, next) => {
-    logger.info("Retrieving all vehicles.");
+    logger.info("Reading all documents from collection 'vehicles'.");
 
     try {
         const documents = await Vehicle.find();
@@ -22,13 +22,11 @@ router.get("/", async (req, res, next) => {
 });
 
 router.post("/", multerConfig.array("images"), async (req, res, next) => {
-    const imageUrls = await Promise.all(req.files.map(file => uploadImage(file)));
+    const imageUrls = !req.files ? [] : await Promise.all(req.files.map(file => uploadImage(file)));
     const document = new Vehicle({
         ...req.body,
         imageUrls
     });
-
-    logger.info("Inserting new vehicle %O.", document);
 
     try {
         await document.save();
@@ -42,8 +40,6 @@ router.post("/", multerConfig.array("images"), async (req, res, next) => {
 
 router.get("/:id", async (req, res, next) => {
     const { id } = req.params;
-
-    logger.info("Querying for vehicle with id '%s'.", id);
 
     try {
         const document = await Vehicle.findById(id);
@@ -59,8 +55,6 @@ router.post("/:id", async (req, res, next) => {
     const { id } = req.params;
     const filter = { _id: new ObjectId(id) };
     const update = req.body;
-    
-    logger.info("Updating vehicle with id '%s'.", id);
 
     try {
         const document = await Vehicle.findOneAndUpdate(filter, update);

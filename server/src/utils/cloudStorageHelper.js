@@ -18,7 +18,7 @@ async function uploadImage(file) {
             })
             .on('finish', function() {
                 const publicUrl = `https://storage.googleapis.com/${bucket.name}/${blob.name}`;
-                logger.debug("publicUrl: %s", publicUrl);
+                // logger.debug("publicUrl: %s", publicUrl);
                 resolve(publicUrl);
             })
     });
