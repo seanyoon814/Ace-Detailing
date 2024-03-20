@@ -38,6 +38,7 @@ a {
     display:flex;
     justify-content: center;
     align-items: center;
+    height: 100vh;
     transform: translateY(150px);
 }
 
@@ -46,9 +47,9 @@ a {
     justify-content: center;
     align-items: center;
     background-color: white;
-    width: 1000px;
-    height: 700px;
-    margin-top:70px;
+    width: 60vw;
+    height: 60vh;
+    margin-top:15vh;
     border-radius:2%;
 }
 
@@ -60,6 +61,7 @@ a {
 }
 
 .login-img {
+    display:flex;
     flex:1;
     flex-grow:2;
     background-image: url("../../images/car_3.jpg");

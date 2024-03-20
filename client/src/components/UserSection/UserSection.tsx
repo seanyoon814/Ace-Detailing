@@ -3,12 +3,17 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./UserSection.css";
 import { Helmet } from "react-helmet";
 import Header from '../Header/Header';
-
+import axios from 'axios'
 function UserSection() {
+    const API_URL = process.env.PORT || 'http://localhost:5000';
+    axios.get(API_URL+'/login').then(res=>{
+        // CHECK IF USER LOGIN DATA IS IN DATABASE...
+    }).catch(err=>{
+        console.log(err);
+    });
+    
     const [inputs, setInputs] = useState({email:'', password:''});
-    // const [email, setEmail] = useState("");
-    // const [pw, setPw] = useState("");
-
+    
     const handleChange = (e:React.ChangeEvent<HTMLInputElement>) => {
         const name = e.target.name;
         const value = e.target.value;
