@@ -1,5 +1,8 @@
 import './AboutSection.css';
-import NL272 from '../NL272Section/NL272'
+import NL272 from '../NL272Section/NL272';
+import DetailGarage from '../DetailGarageVancouver/DetailGarageVancouver';
+import Labocosmetica from '../Labocosmetica/Labocosmetica';
+
 import car1 from '../../images/car_1.jpg';
 import car2 from '../../images/car_2.jpg';
 import car3 from '../../images/car_3.jpg';
@@ -11,10 +14,10 @@ function AboutSection() {
     <div className='container-fluid' style={{ backgroundColor: "black" }}>
         <div className='row justify-content-center pt-5'>
             <div className="col-12 text-center pb-5 pt-5">
-            <h1 className='quote header lato-light'>WE BUILT A TEAM OF <span className='highlight'><i>CERTIFIED &amp; DEDICATED</i></span> DETAILERS.</h1>
+            <h1 className='quote header instrument-sans'>WE BUILT A TEAM OF <span className='highlight'><i>CERTIFIED &amp; DEDICATED</i></span> DETAILERS.</h1>
             </div>
             <div className="col-3">
-                <p className="paragraph-noanim lato-light">Ace Detailing consists of industry-experienced + multiaccredited ceramic coating installers. Our team delivers
+                <p className="paragraph-noanim instrument-sans">Ace Detailing consists of industry-experienced + multiaccredited ceramic coating installers. Our team delivers
                 cutting-edge results for customers looking for premium
                 automotive exterior &amp; interior refinishing services. Our goal is to push the industry standards to
                 incorporate effective business SOPs - allowing us to
@@ -65,7 +68,7 @@ function AboutSection() {
                 </div>
             </div>
             <div className='col-3'>
-                <p className='paragraph-noanim lato-light'>Our goal is to push the industry standards to
+                <p className='paragraph-noanim instrument-sans'>Our goal is to push the industry standards to
                 incorporate effective business SOPs - allowing us to
                 provide maximized margins & value of service for
                 customers looking for the best of the best.</p>
@@ -82,48 +85,50 @@ function AboutSection() {
                 </div>
             </div>
             <div className='col-12 text-center pb-5' style={{marginTop:'10vh'}}>
-                <h1 className='quote header lato-light'>WE OFFER A WIDE RANGE OF  <span className='highlight'><i>PREMIUM DETAILING SERVICES.</i></span></h1>
+                <h1 className='quote header instrument-sans'>WE OFFER A WIDE RANGE OF  <span className='highlight'><i>PREMIUM DETAILING SERVICES.</i></span></h1>
             </div>
             <div className='col-6'>
-                <p className='paragraph-noanim lato-light' style={{float:'left'}}>Our team of detailing specialists provide over 10+ years of
+                <p className='paragraph-noanim instrument-sans' style={{float:'left'}}>Our team of detailing specialists provide over 10+ years of
                 experience within the professional-grade production detailing
                 industry. All of our CarFax registered & warrantied coating services
                 are carried out by certified professional installers with active
                 credentials from Nasiol, Labocosmetica, Chemical Guys, and more.
                 </p>
-                <p className='paragraph-noanim lato-light'>The company mission involves helping our customers receive the
+                <p className='paragraph-noanim instrument-sans'>The company mission involves helping our customers receive the
                 products & results they desire. We develop a customized price
                 matrix for all clients to ensure they have the flexibility to opt in to
                 any of our products at the best pricing and quality available.
                 </p>
-                <p className='paragraph-noanim lato-light'>Ace Detailing always offers complimentary service consultations to
+                <p className='paragraph-noanim instrument-sans'>Ace Detailing always offers complimentary service consultations to
                 all customers, ensuring quality of service is never compromised.
                 </p>
-                <p className='paragraph-noanim lato-light'>We are proudly partnered with BC-local detailing supply distributors
+                <p className='paragraph-noanim instrument-sans'>We are proudly partnered with BC-local detailing supply distributors
                 for professional-grade equipment & supplies.
                 </p>
             </div>
             <div className='col-3 text-center'>
                 <img src={pfp} alt='Koichi Endo' className='pfp' style={{maxWidth:'100%', maxHeight:'auto'}}></img>
-                <p className='paragraph lato-light fade-right'><i>Koichi Endo</i></p>
-                <p className='paragraph lato-light fade-right'>Founder and Lead Detailer</p>
-                <p className='paragraph lato-light fade-right'>Certified Detailing Instructor</p>
+                <p className='paragraph instrument-sans fade-right'><i>Koichi Endo</i></p>
+                <p className='paragraph instrument-sans fade-right'>Founder and Lead Detailer</p>
+                <p className='paragraph instrument-sans fade-right'>Certified Detailing Instructor</p>
             </div>
             <div className='col-3 text-center'>
                 <img src={pfp} alt='Koichi Endo' className='pfp' style={{maxWidth:'100%', maxHeight:'auto'}}></img>
-                <p className='paragraph lato-light fade-right'><i>Matthew Cachero</i></p>
-                <p className='paragraph lato-light fade-right'>Co-Founder and Detailer</p>
-                <p className='paragraph lato-light fade-right'>Certified Detailing</p>
+                <p className='paragraph instrument-sans fade-right'><i>Matthew Cachero</i></p>
+                <p className='paragraph instrument-sans fade-right'>Co-Founder and Detailer</p>
+                <p className='paragraph instrument-sans fade-right'>Certified Detailing</p>
             </div>
             <div className='col-12 text-center pb-5' style={{marginTop:'10vh'}}>
-                <h1 className='quote header lato-light'>WE UTILIZE <span className='highlight'><i>WORLD-CLASS</i></span> PRODUCTS.</h1>
+                <h1 className='quote header instrument-sans'>WE UTILIZE <span className='highlight'><i>WORLD-CLASS</i></span> PRODUCTS.</h1>
                 <img src={nl272} alt='NL272' className='pt-5' style={{maxWidth:'100%', maxHeight:'auto'}}></img>
             </div>
             <div className='col-4 text-center'>
-                <p className="paragraph lato-light btn-ripple" style={{fontWeight:'500', opacity:'1'}}>"YOU'RE ONE DROP AWAY FROM PERFECTION"<br/><span style={{fontSize:'0.6em', fontWeight:'300'}}>-NASIOL</span></p>
+                <p className="paragraph instrument-sans btn-ripple" style={{fontWeight:'500', opacity:'1'}}>"YOU'RE ONE DROP AWAY FROM PERFECTION"<br/><span style={{fontSize:'0.6em', fontWeight:'300'}}>-NASIOL</span></p>
             </div>
         </div>
         <NL272/>
+        {/* <DetailGarage/>
+        <Labocosmetica/> */}
     </div>
 
     );
