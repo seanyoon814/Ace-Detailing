@@ -1,6 +1,5 @@
 import { Helmet } from "react-helmet";
 import "./RegisterSection.css";
-import { useEffect } from "react";
 
 function RegisterSection() {
    
@@ -13,23 +12,25 @@ function RegisterSection() {
                 <header className = "RegisterSection">
                     <a href = "/user" className = "RegisterSection">&#8592;User Portal</a>
                 </header>
+                <h1  className = "RegisterSection">User Regsiter</h1>
+
                 <form action = "http://localhost:5000/user/register" method = "post" className = "RegisterSection">
                     <table className = "RegisterSection"><tbody>
                         <tr>
-                            <td>Name:</td>
-                            <td><input name = "name" type = "text" placeholder = "Name"  className = "RegisterSection"required/></td>
+                            <td className = "RegisterSection">Name:</td>
+                            <td className = "RegisterSection"><input name = "name" type = "text" placeholder = "Name"  className = "RegisterSection"required/></td>
                         </tr>
                         <tr>
-                            <td>Email:</td>
-                            <td><input name = "email" type = "email" placeholder = "Email"  className = "RegisterSection"required/></td>
+                            <td className = "RegisterSection">Email:</td>
+                            <td className = "RegisterSection"><input name = "email" type = "email" placeholder = "Email"  className = "RegisterSection"required/></td>
                         </tr>
                         <tr>
-                            <td>Password:</td>
-                            <td><input name = "password" type = "password" placeholder = "Password"  className = "RegisterSection"required/></td>
+                            <td className = "RegisterSection">Password:</td>
+                            <td className = "RegisterSection"><input name = "password" type = "password" placeholder = "Password"  className = "RegisterSection"required/></td>
                         </tr>
                         <tr>
-                            <td>Confirm Password:</td>
-                            <td><input name = "confirm" type = "password" placeholder = "Confirm Password"  className = "RegisterSection"required/></td>
+                            <td className = "RegisterSection">Confirm Password:</td>
+                            <td className = "RegisterSection"><input name = "confirm" type = "password" placeholder = "Confirm Password"  className = "RegisterSection"required/></td>
                         </tr>
                     </tbody></table>
                     
@@ -46,6 +47,8 @@ function RegisterSection() {
 
 function RegisterSectionScript() {
     console.log("loaded");
+
+    //TODO: check if user is admin
 
     setTimeout(() => {
         var password = document.getElementsByName("password")[0] as HTMLInputElement;
