@@ -1,5 +1,5 @@
 import './MapSection.css';
-import React from 'react';
+import React, { useEffect } from 'react';
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 import Header from '../Header/Header';
@@ -9,7 +9,7 @@ import L from "leaflet";
 L.Icon.Default.mergeOptions({
   iconUrl: iconImg
 });
-
+ 
 function MapSection() {
   return (
     <>
