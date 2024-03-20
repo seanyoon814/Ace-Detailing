@@ -1,13 +1,14 @@
 import { useState } from "react";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import {Route, Routes, Navigate, useNavigate} from 'react-router-dom';
 import "./UserSection.css";
 import { Helmet } from "react-helmet";
-
+import Header from '../Header/Header';
+import axios from 'axios'
 function UserSection() {
+    const API_URL = process.env.PORT || 'http://localhost:5000';
+    const navigate = useNavigate();
     const [inputs, setInputs] = useState({email:'', password:''});
-    // const [email, setEmail] = useState("");
-    // const [pw, setPw] = useState("");
-
+    
     const handleChange = (e:React.ChangeEvent<HTMLInputElement>) => {
         const name = e.target.name;
         const value = e.target.value;
@@ -17,57 +18,58 @@ function UserSection() {
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         // Perform login logic here using formData
+        axios.post(API_URL+'/auth', inputs).then(res=>{     
+            navigate('/portal');
+        }).catch(err=>{
+            console.log(err);
+            window.alert('Error logging in. Invalid credentials. Please try again.');
+        });
         setInputs({email:'', password:''});
         console.log('Login data:', inputs);
       };
 
     return (
         <div className="login-background">
+            <Header/>
             <Helmet>
                 <title>User Portal</title>
             </Helmet>
-                <div id="login-heading" className="jumbotron justify-content-center align-items-center">
-                    <div className="display-5">
-                        <h1>User Portal</h1>
-                        <p className="lead">
-                            Please contact the administrator for access to the user portal.
-                        </p>
-                        <hr className="my-2"/>
-                            FAQ Section Contact Goes Here 
-                    </div>
-                </div>
             <div id="login-container">
-
                 <div id="login-content">
                     <div id="login">
+                        <h1>User Portal</h1>
+                        <p>Please use the login details from the administrator to enter the user portal.</p>
                         <form onSubmit={handleSubmit}>
-                            <label>Email:
-                                <input 
+                            <label>Email: <br></br>
+                                <input className="input-group-text"
                                     type="email"
                                     name="email"
                                     value={inputs.email || "" } 
                                     onChange={handleChange}/>
                             </label>
-                            <label>Password
-                                <input 
+                            <br></br>
+                            <label>Password: <br></br>
+                                <input className="input-group-text"
                                 type="password"
                                 name="password" 
                                 value={inputs.password || ""}
                                 onChange={handleChange}/>
                             </label>
-                            <button type="submit">Login</button>
+                            <br></br>
+                            <button type="submit" className="btn btn-primary">Login</button>
+                            <a href="/user/forgot_password" className="btn btn-link">Forgot password?</a>
                         </form>
+
                     </div> 
-                </div>
-                <div id="login-img">
-                    Test
+                    <div className="login-img">
+                    </div>
                 </div>
                 
                 <br />
                 {/* admin view - should only be able to see registration if admin */}
-                <div id="admin">
+                {/* <div id="admin">
                     <a href = "/user/register">Register</a>
-                </div>
+                </div> */}
 
             </div>
             <span id = "hidden"></span>

@@ -1,3 +1,4 @@
+/* Collapsible Items - Questions */
 .Collapsible:first-of-type {
     margin-top: 1em;
 }
@@ -8,16 +9,18 @@
     -webkit-box-sizing: border-box;
     display: flex;
     flex-direction: column;
-    width: 75%;
+    width: 80%;
     height: fit-content;
     border: 1px solid #E6E6E6;
     border-bottom: none;
     font-size: 1.5em;
-    background-color: #E6E6E6;
+    background-color: white;
+    border-color: black;
 }
 
 .Collapsible:last-of-type {
     border-bottom: 1px solid #E6E6E6;
+    border-color: black;
 }
 
 .Collapsible__trigger {
@@ -32,3 +35,41 @@
     border-top: 1px solid #E6E6E6;
     background-color: white;
 }
+
+/* FAQ Display */
+#faq-container{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+     
+    background-image:url("./../../images/car_2.jpg") ;
+    width:100vw;
+    height:100vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: "no-repeat";
+}
+
+#faq-list{
+    background-color: #ffffff;
+    border-color: black;
+    padding-top: 5vh;
+    padding-bottom: 5vh;
+    border-radius: 8px; 
+    width: 60%;
+    /* height: fit-content; */
+    height:100%;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    /* justify-content: center; */
+}
+
+#faq-heading{
+    color: black;
+    border-radius:5%;
+    font:bolder;
+    margin-bottom:5px;
+}
+

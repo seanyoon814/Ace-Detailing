@@ -8,6 +8,9 @@ const { uploadImage } = require("../utils/cloudStorageHelper");
 
 const router = express.Router();
 
+// const verifyJWT = require("../utils/verifyJWT"); Need to create a header called Authorization
+// router.use(verifyJWT); // Protect all routes in this file with token verification
+
 router.get("/", async (req, res, next) => {
     logger.info("Reading all documents from collection 'vehicles'.");
 
