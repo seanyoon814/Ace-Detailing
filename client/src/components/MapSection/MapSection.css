@@ -2,3 +2,20 @@
     width:100%;
     height:100vh;
 }
+table, th, td {
+    border-left: none;
+    border-right: none;
+    border-top: white 1px solid;
+    border-bottom: none;
+    padding-right: 10px;
+  }
+  
+  th {
+    background-color: black;
+  }
+  tr{
+    margin-left:10px;
+  }
+  #left-edge{
+    border-right:none;
+  }
