@@ -22,7 +22,7 @@ function RegisterSection() {
                         </tr>
                         <tr>
                             <td className = "RegisterSection">Email:</td>
-                            <td className = "RegisterSection"><input name = "email" type = "email" placeholder = "Email"  className = "RegisterSection"required/></td>
+                            <td className = "RegisterSection"><input name = "email" onChange = {checkEmail} type = "email" placeholder = "Email"  className = "RegisterSection"required/></td>
                         </tr>
                         <tr>
                             <td className = "RegisterSection">Password:</td>
@@ -43,7 +43,7 @@ function RegisterSection() {
             
         </html>
     )
-    
+
 }
 
 function RegisterSectionScript() {
@@ -73,7 +73,24 @@ function RegisterSectionScript() {
 }
 
 function checkName() {
+    const input = document.getElementsByName("name")[0] as HTMLInputElement;
+    fetch(`http://localhost:5000/user/api/checkName/${input.value}`)
+        .then(response => response.json())
+        .then(data => {
+            const { taken } = data;
+            input.setCustomValidity(taken ? "This name has been used." : "");
+        });
+}
 
+function checkEmail() {
+    const input = document.getElementsByName("email")[0] as HTMLInputElement;
+    fetch(`http://localhost:5000/user/api/checkEmail/${input.value}`)
+        .then(response => response.json())
+        .then(data => {
+            const { taken } = data;
+            console.log(taken);
+            input.setCustomValidity(taken ? "This email address has been used." : "");
+        });
 }
 
 export default RegisterSection;

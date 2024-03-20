@@ -18,7 +18,7 @@ module.exports = class User {
     password; // to authenticate
     admin; // to specify if the user is the admin account
 
-    constructor(id, name, email, password, admin) {
+    constructor(id, name, email, password) {
         this.id = id;
         this.name = name;
         this.email = email;

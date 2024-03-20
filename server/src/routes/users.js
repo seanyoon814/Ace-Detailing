@@ -31,7 +31,10 @@ router.get("/api/checkEmail/:email", async (req, res) => {
 async function generateUserId() {
     const collectionName = "userCounter";
     const collection = mongoose.connection.collection(collectionName);
-    var doc = await collection.findOne({});
+    var doc;
+    while (doc == null) {
+        doc = await collection.findOneAndUpdate({}, { $set : { key : 0 } }, { upsert : true, new : true});
+    }
     var id = doc.key + 1;
     collection.updateOne({}, { $set : { key : id}});
     return id;
