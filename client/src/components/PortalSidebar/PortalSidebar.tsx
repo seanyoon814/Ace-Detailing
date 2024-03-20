@@ -16,7 +16,14 @@ function PortalSidebar({ page, setPage }: { page: string, setPage: Function}) {
                     browseItems.map(item =>
                         <button
                             className={page === item ? "selected" : ""}
-                            onClick={() => setPage(item)}
+                            onClick = { () => {
+                                setPage(item);
+                                switch(item) {
+                                    case "Vehicles":
+                                        window.location.href = "/portal/vehicles";
+                                        break;
+                                }
+                            }}
                         >
                             {item}
                         </button>

@@ -10,7 +10,7 @@ function RegisterSection() {
             </Helmet>
             <body className = "RegisterSection">
                 <header className = "RegisterSection">
-                    <a href = "/user" className = "RegisterSection">&#8592;User Portal</a>
+                    <a href = "/portal" className = "RegisterSection">&#8592;Portal</a>
                 </header>
                 <h1 className = "RegisterSection">User Regsiter</h1>
 
