@@ -1,8 +1,16 @@
+body{
+    background-color: black;
+}
 .lato-light {
     font-family: "Lato", sans-serif;
     font-weight: 300;
     font-style: normal;
 }
+.garamond {
+    font-family: "Cormorant Garamond", serif;
+    font-weight: 600;
+    font-style: italic;
+  }
 .alex-brush {
     font-family: "Alex Brush", cursive;
     font-weight: 300;
@@ -19,6 +27,11 @@
     font-weight: 300;
     color:	white;
     opacity: 0;
+}
+.paragraph-noanim{
+    font-size: 1.5em;
+    font-weight: 300;
+    color:	white;
 }
 .App > footer {
     display: flex;

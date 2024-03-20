@@ -1,5 +1,7 @@
 import './Header.css';
 import logo from '../../images/logo.png';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+
 function Header() {
     return (
         <header className="navbar navbar-nav" id='main-navbar'>
@@ -9,7 +11,7 @@ function Header() {
                         <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                             <li className="nav-item lato-light">
                                 <li id="logo"><img src={logo} className="logo-img"></img></li>
-                                <a className="nav-link" href="#">HOME</a>
+                                <a className="nav-link" href="/">HOME</a>
                             </li>
                             <li className="nav-item lato-light">
                                 <a className="nav-link" href="#">FAQs</a>
@@ -18,7 +20,7 @@ function Header() {
                                 <a className="nav-link" href="#">BLOG</a>
                             </li>
                             <li className="nav-item lato-light">
-                                <a className="nav-link" href="#">OUR SERVICES</a>
+                                <a className="nav-link" href="/maps">MAPS</a>
                             </li>
                             <li className="nav-item lato-light">
                                 <a className="nav-link" href="/user">USER PORTAL</a>

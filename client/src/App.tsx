@@ -5,7 +5,7 @@ import Main from './components/Main/Main';
 import Portal from "./components/Portal/Portal";
 import UserSection from "./components/UserSection/UserSection";
 import RegisterSection from './components/RegisterSection/RegisterSection';
-
+import MapSection from './components/MapSection/MapSection';
 function App() {
     
     return (
@@ -17,6 +17,7 @@ function App() {
                     <Route path = "/user" element = {<UserSection />} />
                     <Route path = "/user/register" element = {<RegisterSection />} />
                     <Route path = "/portal" element = {<Portal />} />
+                    <Route path = "/maps" element= {<MapSection/>}></Route>
                 </Routes>
             </BrowserRouter>
         </div>
