@@ -40,4 +40,14 @@ module.exports = class User {
 
         await user.save();
     }
+
+    static async checkName(name) {
+        const user = await newUser.findOne({ name : name });
+        return (user != null);
+    }
+
+    static async checkEmail(email) {
+        const user = await newUser.findOne({ email : email });
+        return (user != null);
+    }
 }

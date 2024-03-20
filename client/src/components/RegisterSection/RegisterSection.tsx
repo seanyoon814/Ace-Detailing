@@ -18,7 +18,7 @@ function RegisterSection() {
                     <table className = "RegisterSection"><tbody>
                         <tr>
                             <td className = "RegisterSection">Name:</td>
-                            <td className = "RegisterSection"><input name = "name" type = "text" placeholder = "Name"  className = "RegisterSection"required/></td>
+                            <td className = "RegisterSection"><input name = "name" onChange = {checkName} type = "text" placeholder = "Name"  className = "RegisterSection"required/></td>
                         </tr>
                         <tr>
                             <td className = "RegisterSection">Email:</td>
@@ -43,6 +43,7 @@ function RegisterSection() {
             
         </html>
     )
+    
 }
 
 function RegisterSectionScript() {
@@ -69,6 +70,10 @@ function RegisterSectionScript() {
     
 
     return "";
+}
+
+function checkName() {
+
 }
 
 export default RegisterSection;

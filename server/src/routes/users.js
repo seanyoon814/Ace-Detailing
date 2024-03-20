@@ -9,11 +9,23 @@ router.use(bodyParser.urlencoded({extended : true}));
 router.post("/register", async (req, res) => {
     // TODO: confirm email address
     // TODO: check duplicated name and email
-    
+
     var id = await generateUserId();
     var user = new User(id, req.body.name, req.body.email, req.body.password);
     user.save();
     res.send("success");
+})
+
+router.get("/api/checkName/:name", async (req, res) => {
+    const { name } = req.params;
+    const taken = await User.checkName(name);
+    res.json({ taken });
+})
+
+router.get("/api/checkEmail/:email", async (req, res) => {
+    const { email } = req.params;
+    const taken = await User.checkEmail(email);
+    res.json({ taken });
 })
 
 async function generateUserId() {
