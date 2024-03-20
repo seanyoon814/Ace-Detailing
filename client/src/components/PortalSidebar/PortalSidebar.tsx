@@ -27,7 +27,14 @@ function PortalSidebar({ page, setPage }: { page: string, setPage: Function}) {
                     adminItems.map(item =>
                         <button
                             className={page === item ? "selected" : ""}
-                            onClick={() => setPage(item)}
+                            onClick = { () => {
+                                setPage(item);
+                                switch (item) {
+                                    case "Users":
+                                        window.location.href = "/user/register";
+                                        break;
+                                }
+                            }}
                         >
                             {item}
                         </button>
