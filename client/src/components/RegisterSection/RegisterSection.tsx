@@ -12,7 +12,7 @@ function RegisterSection() {
                 <header className = "RegisterSection">
                     <a href = "/user" className = "RegisterSection">&#8592;User Portal</a>
                 </header>
-                <h1  className = "RegisterSection">User Regsiter</h1>
+                <h1 className = "RegisterSection">User Regsiter</h1>
 
                 <form action = "http://localhost:5000/user/register" method = "post" className = "RegisterSection">
                     <table className = "RegisterSection"><tbody>
