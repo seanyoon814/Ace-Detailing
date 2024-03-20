@@ -9,6 +9,9 @@ const logger = require("./utils/logger");
 const usersRoutes = require("./routes/users");
 const reportsRoutes = require("./routes/reports");
 const vehiclesRoutes = require("./routes/vehicles");
+const authRoutes = require("./routes/auth");
+
+const { default: mongoose } = require('mongoose');
 
 const app = express();
 const port = process.env.PORT || 5000;
@@ -21,6 +24,7 @@ app.use(express.json());
 app.use("/user", usersRoutes);
 app.use("/reports", reportsRoutes);
 app.use("/vehicles", vehiclesRoutes);
+app.use("/auth", authRoutes);
 
 app.listen(port, () => {
     logger.info(`Server is running on port ${port}.`);
