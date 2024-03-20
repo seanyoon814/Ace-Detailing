@@ -1,0 +1,46 @@
+.DisplayVehicleSection {
+    background-color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.DisplayVehicleSection > header {
+    position: fixed;
+    font-size: 32px;
+}
+
+.DisplayVehicleSection > h1 {
+    text-align: center;
+    font-size: 64px;
+}
+
+.DisplayVehicleSection > main {
+    background-color: white;
+}
+
+.DisplayVehicleSection > main > section {
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 8px;
+    width: 50%;
+    margin: auto;
+    padding: 8px;
+    margin-top: 32px;
+}
+
+.DisplayVehicleSection > main > section > img {
+    width: 100px;
+    height: 100px;
+    margin: 4px;
+}
+
+.DisplayVehicleSection > main > section > table {
+    color: black;
+    display: inline;
+    vertical-align: top;
+}
+
+.DisplayVehicleSection > main > section > table > tr > td {
+    padding: 0px;
+    padding-left: 8px;
+    margin: 8px;
+}

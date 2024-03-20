@@ -11,7 +11,7 @@ import 'swiper/css/effect-coverflow';
 function ServicesSection() {
     return (
         <section>
-            <h1>Services</h1>
+            <h1 className='quote header lato-light'>WHERE <span className='highlight'><i>EXPERIENCE</i></span> MEETS <span className='highlight'><i>PERFECTIONISM.</i></span></h1>
             <Swiper
                 modules={[Navigation, EffectCoverflow]}
                 grabCursor={true}

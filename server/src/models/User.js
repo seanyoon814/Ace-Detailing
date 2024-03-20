@@ -18,7 +18,7 @@ module.exports = class User {
     password; // to authenticate
     admin; // to specify if the user is the admin account
 
-    constructor(id, name, email, password, admin) {
+    constructor(id, name, email, password) {
         this.id = id;
         this.name = name;
         this.email = email;
@@ -39,5 +39,15 @@ module.exports = class User {
         });
 
         await user.save();
+    }
+
+    static async checkName(name) {
+        const user = await newUser.findOne({ name : name });
+        return (user != null);
+    }
+
+    static async checkEmail(email) {
+        const user = await newUser.findOne({ email : email });
+        return (user != null);
     }
 }

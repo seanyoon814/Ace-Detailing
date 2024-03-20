@@ -8,13 +8,22 @@
 
 html.RegisterSection {
     width: 100%;
+    background-color: white;
 }
 
 body.RegisterSection {
     margin: initial;
-    font-family: initial;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: white;
     -webkit-font-smoothing: initial;
     -moz-osx-font-smoothing: initial;
+    height: 560px;
+}
+
+h1.RegisterSection {
+    width: 100%;
+    text-align: center;
+    font-size: 64px;
 }
 
 form.RegisterSection {
@@ -23,12 +32,17 @@ form.RegisterSection {
     margin-top: 32px;
     border: 1px solid black;
     border-radius: 8px;
-    font-size: 32px;
+    font-size: 28px;
     font-family: Arial, Helvetica, sans-serif;
 }
 
 table.RegisterSection {
     margin: 16px;
+    color: black;
+}
+
+td.RegisterSection {
+    padding: 0px;
 }
 
 input.RegisterSection {

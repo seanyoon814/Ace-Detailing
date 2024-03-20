@@ -1,42 +1,46 @@
-.image-section {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 100vh;
-    background-image: url('../../images/bg.jpg');
-    background-size: cover; /* Cover the entire container with the background image */
-    background-repeat: repeat;
+body{
+    background-color: black;
 }
 .lato-light {
     font-family: "Lato", sans-serif;
     font-weight: 300;
     font-style: normal;
 }
-.title{
-    color: white;
-    font-size: 5em;
-    letter-spacing: 9px;
+.instrument-sans {
+    font-family: "Instrument Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings:
+      "wdth" 100;
+  }
+.garamond {
+    font-family: "Cormorant Garamond", serif;
+    font-weight: 600;
+    font-style: italic;
+  }
+.alex-brush {
+    font-family: "Alex Brush", cursive;
+    font-weight: 300;
+    font-style: normal;
 }
-.subtitle{
-    color: #71706e;
-    font-size: 2em;
+.header{
+    font-size: 3.5em;
+    font-weight: 300;
+    color:white;
 }
 
-.App > footer {
-    display: flex;
-    width: 100%;
-    height: 15em;
-    background-color: black;
-    color: white;
+.paragraph{
+    font-size: 1.5em;
+    font-weight: 300;
+    color:	white;
+    opacity: 0;
 }
-
-.App > footer > div {
-    display: flex;
-    flex-direction: column;
-    margin: 1em 5em;
+.paragraph-noanim{
+    font-size: 1.5em;
+    font-weight: 300;
+    color:	white;
 }
-
 .App > section {
     box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -52,5 +56,5 @@
 }
 
 .App > section h1 {
-    font-size: 5em;
+    font-size: 3.5em;
 }

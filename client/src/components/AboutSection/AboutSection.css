@@ -1,9 +1,196 @@
 section{
     background-color: black;
 }
+.world{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height:40vh;
+    position: relative;
+    background: url(../../images/world.jpg);
+    background-size: cover contain;
+    background-position: center;
+}
 .carousel-control-prev{
-    margin-left:2vw;
+    margin-left:1vw;
 }
 .carousel-control-next{
-    margin-right:3vw;
+    margin-right:1vw;
+}  
+.highlight{
+    background: radial-gradient(circle, white, #d41919);
+    background-clip:text;
+    color: transparent;
+    animation: highlight 5s linear infinite;
+    background-size: 200% 200%;
+    font-weight: 700;
 }
+@keyframes typing { 
+    0% { 
+        width: 0px; 
+        height: 0px; 
+    } 
+
+    30% { 
+        width: 50px; 
+        height: 0px; 
+    } 
+
+    60% { 
+        width: 50px; 
+        height: 80px; 
+    } 
+} 
+
+@keyframes highlight{
+    0%{
+        background-position: 0% 0%;
+    }
+    50%{
+        background-position: 100% 100%;
+    }
+    100%{
+        background-position: 0% 0%;
+    }
+}
+.btn-ripple {
+    border: none; /* Removing the default button border */
+    border-radius: 6px; /* Giving our button rounded corners */
+    padding: 12px 16px; /* Providing some padding around the button text */
+    font-size: 1.2em; /* Increasing the font size of the button text */
+    cursor: pointer; /* Changing the cursor to a hand icon when hovering over the button */
+    color: white; /* Making the button text color white */
+    background-color: #6b0313; /* Setting the initial button background color */
+    outline: none; /* Removing the outline from the button */
+    background-position: center; /* Setting the position of the background image to center */
+    transition: background 1s; /* Adding a transition to the background color */
+}
+
+/* Defining the hover state */
+.btn-ripple:hover {
+    background: #e10233 radial-gradient(circle, transparent 1%, #e10233 1%)
+    center/15000%; /* Creating a radial gradient background on hover */
+}
+
+/* Defining the active (clicked) state */
+.btn-ripple:active {
+    background-color: #f23542; /* Changing the button color when active */
+    background-size: 100%; /* Increasing the size of the background image */
+    transition: background 0s; /* Removing the transition from the background color */
+}
+
+.reveal-text,
+.reveal-text::after {
+	animation-delay: var(--animation-delay, 2s);
+	animation-iteration-count: var(--iterations, 1);
+	animation-duration: var(--duration, 800ms);
+	animation-fill-mode: both;
+	animation-timing-function: cubic-bezier(0.0, 0.0, 0.2, 1);
+}
+
+.reveal-text {
+	--animation-delay: var(--delay, 0);
+	--animation-duration: var(--duration, 800ms);
+	--animation-iterations: var(--iterations, 1);
+	position: relative;
+	animation-name: clip-text;
+	color: #FFF;
+	cursor: default;
+	
+	&::after {
+		content: "";
+		position: absolute;
+		z-index: 999;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background-color: #6b0313;
+		transform: scaleX(0);
+		transform-origin: 0 50%;
+		pointer-events: none;
+		animation-name: text-revealer;
+	}
+	
+}
+
+@keyframes clip-text {
+	from {
+		clip-path: inset(0 100% 0 0);
+	}
+	to {
+		clip-path: inset(0 0 0 0);
+	}
+}
+
+
+@keyframes text-revealer {
+	
+	0%, 50% {
+		transform-origin: 0 50%;
+	}
+	
+	60%, 100% {
+		transform-origin: 100% 50%;		
+	}
+
+	
+	60% {
+		transform: scaleX(1);
+	}
+	
+	100% {
+		transform: scaleX(0);
+	}
+}
+
+.fade-in-left {
+    opacity: 0;
+    position: relative;
+    animation: fadeInLeftRight 1s ease forwards;
+}
+
+.fade-in-right {
+    opacity: 0;
+    position: relative;
+    animation: fadeInRightLeft 1s ease forwards;
+    animation-delay: 0.8s;
+}
+
+@keyframes fadeInLeftRight {
+    0% {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInRightLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    color: white;
+    font-family: Arial, sans-serif;
+  }
+  
+  table, th, td {
+    border: 1px solid white;
+    padding: 10px;
+  }
+  
+  th {
+    background-color: black;
+  }
