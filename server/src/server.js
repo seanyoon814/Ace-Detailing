@@ -12,6 +12,7 @@ const vehiclesRoutes = require("./routes/vehicles");
 const authRoutes = require("./routes/auth");
 
 const { default: mongoose } = require('mongoose');
+var cookieParser = require('cookie-parser')
 
 const app = express();
 const port = process.env.PORT || 5000;
@@ -19,6 +20,7 @@ const port = process.env.PORT || 5000;
 // middleware
 app.use(cors());
 app.use(express.json());
+app.use(cookieParser());
 
 // routes
 app.use("/user", usersRoutes);
