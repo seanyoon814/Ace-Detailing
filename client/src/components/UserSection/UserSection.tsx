@@ -1,17 +1,12 @@
 import { useState } from "react";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import {Route, Routes, Navigate, useNavigate} from 'react-router-dom';
 import "./UserSection.css";
 import { Helmet } from "react-helmet";
 import Header from '../Header/Header';
 import axios from 'axios'
 function UserSection() {
     const API_URL = process.env.PORT || 'http://localhost:5000';
-    axios.get(API_URL+'/login').then(res=>{
-        // CHECK IF USER LOGIN DATA IS IN DATABASE...
-    }).catch(err=>{
-        console.log(err);
-    });
-    
+    const navigate = useNavigate();
     const [inputs, setInputs] = useState({email:'', password:''});
     
     const handleChange = (e:React.ChangeEvent<HTMLInputElement>) => {
@@ -23,6 +18,12 @@ function UserSection() {
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         // Perform login logic here using formData
+        axios.post(API_URL+'/auth', inputs).then(res=>{     
+            navigate('/portal');
+        }).catch(err=>{
+            console.log(err);
+            window.alert('Error logging in. Invalid credentials. Please try again.');
+        });
         setInputs({email:'', password:''});
         console.log('Login data:', inputs);
       };
@@ -33,16 +34,6 @@ function UserSection() {
             <Helmet>
                 <title>User Portal</title>
             </Helmet>
-                {/* <div id="login-heading" className="jumbotron justify-content-center align-items-center">
-                    <div className="display-5">
-                        <h1>User Portal</h1>
-                        <p className="lead">
-                            Please contact the administrator for access to the user portal.
-                        </p>
-                        <hr className="my-2"/>
-                            FAQ Section Contact Goes Here 
-                    </div>
-                </div> */}
             <div id="login-container">
                 <div id="login-content">
                     <div id="login">
