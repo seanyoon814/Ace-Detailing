@@ -1,61 +1,60 @@
 import './FAQSection.css';
-
+import Header from '../Header/Header';
 import aceDetailing from '../../constants/aceDetailing';
 import Collapsible from 'react-collapsible';
 import * as React from 'react';
+import IconButton from '@mui/material/Button';
 import Slide from '@mui/material/Slide';
+import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
+import { isTemplateElement } from '@babel/types';
+import Image from '../../images/car_1.jpg';
+import Image2 from '../../images/car_2.jpg';
+import Image3 from '../../images/car_3.jpg';
+import Image4 from '../../images/logo.png';
+import Image5 from '../../images/pfp.png';
+import { eventListeners } from '@popperjs/core';
 function FAQSection() {
-    const [isView, setView] = React.useState(false);
+    const [index, setIndex] = React.useState(0);
+    const [slide, setSlide] = React.useState(true);
+    const images = [
+        Image,
+        Image2,
+        Image3,
+        Image4,
+        Image5
+    ]
     const handleChange = () => {
-        setView((prev) => !prev);
+        setSlide(false);
+        setIndex(prevIndex => (prevIndex + 1) % aceDetailing.questions.length)
+        setTimeout(() => {
+            setSlide(true);
+        }, 100);
     };
 
-    React.useEffect(() => {
-        // const heading = document.getElementById('faq-container')?.scrollIntoView({behavior: 'smooth'})
-        function checkInView(){
-            // Get the bounding rectangle of the heading
-            const heading = document.getElementById('faq-container');
-            const blog = document.getElementById('blog');
-            const {top} = heading!.getBoundingClientRect();
-            const {bottom} = blog!.getBoundingClientRect();
-            // console.log("top of heading:" + top + "\nbottom of blog:"+ bottom);
 
-            if( top > -200 && bottom < top/3 ){
-                return true;
-            }else {
-                return false;
-            }
-        }
-        document.addEventListener('scroll', function(){    
-            if(checkInView()){
-                setView(true);
-            }else{
-                setView(false);
-            }
-        });
-        }, []);
-    
     return (
         <div id="faq-container">
-        <section id="faq-list" className="lato-light ">
-                <Slide direction="right" in={isView} mountOnEnter unmountOnExit>
-            <div id="faq-heading">
-                    <h1 className="display-3 lato-light">Frequently Asked Questions!</h1>
-            </div>
-                </Slide>
-                {
-                    aceDetailing.questions.map(item => 
-                        <Collapsible
-                            trigger={item.question}
-                            key={item.question}
-                        >
-                            {item.answer}
-                        </Collapsible>    
-                    )
-                }
-            
-        </section>
+            <div id="faq-content" >
+            <Header/>
+                <div id="faq-section">
+                    <div style={{display: 'flex', flexDirection:'row', justifyContent:'space-between', marginBottom:10}}>
+                    <Slide direction="right" in={slide} mountOnEnter unmountOnExit>  
+                        <h3>{aceDetailing.questions[index].question}</h3>
+                    </Slide>
+                        <IconButton id='' onClick={handleChange}>
+                            <ArrowForwardIosIcon/>
+                        </IconButton>
+                    </div>
+                    <p>{aceDetailing.questions[index].answer}</p>
+                </div>
+                <div id="faq-imagecontainer">
+                    <img id="faq-image" src={images[index]} alt={`Car Image ${index}`}  />
+                    
+                    {/* <img id="faq-image" src={images[index].image} alt={`Car Image ${index}`}  /> */}
+                </div>
+            </div> 
         </div>
+       
     );
 }
 

@@ -7,6 +7,7 @@ import UserSection from "./components/UserSection/UserSection";
 import RegisterSection from './components/RegisterSection/RegisterSection';
 import MapSection from './components/MapSection/MapSection';
 import DisplayVehicleSection from './components/DisplayVehicleSection/DisplayVehicleSection';
+import FAQSection from './components/FAQSection/FAQSection';
 function App() {
     
     return (
@@ -20,6 +21,7 @@ function App() {
                     <Route path = "/portal" element = {<Portal />} />
                     <Route path = "/portal/vehicles" element = {<DisplayVehicleSection />} />
                     <Route path = "/maps" element= {<MapSection/>}></Route>
+                    <Route path = "/FAQs" element= {<FAQSection/>}></Route>
                 </Routes>
             </BrowserRouter>
         </div>
