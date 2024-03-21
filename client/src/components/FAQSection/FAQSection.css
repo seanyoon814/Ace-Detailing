@@ -51,7 +51,8 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-evenly;
-    height: 70%; 
+    margin-top:30px;
+    height: 60%; 
     width:90%; /* Adjusts the how far apart*/
     border-bottom: 3px solid white
 }

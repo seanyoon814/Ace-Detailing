@@ -1,18 +1,15 @@
 import './FAQSection.css';
 import Header from '../Header/Header';
 import aceDetailing from '../../constants/aceDetailing';
-import Collapsible from 'react-collapsible';
 import * as React from 'react';
 import IconButton from '@mui/material/Button';
 import Slide from '@mui/material/Slide';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
-import { isTemplateElement } from '@babel/types';
 import Image from '../../images/car_1.jpg';
 import Image2 from '../../images/car_2.jpg';
 import Image3 from '../../images/car_3.jpg';
 import Image4 from '../../images/logo.png';
 import Image5 from '../../images/pfp.png';
-import { eventListeners } from '@popperjs/core';
 function FAQSection() {
     const [index, setIndex] = React.useState(0);
     const [slide, setSlide] = React.useState(true);
@@ -49,12 +46,9 @@ function FAQSection() {
                 </div>
                 <div id="faq-imagecontainer">
                     <img id="faq-image" src={images[index]} alt={`Car Image ${index}`}  />
-                    
-                    {/* <img id="faq-image" src={images[index].image} alt={`Car Image ${index}`}  /> */}
                 </div>
             </div> 
         </div>
-       
     );
 }
 
