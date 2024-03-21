@@ -17,7 +17,7 @@ function RegisterSection() {
                 </header>
                 <h1 className = "RegisterSection">User Regsiter</h1>
 
-                <form action = "${apiUrl}/user/register" method = "post" className = "RegisterSection">
+                <form action = `${apiUrl}/user/register` method = "post" className = "RegisterSection">
                     <table className = "RegisterSection"><tbody>
                         <tr>
                             <td className = "RegisterSection">Name:</td>
