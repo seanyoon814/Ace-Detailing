@@ -28,9 +28,9 @@ function FAQSection() {
         }, 100);
     };
 
-
     return (
         <div id="faq-container">
+            <div id='hidden'></div>
             <div id="faq-content" >
             <Header/>
                 <div id="faq-section">
