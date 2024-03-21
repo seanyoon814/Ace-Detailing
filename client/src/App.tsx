@@ -21,7 +21,11 @@ function App() {
                     <Route path = "/portal" element = {<Portal />} />
                     <Route path = "/portal/vehicles" element = {<DisplayVehicleSection />} />
                     <Route path = "/maps" element= {<MapSection/>}></Route>
+<<<<<<< HEAD
                     <Route path = "/FAQs" element= {<FAQSection/>}></Route>
+=======
+                    <Route path = "/faq" element= {<FAQSection/>}></Route>
+>>>>>>> main
                 </Routes>
             </BrowserRouter>
         </div>
