@@ -8,6 +8,7 @@ import RegisterSection from './components/RegisterSection/RegisterSection';
 import MapSection from './components/MapSection/MapSection';
 import DisplayVehicleSection from './components/DisplayVehicleSection/DisplayVehicleSection';
 import FAQSection from './components/FAQSection/FAQSection';
+
 function App() {
     
     return (

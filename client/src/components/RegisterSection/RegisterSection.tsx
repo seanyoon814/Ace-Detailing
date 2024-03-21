@@ -1,5 +1,8 @@
 import { Helmet } from "react-helmet";
 import "./RegisterSection.css";
+import backend from "../../constants/backend";
+
+const { apiUrl } = backend;
 
 function RegisterSection() {
    
@@ -14,7 +17,7 @@ function RegisterSection() {
                 </header>
                 <h1 className = "RegisterSection">User Regsiter</h1>
 
-                <form action = "http://localhost:5000/user/register" method = "post" className = "RegisterSection">
+                <form action = "${apiUrl}/user/register" method = "post" className = "RegisterSection">
                     <table className = "RegisterSection"><tbody>
                         <tr>
                             <td className = "RegisterSection">Name:</td>
@@ -74,7 +77,7 @@ function RegisterSectionScript() {
 
 function checkName() {
     const input = document.getElementsByName("name")[0] as HTMLInputElement;
-    fetch(`http://localhost:5000/user/api/checkName/${input.value}`)
+    fetch(`${apiUrl}/user/api/checkName/${input.value}`)
         .then(response => response.json())
         .then(data => {
             const { taken } = data;
@@ -84,7 +87,7 @@ function checkName() {
 
 function checkEmail() {
     const input = document.getElementsByName("email")[0] as HTMLInputElement;
-    fetch(`http://localhost:5000/user/api/checkEmail/${input.value}`)
+    fetch(`${apiUrl}/user/api/checkEmail/${input.value}`)
         .then(response => response.json())
         .then(data => {
             const { taken } = data;

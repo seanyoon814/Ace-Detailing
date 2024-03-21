@@ -1,11 +1,14 @@
 import { useEffect } from "react";
 import "./DisplayVehicleSection.css";
+import backend from "../../constants/backend";
+
+const { apiUrl } = backend;
 
 function DisplayVehicleSection() {
 
     useEffect(() => {
 
-        fetch("http://localhost:5000/vehicles")
+        fetch(`${apiUrl}/vehicles`)
             .then(response => response.json())
             .then(vehicles => {
                 const main = document.getElementsByTagName("main")[0];

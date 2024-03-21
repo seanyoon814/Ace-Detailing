@@ -1,0 +1,13 @@
+runtime: nodejs20
+env: standard
+
+instance_class: F4_1G
+
+handlers:
+- url: /build/static
+  static_dir: static
+  secure: always
+
+- url: /.*
+  script: auto
+  secure: always

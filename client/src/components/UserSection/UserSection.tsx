@@ -4,8 +4,10 @@ import "./UserSection.css";
 import { Helmet } from "react-helmet";
 import Header from '../Header/Header';
 import axios from 'axios'
+import backend from "../../constants/backend";
+
 function UserSection() {
-    const API_URL = process.env.PORT || 'http://localhost:5000';
+    const { apiUrl } = backend;
     const navigate = useNavigate();
     const [inputs, setInputs] = useState({email:'', password:''});
     
@@ -18,7 +20,7 @@ function UserSection() {
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         // Perform login logic here using formData
-        axios.post(API_URL+'/auth', inputs).then(res=>{     
+        axios.post(apiUrl+'/auth', inputs).then(res=>{     
             navigate('/portal');
         }).catch(err=>{
             console.log(err);
