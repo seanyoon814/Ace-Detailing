@@ -25,6 +25,7 @@ router.get("/", async (req, res, next) => {
 });
 
 router.post("/", multerConfig.array("images"), async (req, res, next) => {
+    console.log(req);
     const imageUrls = !req.files ? [] : await Promise.all(req.files.map(file => uploadImage(file)));
     const document = new Vehicle({
         ...req.body,

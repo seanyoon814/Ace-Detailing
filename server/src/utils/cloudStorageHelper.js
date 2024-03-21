@@ -1,8 +1,8 @@
 const fs = require("fs");
 
-const cloudStorage = require("../services/cloudStorage");
+const { storage } = require("../services/cloudStorage");
 const logger = require("./logger");
-const bucket = cloudStorage.bucket(process.env.GOOGLE_CLOUD_BUCKET_NAME);
+const bucket = storage.bucket(process.env.GOOGLE_CLOUD_BUCKET_NAME);
 
 async function uploadImage(file) {
     const { filename, originalname, path } = file;

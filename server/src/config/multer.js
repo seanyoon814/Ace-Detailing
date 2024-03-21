@@ -1,8 +1,7 @@
 const multer = require("multer");
 const path = require("path");
 
-const multerConfig = multer({
-    dest: path.join(__dirname, "..", "..", "/public/uploads/"),
-});
+const dest = process.env.ENV == "prod" ? "/tmp/uploads" : path.join(__dirname, "..", "..", "/public/uploads/");
+const multerConfig = multer({ dest });
 
 module.exports = multerConfig;

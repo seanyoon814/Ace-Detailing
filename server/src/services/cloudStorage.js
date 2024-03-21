@@ -1,12 +1,23 @@
-const path = require('path');
+const logger = require('../utils/logger');
 const { Storage } = require('@google-cloud/storage');
 
- // todo: use application default credentials
-const serviceKey = path.join(__dirname, "..", "..", "./keys.json");
-
-const cloudStorage = new Storage({
-  keyFilename: serviceKey,
+const storage = new Storage({
   projectId: process.env.GOOGLE_CLOUD_PROJECT_ID,
-})
+});
 
-module.exports = cloudStorage;
+async function testConnection() {
+    logger.info("Testing Cloud Storage connection.");
+
+    try {
+        await storage.getBuckets();
+        logger.info("Cloud Storage connection confirmed.");
+    }
+    catch (err) {
+        logger.error("Application default credentials failed.");
+    }
+}
+
+module.exports = {
+    storage,
+    testConnection
+};

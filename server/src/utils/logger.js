@@ -21,7 +21,7 @@ const logger = winston.createLogger({
       )
     }),
     new transports.File({
-      filename: 'logs/combined.log',
+      filename: process.env.ENV == "prod" ? "/tmp/combined.log" : 'logs/combined.log',
       format: format.combine(
         format.json()
       )
