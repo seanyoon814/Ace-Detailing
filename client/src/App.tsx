@@ -8,7 +8,7 @@ import RegisterSection from './components/RegisterSection/RegisterSection';
 import MapSection from './components/MapSection/MapSection';
 import DisplayVehicleSection from './components/DisplayVehicleSection/DisplayVehicleSection';
 import FAQSection from './components/FAQSection/FAQSection';
-
+import AdminBlog from './components/AdminBlog/AdminBlog'
 function App() {
     
     return (
@@ -23,6 +23,7 @@ function App() {
                     <Route path = "/portal/vehicles" element = {<DisplayVehicleSection />} />
                     <Route path = "/maps" element= {<MapSection/>}></Route>
                     <Route path = "/faq" element= {<FAQSection/>}></Route>
+                    <Route path='/admin-blog' element= {<AdminBlog/>}></Route>
                 </Routes>
             </BrowserRouter>
         </div>

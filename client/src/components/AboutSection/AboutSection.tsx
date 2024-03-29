@@ -129,7 +129,7 @@ function AboutSection() {
         <NL272/>
         {/* <DetailGarage/>
         <Labocosmetica/> */}
-    </div>
+[]    </div>
 
     );
 }
