@@ -7,9 +7,11 @@ section{
     justify-content: center;
     height:40vh;
     position: relative;
-    background: url(../../images/world.jpg);
-    background-size: cover contain;
+    background: url(../../images/world2.jpg);
+    background-size: 100%;
     background-position: center;
+    background-repeat: no-repeat;
+    image-rendering: -webkit-optimize-contrast;
 }
 .carousel-control-prev{
     margin-left:1vw;

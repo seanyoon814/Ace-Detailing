@@ -7,9 +7,31 @@ import car1 from '../../images/car_1.jpg';
 import car2 from '../../images/car_2.jpg';
 import car3 from '../../images/car_3.jpg';
 import pfp from '../../images/pfp.png';
-import nl272 from '../../images/nl272.png';
-import world from '../../images/world.jpg'
+import nl272img from '../../images/nl272.png';
+import { useState } from 'react';
 function AboutSection() {
+    const [nl272, setNL272] = useState(true);
+    const [labo, setLabo] = useState(false);
+    const [detailGarage, setDetailGarage] = useState(false);
+
+    const showNL272 = () => {
+        setNL272(true);
+        setLabo(false);
+        setDetailGarage(false);
+    }
+
+    const showLabo = () => {
+        setNL272(false);
+        setLabo(true);
+        setDetailGarage(false);
+    }
+
+    const showDetailGarage = () => {
+        setNL272(false);
+        setLabo(false);
+        setDetailGarage(true);
+    }
+
     return (
     <div className='container-fluid' style={{ backgroundColor: "black" }}>
         <div className='row justify-content-center pt-5'>
@@ -73,7 +95,7 @@ function AboutSection() {
                 provide maximized margins & value of service for
                 customers looking for the best of the best.</p>
             </div>
-            <div className='col-12 world text-center' style={{marginTop:'10vh'}}>
+            <div className='col-10 world text-center' style={{marginTop:'10vh', backgroundColor:'red'}}>
                 <div className='col-3'>
                     <p className='header garmond'><i>500+ Customers</i></p>
                 </div>
@@ -120,16 +142,17 @@ function AboutSection() {
             </div>
             <div className='col-12 text-center pb-5' style={{marginTop:'10vh'}}>
                 <h1 className='quote header instrument-sans'>WE UTILIZE <span className='highlight'><i>WORLD-CLASS</i></span> PRODUCTS.</h1>
-                <img src={nl272} alt='NL272' className='pt-5' style={{maxWidth:'100%', maxHeight:'auto'}}></img>
-            </div>
-            <div className='col-4 text-center'>
-                <p className="paragraph instrument-sans btn-ripple" style={{fontWeight:'500', opacity:'1'}}>"YOU'RE ONE DROP AWAY FROM PERFECTION"<br/><span style={{fontSize:'0.6em', fontWeight:'300'}}>-NASIOL</span></p>
             </div>
         </div>
-        <NL272/>
+        <button onClick={showNL272} className='btn btn-primary'>NL272</button>
+        <button onClick={showLabo} className='btn btn-primary'>Labocosmetica</button>
+        <button onClick={showDetailGarage} className='btn btn-primary'>Detail Garage</button>
+        {nl272 && <NL272/>}
+        {labo && <Labocosmetica/>}
+        {detailGarage && <DetailGarage/>}
         {/* <DetailGarage/>
         <Labocosmetica/> */}
-[]    </div>
+    </div>
 
     );
 }
