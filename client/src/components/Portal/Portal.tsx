@@ -11,7 +11,7 @@ function Portal() {
     const [page, setPage] = useState(browseItems[0]);
 
 
-    function getPage(page: string): JSX.Element {
+    function getPageComponent(page: string): JSX.Element {
         switch (page) {
             case "Vehicles":
                 return (<PortalVehicles />)
@@ -34,7 +34,7 @@ function Portal() {
             />
             <main>
                 <header>{`${getPageCategory(page)} > ${page}`}</header>
-                { getPage(page) }
+                { getPageComponent(page) }
             </main>
         </div>
     );
