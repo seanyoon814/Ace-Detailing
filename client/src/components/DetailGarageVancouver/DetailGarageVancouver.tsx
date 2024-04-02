@@ -1,27 +1,42 @@
 import React from 'react';
-
+import DetailPic from '../../images/detailgarage.png'
 function DetailVancouver(){
     return(
-        <div className='container-fluid'>
-            <div className='row'>
-                <div className='col-12'>
-                    <h1>Detail Garage Vancouver</h1>
-                    <p>Detail Garage Vancouver is a car detailing service located in the heart of Vancouver. We offer a variety of services to keep your car looking its best. Our services include:</p>
-                    <ul>
-                        <li>Car Wash</li>
-                        <li>Interior Detailing</li>
-                        <li>Exterior Detailing</li>
-                        <li>Engine Cleaning</li>
-                        <li>Headlight Restoration</li>
-                        <li>Paint Correction</li>
-                        <li>Paint Protection</li>
-                        <li>Window Tinting</li>
-                        <li>And More!</li>
-                    </ul>
-                    <p>Our team of professionals are dedicated to providing the best service possible. We use only the best products and equipment to ensure that your car looks its best. Whether you need a quick wash or a full detail, we have you covered. Contact us today to schedule an appointment!</p>
-                </div>
+        <>
+        <div className='row justify-content-center'>
+            <div className='col-12 text-center pb-5' style={{marginTop:'10vh'}}>
+                <img src={DetailPic} alt='NL272' style={{maxWidth:'60%', maxHeight:'auto'}}></img>
             </div>
         </div>
+        <div className='row justify-content-center'>
+            <div className='col-4 text-center'>
+                <p className="paragraph instrument-sans btn-ripple" style={{fontWeight:'500', opacity:'1'}}>"SOLUTIONS DESIGNED
+FOR EVERY PHASE OF DETAILING"<br/><span style={{fontSize:'0.6em', fontWeight:'300'}}>- LABOCOSMETICA</span></p>
+            </div>
+        </div>
+        <div className='row justify-content-center'>
+                        <div className='col-4 text-center'>
+                <p className='paragraph lato-light' style={{opacity:1}}>NASIOL CANADA WARRANTY : NL272</p>
+                <table>
+                        <tr>
+                            <td><b>5 YEARS</b> <br/>without annual top coat</td>
+                            <td><b>10 YEARS</b> <br/>without annual top coat</td>
+                            <td><b>Declared on Carfax</b></td>
+                        </tr>
+                </table>
+            </div>
+            <div className='col-4 text-center'>
+                <p className='paragraph lato-light' style={{opacity:1}}>NASIOL CANADA WARRANTY : ZR53</p>
+                <table>
+                    <tr>
+                        <td><b>5 YEARS</b> <br/>without annual top coat</td>
+                        <td><b>10 YEARS</b> <br/>without annual top coat</td>
+                        <td><b>Declared on Carfax</b></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        </>
     );
 }
 

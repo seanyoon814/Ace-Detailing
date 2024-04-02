@@ -10,7 +10,6 @@ import DisplayVehicleSection from './components/DisplayVehicleSection/DisplayVeh
 import FAQSection from './components/FAQSection/FAQSection';
 import AdminBlog from './components/AdminBlog/AdminBlog'
 function App() {
-    
     return (
         <div className="App">
             <BrowserRouter>

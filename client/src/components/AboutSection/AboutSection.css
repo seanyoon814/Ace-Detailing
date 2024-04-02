@@ -1,16 +1,31 @@
 section{
     background-color: black;
 }
+.panelImg{
+    height:auto;
+    width:100%;
+    filter:brightness(60%);
+}
+
+.text-overlay {
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    text-align: center;
+}
 .world{
     display: flex;
     align-items: center;
     justify-content: center;
     height:40vh;
     position: relative;
-    background: url(../../images/world2.jpg);
+    background: url(../../images/world5.jpg);
     background-size: 100%;
     background-position: center;
     background-repeat: no-repeat;
+    filter:brightness(100%);
     image-rendering: -webkit-optimize-contrast;
 }
 .carousel-control-prev{

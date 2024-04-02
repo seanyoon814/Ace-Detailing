@@ -2,14 +2,19 @@ import React from 'react'
 import nl272img from '../../images/nl272.png';
 function NL272(){
     return(
-        <div className='row justify-content-center pt-5'>
+        <>
+        <div className='row justify-content-center'>
             <div className='col-12 text-center pb-5' style={{marginTop:'10vh'}}>
-                <img src={nl272img} alt='NL272' className='pt-5' style={{maxWidth:'100%', maxHeight:'auto'}}></img>
+                <img src={nl272img} alt='NL272' style={{maxWidth:'100%', maxHeight:'auto'}}></img>
             </div>
-            <div className='col-9 text-center'>
+        </div>
+        <div className='row justify-content-center'>
+            <div className='col-4 text-center'>
                 <p className="paragraph instrument-sans btn-ripple" style={{fontWeight:'500', opacity:'1'}}>"YOU'RE ONE DROP AWAY FROM PERFECTION"<br/><span style={{fontSize:'0.6em', fontWeight:'300'}}>-NASIOL</span></p>
             </div>
-            <div className='col-4 text-center'>
+        </div>
+        <div className='row justify-content-center'>
+                        <div className='col-4 text-center'>
                 <p className='paragraph lato-light' style={{opacity:1}}>NASIOL CANADA WARRANTY : NL272</p>
                 <table>
                         <tr>
@@ -30,6 +35,7 @@ function NL272(){
                 </table>
             </div>
         </div>
+        </>
     );
 }
 
