@@ -1,29 +1,28 @@
 import "./PortalSidebar.css"
 
-function PortalSidebar({ page, setPage }: { page: string, setPage: Function}) {
+function PortalSidebar(
+        props: {
+                page: string,
+                setPage: Function,
+                browseItems: string[],
+                adminItems: string[] 
+        }
+    ) {
 
-    const browseItems = ["Dashboard", "Vehicles", "Notifications"];
-    const adminItems = ["Reports", "Users"];
+    const { page, setPage, browseItems, adminItems } = props;
 
     // todo: add icons to left of buttons
 
     return (
         <nav className="portal-sidebar">
             <div>
-                <header>User</header>
+                <header>Ace Detailing</header>
                 <div>Browse</div>
                 {
                     browseItems.map(item =>
                         <button
                             className={page === item ? "selected" : ""}
-                            onClick = { () => {
-                                setPage(item);
-                                switch(item) {
-                                    case "Vehicles":
-                                        window.location.href = "/portal/vehicles";
-                                        break;
-                                }
-                            }}
+                            onClick = {() => setPage(item)}
                         >
                             {item}
                         </button>
@@ -34,14 +33,7 @@ function PortalSidebar({ page, setPage }: { page: string, setPage: Function}) {
                     adminItems.map(item =>
                         <button
                             className={page === item ? "selected" : ""}
-                            onClick = { () => {
-                                setPage(item);
-                                switch (item) {
-                                    case "Users":
-                                        window.location.href = "/user/register";
-                                        break;
-                                }
-                            }}
+                            onClick = { () => setPage(item) }
                         >
                             {item}
                         </button>

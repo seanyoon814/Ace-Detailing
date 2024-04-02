@@ -1,17 +1,40 @@
 import "./Portal.css";
 
 import PortalSidebar from "../PortalSidebar/PortalSidebar";
+import PortalVehicles from "../PortalVehicles/PortalVehicles";
 import { useState } from "react";
 
 function Portal() {
-    
-    const [page, setPage] = useState("Dashboard");
+
+    const browseItems = ["Dashboard", "Vehicles", "Notifications"];
+    const adminItems = ["Reports", "Users"];
+    const [page, setPage] = useState(browseItems[0]);
+
+
+    function getPage(page: string): JSX.Element {
+        switch (page) {
+            case "Vehicles":
+                return (<PortalVehicles />)
+            default:
+                return (<></>);
+        }
+    }
+
+    function getPageCategory(page: string): string {
+        return browseItems.includes(page) ? "Browse" : "Admin";
+    }
     
     return (
-        <div className="portal">
-            <PortalSidebar page={page} setPage={setPage} />
+        <div className="portal instrument-sans">
+            <PortalSidebar
+                page={page}
+                setPage={setPage}
+                browseItems={browseItems}
+                adminItems={adminItems}
+            />
             <main>
-                { /* conditionally display pages */ }
+                <header>{`${getPageCategory(page)} > ${page}`}</header>
+                { getPage(page) }
             </main>
         </div>
     );
