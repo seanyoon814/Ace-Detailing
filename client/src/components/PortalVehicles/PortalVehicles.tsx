@@ -25,45 +25,51 @@ function PortalVehicles() {
 
     const [data, setData] = useState([]);
     const [pagination, setPagination] = useState({
-        pageIndex: 0, //initial page index
-        pageSize: 10, //default page size
+        pageIndex: 0, // initial page index
+        pageSize: 12, // default page size
     });
 
     const columnHelper = createColumnHelper<any>();
     const columns = [
         columnHelper.accessor("step", {
-            header: "Step",
+            header: "STEP",
             cell: info => info.getValue(),
             footer: info => info.column.id,
+            enableColumnFilter: true,
+            filterFn: "equals",
         }),
-        columnHelper.accessor("imageUrl", {
-            header: "Image",
-            cell: info => info.getValue(),
+        columnHelper.accessor("imageUrls", {
+            header: "IMAGE",
+            cell: info => <img src={info.getValue()[0]} />,
             footer: info => info.column.id,
         }),
         columnHelper.accessor("stockNumber", {
-            header: "Stock Number",
+            header: "STOCK NUMBER",
             cell: info => info.getValue(),
             footer: info => info.column.id,
+            enableColumnFilter: true,
+            filterFn: "includesString",
         }),
         columnHelper.accessor("vehicle", {
-            header: "Vehicle",
+            header: "VEHICLE",
             cell: info => info.getValue(),
             footer: info => info.column.id,
+            enableColumnFilter: true,
+            filterFn: "includesString",
         }),
         columnHelper.accessor("notes", {
-            header: "Notes",
+            header: "NOTES",
             cell: info => info.getValue(),
             footer: info => info.column.id,
         }),
         columnHelper.accessor("createdAt", {
-            header: "Created At",
-            cell: info => info.getValue(),
+            header: "CREATED AT",
+            cell: info => new Date(info.getValue()).toLocaleString(),
             footer: info => info.column.id,
         }),
-        columnHelper.accessor("modifiedAt", {
-            header: "Modified At",
-            cell: info => info.getValue(),
+        columnHelper.accessor("updatedAt", {
+            header: "MODIFIED AT",
+            cell: info => new Date(info.getValue()).toLocaleString(),
             footer: info => info.column.id,
         }),
     ];
@@ -73,7 +79,6 @@ function PortalVehicles() {
         columns,
         data,
         getCoreRowModel: getCoreRowModel(),
-        getSortedRowModel: getSortedRowModel(),
         getFilteredRowModel: getFilteredRowModel(),
         getPaginationRowModel: getPaginationRowModel(),
         onPaginationChange: setPagination,
@@ -81,6 +86,27 @@ function PortalVehicles() {
             pagination,
         },
     });
+
+    function applyFilter(e: Event) {
+        e.preventDefault();
+
+        const stockNumber = (document.getElementById("stockNumber") as HTMLInputElement)?.value;
+        const vehicle = (document.getElementById("vehicle") as HTMLInputElement)?.value;
+        const step = (document.getElementById("step") as HTMLSelectElement)?.value;
+
+        if (!stockNumber && !vehicle && step === "All") {
+            table.resetColumnFilters();
+            return;
+        }
+
+        const filters = [];
+
+        if (stockNumber) filters.push({ id: "stockNumber", value: stockNumber, includesString: true });
+        if (vehicle) filters.push({ id: "vehicle", value: vehicle, includesString: true });
+        if (step !== "All") filters.push({ id: "step", value: step, includesString: true });
+
+        table.setColumnFilters(filters);
+    }
 
     useEffect(() => {
         getData(setData);
@@ -92,7 +118,7 @@ function PortalVehicles() {
                 <h3>Vehicles</h3>
                 <button>CREATE NEW</button>
             </div>
-            <section className="vehicles-filter">
+            <form className="vehicles-filter" onSubmit={(e) => applyFilter(e)}>
                 <div>
                     <label>Stock Number</label>
                     <input id="stockNumber" placeholder="Search for stock number"></input>
@@ -103,8 +129,8 @@ function PortalVehicles() {
                 </div>
                 <div>
                     <label>Step</label>
-                    <select id="step">
-                        <option selected>All</option>
+                    <select id="step" defaultValue="All">
+                        <option>All</option>
                         <option>1</option>
                         <option>2</option>
                         <option>3</option>
@@ -112,10 +138,27 @@ function PortalVehicles() {
                 </div>
                 <div>
                     <label>Placeholder</label>
-                    <button>FILTER</button>
+                    <button type="submit">FILTER</button>
                 </div>
-            </section>
+            </form>
             <section className="vehicles-table-container">
+                <div>
+                    <button
+                        onClick={() => table.previousPage()}
+                        disabled={!table.getCanPreviousPage()}
+                    >
+                        {'<'}
+                    </button>
+                    <strong>
+                        {`${table.getState().pagination.pageIndex + 1} of ${table.getPageCount().toLocaleString()}`}
+                    </strong>
+                    <button
+                        onClick={() => table.nextPage()}
+                        disabled={!table.getCanNextPage()}
+                    >
+                        {'>'}
+                    </button>
+                </div>
                 <table className="vehicles-table">
                     <thead>
                         {table.getHeaderGroups().map(headerGroup => (
@@ -138,7 +181,7 @@ function PortalVehicles() {
                             <tr key={row.id}>
                                 {row.getVisibleCells().map(cell => (
                                     <td key={cell.id}>
-                                        {flexRender(cell.column.columnDef.cell, cell.getContext())}
+                                        {cell.column.columnDef.cell(cell)}
                                     </td>
                                 ))}
                             </tr>
