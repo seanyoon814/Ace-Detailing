@@ -1,0 +1,173 @@
+{"label":"server.js","level":"info","message":"Connecting to MongoDB cluster.","metadata":{},"timestamp":"2024-04-02 21:27:48"}
+{"label":"server.js","level":"info","message":"Testing Cloud Storage connection.","metadata":{},"timestamp":"2024-04-02 21:27:48"}
+{"label":"server.js","level":"info","message":"Server is running on port 5000.","metadata":{},"timestamp":"2024-04-02 21:27:49"}
+{"label":"server.js","level":"info","message":"Cloud Storage connection confirmed.","metadata":{},"timestamp":"2024-04-02 21:27:49"}
+{"label":"server.js","level":"error","message":"blog validation failed: description: Path `description` is required.","metadata":{},"timestamp":"2024-04-02 21:28:20"}
+{"label":"server.js","level":"info","message":"Saving document to collection 'reports'.","metadata":{},"timestamp":"2024-04-02 21:29:28"}
+{"label":"server.js","level":"info","message":"Saved document with id '660cdb2838f7987a63d96ca6' to collection 'reports'.","metadata":{},"timestamp":"2024-04-02 21:29:28"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'blog'.","metadata":{},"timestamp":"2024-04-02 21:29:47"}
+{"label":"server.js","level":"info","message":"Saving document to collection 'reports'.","metadata":{},"timestamp":"2024-04-02 21:40:08"}
+{"label":"server.js","level":"info","message":"Saved document with id '660cdda838f7987a63d96ca9' to collection 'reports'.","metadata":{},"timestamp":"2024-04-02 21:40:08"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'blog'.","metadata":{},"timestamp":"2024-04-02 21:40:19"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'blog'.","metadata":{},"timestamp":"2024-04-02 21:41:15"}
+{"label":"server.js","level":"info","message":"Connecting to MongoDB cluster.","metadata":{},"timestamp":"2024-04-02 21:41:42"}
+{"label":"server.js","level":"info","message":"Testing Cloud Storage connection.","metadata":{},"timestamp":"2024-04-02 21:41:42"}
+{"label":"server.js","level":"info","message":"Server is running on port 5000.","metadata":{},"timestamp":"2024-04-02 21:41:42"}
+{"label":"server.js","level":"info","message":"Cloud Storage connection confirmed.","metadata":{},"timestamp":"2024-04-02 21:41:42"}
+{"label":"server.js","level":"info","message":"Saving document to collection 'reports'.","metadata":{},"timestamp":"2024-04-02 21:41:49"}
+{"label":"server.js","level":"info","message":"Saved document with id '660cde0ddcd9ea6d732988eb' to collection 'reports'.","metadata":{},"timestamp":"2024-04-02 21:41:49"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'blog'.","metadata":{},"timestamp":"2024-04-02 21:41:52"}
+{"label":"server.js","level":"info","message":"Saving document to collection 'reports'.","metadata":{},"timestamp":"2024-04-02 21:44:24"}
+{"label":"server.js","level":"info","message":"Saved document with id '660cdea8dcd9ea6d732988ee' to collection 'reports'.","metadata":{},"timestamp":"2024-04-02 21:44:24"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'blog'.","metadata":{},"timestamp":"2024-04-02 21:44:28"}
+{"label":"server.js","level":"info","message":"Connecting to MongoDB cluster.","metadata":{},"timestamp":"2024-04-02 21:44:56"}
+{"label":"server.js","level":"info","message":"Testing Cloud Storage connection.","metadata":{},"timestamp":"2024-04-02 21:44:57"}
+{"label":"server.js","level":"info","message":"Server is running on port 5000.","metadata":{},"timestamp":"2024-04-02 21:44:57"}
+{"label":"server.js","level":"info","message":"Cloud Storage connection confirmed.","metadata":{},"timestamp":"2024-04-02 21:44:57"}
+{"label":"server.js","level":"info","message":"Saving document to collection 'reports'.","metadata":{},"timestamp":"2024-04-02 21:45:03"}
+{"label":"server.js","level":"info","message":"Saved document with id '660cdecfa824b2c15ef2d85e' to collection 'reports'.","metadata":{},"timestamp":"2024-04-02 21:45:03"}
+{"label":"server.js","level":"info","message":"Connecting to MongoDB cluster.","metadata":{},"timestamp":"2024-04-02 21:46:32"}
+{"label":"server.js","level":"info","message":"Testing Cloud Storage connection.","metadata":{},"timestamp":"2024-04-02 21:46:33"}
+{"label":"server.js","level":"info","message":"Server is running on port 5000.","metadata":{},"timestamp":"2024-04-02 21:46:33"}
+{"label":"server.js","level":"info","message":"Cloud Storage connection confirmed.","metadata":{},"timestamp":"2024-04-02 21:46:33"}
+{"label":"server.js","level":"info","message":"Saving document to collection 'reports'.","metadata":{},"timestamp":"2024-04-02 21:46:51"}
+{"label":"server.js","level":"info","message":"Saved document with id '660cdf3b20b9b762336168f9' to collection 'reports'.","metadata":{},"timestamp":"2024-04-02 21:46:51"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'blog'.","metadata":{},"timestamp":"2024-04-02 21:46:54"}
+{"label":"server.js","level":"info","message":"Saving document to collection 'reports'.","metadata":{},"timestamp":"2024-04-02 21:48:16"}
+{"label":"server.js","level":"info","message":"Saved document with id '660cdf9020b9b762336168fc' to collection 'reports'.","metadata":{},"timestamp":"2024-04-02 21:48:16"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'blog'.","metadata":{},"timestamp":"2024-04-02 21:48:18"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'blog'.","metadata":{},"timestamp":"2024-04-02 21:48:19"}
+{"label":"server.js","level":"info","message":"Connecting to MongoDB cluster.","metadata":{},"timestamp":"2024-04-02 21:50:40"}
+{"label":"server.js","level":"info","message":"Testing Cloud Storage connection.","metadata":{},"timestamp":"2024-04-02 21:50:40"}
+{"label":"server.js","level":"info","message":"Server is running on port 5000.","metadata":{},"timestamp":"2024-04-02 21:50:40"}
+{"label":"server.js","level":"info","message":"Cloud Storage connection confirmed.","metadata":{},"timestamp":"2024-04-02 21:50:41"}
+{"label":"server.js","level":"info","message":"Saving document to collection 'reports'.","metadata":{},"timestamp":"2024-04-02 21:50:54"}
+{"label":"server.js","level":"info","message":"Saved document with id '660ce02e51b42cd46f24fe58' to collection 'reports'.","metadata":{},"timestamp":"2024-04-02 21:50:54"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'blog'.","metadata":{},"timestamp":"2024-04-02 21:50:58"}
+{"label":"server.js","level":"info","message":"Connecting to MongoDB cluster.","metadata":{},"timestamp":"2024-04-02 21:51:48"}
+{"label":"server.js","level":"info","message":"Testing Cloud Storage connection.","metadata":{},"timestamp":"2024-04-02 21:51:48"}
+{"label":"server.js","level":"info","message":"Server is running on port 5000.","metadata":{},"timestamp":"2024-04-02 21:51:49"}
+{"label":"server.js","level":"info","message":"Cloud Storage connection confirmed.","metadata":{},"timestamp":"2024-04-02 21:51:49"}
+{"label":"server.js","level":"info","message":"Saving document to collection 'reports'.","metadata":{},"timestamp":"2024-04-02 21:52:01"}
+{"label":"server.js","level":"info","message":"Saved document with id '660ce07109d8731415e5aa78' to collection 'reports'.","metadata":{},"timestamp":"2024-04-02 21:52:01"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'blog'.","metadata":{},"timestamp":"2024-04-02 21:52:12"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'blog'.","metadata":{},"timestamp":"2024-04-02 21:54:51"}
+{"label":"server.js","level":"info","message":"Saving document to collection 'reports'.","metadata":{},"timestamp":"2024-04-02 21:54:53"}
+{"label":"server.js","level":"info","message":"Saved document with id '660ce11d09d8731415e5aa7c' to collection 'reports'.","metadata":{},"timestamp":"2024-04-02 21:54:53"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'blog'.","metadata":{},"timestamp":"2024-04-02 21:54:55"}
+{"label":"server.js","level":"info","message":"Connecting to MongoDB cluster.","metadata":{},"timestamp":"2024-04-02 22:01:46"}
+{"label":"server.js","level":"info","message":"Testing Cloud Storage connection.","metadata":{},"timestamp":"2024-04-02 22:01:46"}
+{"label":"server.js","level":"info","message":"Server is running on port 5000.","metadata":{},"timestamp":"2024-04-02 22:01:46"}
+{"label":"server.js","level":"info","message":"Cloud Storage connection confirmed.","metadata":{},"timestamp":"2024-04-02 22:01:47"}
+{"label":"server.js","level":"info","message":"Connecting to MongoDB cluster.","metadata":{},"timestamp":"2024-04-02 22:04:32"}
+{"label":"server.js","level":"info","message":"Testing Cloud Storage connection.","metadata":{},"timestamp":"2024-04-02 22:04:33"}
+{"label":"server.js","level":"info","message":"Server is running on port 5000.","metadata":{},"timestamp":"2024-04-02 22:04:33"}
+{"label":"server.js","level":"info","message":"Cloud Storage connection confirmed.","metadata":{},"timestamp":"2024-04-02 22:04:33"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'blog'.","metadata":{},"timestamp":"2024-04-02 22:05:40"}
+{"label":"server.js","level":"info","message":"Connecting to MongoDB cluster.","metadata":{},"timestamp":"2024-04-02 22:06:50"}
+{"label":"server.js","level":"info","message":"Testing Cloud Storage connection.","metadata":{},"timestamp":"2024-04-02 22:06:50"}
+{"label":"server.js","level":"info","message":"Server is running on port 5000.","metadata":{},"timestamp":"2024-04-02 22:06:50"}
+{"label":"server.js","level":"info","message":"Cloud Storage connection confirmed.","metadata":{},"timestamp":"2024-04-02 22:06:50"}
+{"label":"server.js","level":"info","message":"Connecting to MongoDB cluster.","metadata":{},"timestamp":"2024-04-02 22:17:01"}
+{"label":"server.js","level":"info","message":"Testing Cloud Storage connection.","metadata":{},"timestamp":"2024-04-02 22:17:01"}
+{"label":"server.js","level":"info","message":"Server is running on port 5000.","metadata":{},"timestamp":"2024-04-02 22:17:01"}
+{"label":"server.js","level":"info","message":"Cloud Storage connection confirmed.","metadata":{},"timestamp":"2024-04-02 22:17:02"}
+{"label":"server.js","level":"info","message":"Connecting to MongoDB cluster.","metadata":{},"timestamp":"2024-04-02 22:24:56"}
+{"label":"server.js","level":"info","message":"Testing Cloud Storage connection.","metadata":{},"timestamp":"2024-04-02 22:24:56"}
+{"label":"server.js","level":"info","message":"Server is running on port 5000.","metadata":{},"timestamp":"2024-04-02 22:24:56"}
+{"label":"server.js","level":"info","message":"Cloud Storage connection confirmed.","metadata":{},"timestamp":"2024-04-02 22:24:57"}
+{"label":"server.js","level":"info","message":"Connecting to MongoDB cluster.","metadata":{},"timestamp":"2024-04-02 22:25:52"}
+{"label":"server.js","level":"info","message":"Testing Cloud Storage connection.","metadata":{},"timestamp":"2024-04-02 22:25:52"}
+{"label":"server.js","level":"info","message":"Server is running on port 5000.","metadata":{},"timestamp":"2024-04-02 22:25:52"}
+{"label":"server.js","level":"info","message":"Cloud Storage connection confirmed.","metadata":{},"timestamp":"2024-04-02 22:25:52"}
+{"label":"server.js","level":"info","message":"Connecting to MongoDB cluster.","metadata":{},"timestamp":"2024-04-02 22:28:43"}
+{"label":"server.js","level":"info","message":"Testing Cloud Storage connection.","metadata":{},"timestamp":"2024-04-02 22:28:44"}
+{"label":"server.js","level":"info","message":"Server is running on port 5000.","metadata":{},"timestamp":"2024-04-02 22:28:44"}
+{"label":"server.js","level":"info","message":"Cloud Storage connection confirmed.","metadata":{},"timestamp":"2024-04-02 22:28:44"}
+{"label":"server.js","level":"info","message":"Connecting to MongoDB cluster.","metadata":{},"timestamp":"2024-04-02 22:29:50"}
+{"label":"server.js","level":"info","message":"Testing Cloud Storage connection.","metadata":{},"timestamp":"2024-04-02 22:29:50"}
+{"label":"server.js","level":"info","message":"Server is running on port 5000.","metadata":{},"timestamp":"2024-04-02 22:29:51"}
+{"label":"server.js","level":"info","message":"Cloud Storage connection confirmed.","metadata":{},"timestamp":"2024-04-02 22:29:51"}
+{"label":"server.js","level":"info","message":"Connecting to MongoDB cluster.","metadata":{},"timestamp":"2024-04-02 22:31:11"}
+{"label":"server.js","level":"info","message":"Testing Cloud Storage connection.","metadata":{},"timestamp":"2024-04-02 22:31:11"}
+{"label":"server.js","level":"info","message":"Server is running on port 5000.","metadata":{},"timestamp":"2024-04-02 22:31:11"}
+{"label":"server.js","level":"info","message":"Cloud Storage connection confirmed.","metadata":{},"timestamp":"2024-04-02 22:31:11"}
+{"label":"server.js","level":"info","message":"Connecting to MongoDB cluster.","metadata":{},"timestamp":"2024-04-02 22:32:08"}
+{"label":"server.js","level":"info","message":"Testing Cloud Storage connection.","metadata":{},"timestamp":"2024-04-02 22:32:08"}
+{"label":"server.js","level":"info","message":"Server is running on port 5000.","metadata":{},"timestamp":"2024-04-02 22:32:08"}
+{"label":"server.js","level":"info","message":"Cloud Storage connection confirmed.","metadata":{},"timestamp":"2024-04-02 22:32:09"}
+{"label":"server.js","level":"info","message":"Saving document to collection 'reports'.","metadata":{},"timestamp":"2024-04-02 22:32:09"}
+{"label":"server.js","level":"info","message":"Saved document with id '660ce9d9d421bdd07cfad2ab' to collection 'reports'.","metadata":{},"timestamp":"2024-04-02 22:32:09"}
+{"label":"server.js","level":"info","message":"Saving document to collection 'reports'.","metadata":{},"timestamp":"2024-04-02 22:32:12"}
+{"label":"server.js","level":"info","message":"Saved document with id '660ce9dcd421bdd07cfad2ad' to collection 'reports'.","metadata":{},"timestamp":"2024-04-02 22:32:12"}
+{"label":"server.js","level":"error","message":"blog validation failed: imageUrl.0: Cast to [string] failed for value \"[ {} ]\" (type string) at path \"imageUrl.0\" because of \"CastError\"","metadata":{},"timestamp":"2024-04-02 22:32:45"}
+{"label":"server.js","level":"info","message":"Connecting to MongoDB cluster.","metadata":{},"timestamp":"2024-04-02 22:36:11"}
+{"label":"server.js","level":"info","message":"Testing Cloud Storage connection.","metadata":{},"timestamp":"2024-04-02 22:36:11"}
+{"label":"server.js","level":"info","message":"Server is running on port 5000.","metadata":{},"timestamp":"2024-04-02 22:36:11"}
+{"label":"server.js","level":"info","message":"Cloud Storage connection confirmed.","metadata":{},"timestamp":"2024-04-02 22:36:12"}
+{"label":"server.js","level":"info","message":"Saving document to collection 'reports'.","metadata":{},"timestamp":"2024-04-02 22:36:13"}
+{"label":"server.js","level":"info","message":"Saved document with id '660ceacd875143fee08c7742' to collection 'reports'.","metadata":{},"timestamp":"2024-04-02 22:36:13"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'blog'.","metadata":{},"timestamp":"2024-04-02 22:37:08"}
+{"label":"server.js","level":"info","message":"Saving document to collection 'reports'.","metadata":{},"timestamp":"2024-04-02 22:39:37"}
+{"label":"server.js","level":"info","message":"Saved document with id '660ceb99875143fee08c7745' to collection 'reports'.","metadata":{},"timestamp":"2024-04-02 22:39:37"}
+{"label":"server.js","level":"info","message":"Connecting to MongoDB cluster.","metadata":{},"timestamp":"2024-04-02 22:40:04"}
+{"label":"server.js","level":"info","message":"Testing Cloud Storage connection.","metadata":{},"timestamp":"2024-04-02 22:40:04"}
+{"label":"server.js","level":"info","message":"Server is running on port 5000.","metadata":{},"timestamp":"2024-04-02 22:40:04"}
+{"label":"server.js","level":"info","message":"Cloud Storage connection confirmed.","metadata":{},"timestamp":"2024-04-02 22:40:05"}
+{"label":"server.js","level":"info","message":"Saving document to collection 'reports'.","metadata":{},"timestamp":"2024-04-02 22:40:09"}
+{"label":"server.js","level":"info","message":"Saved document with id '660cebb9a8c58f29fb819fdb' to collection 'reports'.","metadata":{},"timestamp":"2024-04-02 22:40:09"}
+{"label":"server.js","level":"info","message":"Saving document to collection 'reports'.","metadata":{},"timestamp":"2024-04-02 22:40:55"}
+{"label":"server.js","level":"info","message":"Saved document with id '660cebe7a8c58f29fb819fdd' to collection 'reports'.","metadata":{},"timestamp":"2024-04-02 22:40:55"}
+{"label":"server.js","level":"info","message":"Saving document to collection 'reports'.","metadata":{},"timestamp":"2024-04-02 22:41:07"}
+{"label":"server.js","level":"info","message":"Saved document with id '660cebf3a8c58f29fb819fdf' to collection 'reports'.","metadata":{},"timestamp":"2024-04-02 22:41:07"}
+{"label":"server.js","level":"info","message":"Saving document to collection 'reports'.","metadata":{},"timestamp":"2024-04-02 22:41:25"}
+{"label":"server.js","level":"info","message":"Saved document with id '660cec05a8c58f29fb819fe1' to collection 'reports'.","metadata":{},"timestamp":"2024-04-02 22:41:25"}
+{"label":"server.js","level":"info","message":"Connecting to MongoDB cluster.","metadata":{},"timestamp":"2024-04-02 22:42:11"}
+{"label":"server.js","level":"info","message":"Testing Cloud Storage connection.","metadata":{},"timestamp":"2024-04-02 22:42:11"}
+{"label":"server.js","level":"info","message":"Server is running on port 5000.","metadata":{},"timestamp":"2024-04-02 22:42:11"}
+{"label":"server.js","level":"info","message":"Cloud Storage connection confirmed.","metadata":{},"timestamp":"2024-04-02 22:42:12"}
+{"label":"server.js","level":"info","message":"Connecting to MongoDB cluster.","metadata":{},"timestamp":"2024-04-02 22:42:32"}
+{"label":"server.js","level":"info","message":"Testing Cloud Storage connection.","metadata":{},"timestamp":"2024-04-02 22:42:32"}
+{"label":"server.js","level":"info","message":"Server is running on port 5000.","metadata":{},"timestamp":"2024-04-02 22:42:32"}
+{"label":"server.js","level":"info","message":"Cloud Storage connection confirmed.","metadata":{},"timestamp":"2024-04-02 22:42:33"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'blog'.","metadata":{},"timestamp":"2024-04-02 22:42:38"}
+{"label":"server.js","level":"info","message":"Saving document to collection 'reports'.","metadata":{},"timestamp":"2024-04-02 22:42:40"}
+{"label":"server.js","level":"info","message":"Saved document with id '660cec502e722182b351df9d' to collection 'reports'.","metadata":{},"timestamp":"2024-04-02 22:42:40"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'blog'.","metadata":{},"timestamp":"2024-04-02 22:42:41"}
+{"label":"server.js","level":"info","message":"Connecting to MongoDB cluster.","metadata":{},"timestamp":"2024-04-02 22:43:21"}
+{"label":"server.js","level":"info","message":"Testing Cloud Storage connection.","metadata":{},"timestamp":"2024-04-02 22:43:21"}
+{"label":"server.js","level":"info","message":"Server is running on port 5000.","metadata":{},"timestamp":"2024-04-02 22:43:22"}
+{"label":"server.js","level":"info","message":"Cloud Storage connection confirmed.","metadata":{},"timestamp":"2024-04-02 22:43:22"}
+{"label":"server.js","level":"info","message":"Saving document to collection 'reports'.","metadata":{},"timestamp":"2024-04-02 22:43:23"}
+{"label":"server.js","level":"info","message":"Saved document with id '660cec7b0ed8e3efe965c9e2' to collection 'reports'.","metadata":{},"timestamp":"2024-04-02 22:43:23"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'blog'.","metadata":{},"timestamp":"2024-04-02 22:43:38"}
+{"label":"server.js","level":"info","message":"Connecting to MongoDB cluster.","metadata":{},"timestamp":"2024-04-02 22:50:21"}
+{"label":"server.js","level":"info","message":"Testing Cloud Storage connection.","metadata":{},"timestamp":"2024-04-02 22:50:22"}
+{"label":"server.js","level":"info","message":"Server is running on port 5000.","metadata":{},"timestamp":"2024-04-02 22:50:22"}
+{"label":"server.js","level":"info","message":"Cloud Storage connection confirmed.","metadata":{},"timestamp":"2024-04-02 22:50:22"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'vehicles'.","metadata":{},"timestamp":"2024-04-02 22:50:53"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'vehicles'.","metadata":{},"timestamp":"2024-04-02 22:50:53"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'vehicles'.","metadata":{},"timestamp":"2024-04-02 22:51:02"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'vehicles'.","metadata":{},"timestamp":"2024-04-02 22:51:02"}
+{"label":"server.js","level":"info","message":"Connecting to MongoDB cluster.","metadata":{},"timestamp":"2024-04-02 22:53:34"}
+{"label":"server.js","level":"info","message":"Testing Cloud Storage connection.","metadata":{},"timestamp":"2024-04-02 22:53:34"}
+{"label":"server.js","level":"info","message":"Server is running on port 5000.","metadata":{},"timestamp":"2024-04-02 22:53:35"}
+{"label":"server.js","level":"info","message":"Cloud Storage connection confirmed.","metadata":{},"timestamp":"2024-04-02 22:53:35"}
+{"label":"server.js","level":"info","message":"Connecting to MongoDB cluster.","metadata":{},"timestamp":"2024-04-02 22:56:21"}
+{"label":"server.js","level":"info","message":"Testing Cloud Storage connection.","metadata":{},"timestamp":"2024-04-02 22:56:21"}
+{"label":"server.js","level":"info","message":"Server is running on port 5000.","metadata":{},"timestamp":"2024-04-02 22:56:21"}
+{"label":"server.js","level":"info","message":"Cloud Storage connection confirmed.","metadata":{},"timestamp":"2024-04-02 22:56:21"}
+{"label":"server.js","level":"info","message":"Connecting to MongoDB cluster.","metadata":{},"timestamp":"2024-04-02 23:00:31"}
+{"label":"server.js","level":"info","message":"Testing Cloud Storage connection.","metadata":{},"timestamp":"2024-04-02 23:00:31"}
+{"label":"server.js","level":"info","message":"Server is running on port 5000.","metadata":{},"timestamp":"2024-04-02 23:00:31"}
+{"label":"server.js","level":"info","message":"Cloud Storage connection confirmed.","metadata":{},"timestamp":"2024-04-02 23:00:32"}
+{"label":"server.js","level":"info","message":"Saving document to collection 'reports'.","metadata":{},"timestamp":"2024-04-02 23:01:47"}
+{"label":"server.js","level":"info","message":"Saved document with id '660cf0cb43c8b8a9bc85f25e' to collection 'reports'.","metadata":{},"timestamp":"2024-04-02 23:01:47"}
+{"label":"server.js","level":"info","message":"Saving document to collection 'reports'.","metadata":{},"timestamp":"2024-04-02 23:01:47"}
+{"label":"server.js","level":"info","message":"Saved document with id '660cf0cb43c8b8a9bc85f260' to collection 'reports'.","metadata":{},"timestamp":"2024-04-02 23:01:47"}
+{"label":"server.js","level":"info","message":"Saving document to collection 'reports'.","metadata":{},"timestamp":"2024-04-02 23:02:17"}
+{"label":"server.js","level":"info","message":"Saved document with id '660cf0e943c8b8a9bc85f262' to collection 'reports'.","metadata":{},"timestamp":"2024-04-02 23:02:17"}
+{"label":"server.js","level":"info","message":"Connecting to MongoDB cluster.","metadata":{},"timestamp":"2024-04-02 23:05:46"}
+{"label":"server.js","level":"info","message":"Testing Cloud Storage connection.","metadata":{},"timestamp":"2024-04-02 23:05:47"}
+{"label":"server.js","level":"info","message":"Server is running on port 5000.","metadata":{},"timestamp":"2024-04-02 23:05:47"}
+{"label":"server.js","level":"info","message":"Cloud Storage connection confirmed.","metadata":{},"timestamp":"2024-04-02 23:05:47"}
