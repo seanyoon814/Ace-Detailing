@@ -2,6 +2,7 @@ import "./Portal.css";
 
 import PortalSidebar from "../PortalSidebar/PortalSidebar";
 import PortalVehicles from "../PortalVehicles/PortalVehicles";
+import PortalUsers from "../PortalUsers/PortalUsers";
 import PortalBlog from "../PortalBlog/PortalBlog";
 import { useState } from "react";
 
@@ -16,6 +17,8 @@ function Portal() {
         switch (page) {
             case "Vehicles":
                 return (<PortalVehicles />)
+            case "Users":
+                return (<PortalUsers />)
             case "Blog":
                 return (<PortalBlog />)
             default:

@@ -2,6 +2,8 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const router = express.Router();
 const User = require("../models/User");
+const { clientUrl } = require("../utils/constants");
+
 var mongoose = require("mongoose");
 
 router.use(bodyParser.urlencoded({extended : true}));
@@ -11,7 +13,8 @@ router.post("/register", async (req, res) => {
     var id = await generateUserId();
     var user = new User(id, req.body.name, req.body.email, req.body.password);
     user.save();
-    res.send("success");
+    res.redirect(`${clientUrl}/portal`);
+    
 })
 
 router.get("/api/checkName/:name", async (req, res) => {
