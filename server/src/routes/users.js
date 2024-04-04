@@ -13,7 +13,7 @@ router.post("/register", async (req, res) => {
     var id = await generateUserId();
     var user = new User(id, req.body.name, req.body.email, req.body.password);
     user.save();
-    res.redirect(`${clientUrl}/portal`);
+    res.status(204).send();
     
 })
 

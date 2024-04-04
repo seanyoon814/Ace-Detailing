@@ -9,7 +9,7 @@ function PortalUsers() {
     return (
         <div id = "PortalUsers">
 
-            <form action = {`${apiUrl}/user/register`} method = "post">
+            <form onSubmit = {submit}>
                 <table><tbody>
                     <tr>
                         <td>Name:</td>
@@ -53,7 +53,7 @@ function PortalUsersScript() {
 
 
         function validate() {
-            if (password.value != confirm.value) {
+            if (password.value !== confirm.value) {
                 confirm.setCustomValidity("Doesn't Match");
             }
             else {
@@ -82,9 +82,35 @@ function checkEmail() {
         .then(response => response.json())
         .then(data => {
             const { taken } = data;
-            console.log(taken);
             input.setCustomValidity(taken ? "This email address has been used." : "");
         });
+}
+
+function submit(event: any) {
+    event.preventDefault();
+
+    fetch(`${apiUrl}/user/register`, {
+        method : "post",
+        headers : { "Content-Type" : "application/json" },
+        body : JSON.stringify({
+            name : getInput("name").value,
+            email : getInput("email").value,
+            password : getInput("password").value
+        })
+    })
+        .then(response => {
+            if (response.status === 204) {
+                alert(`Created user: ${getInput("name").value}.`);
+                getInput("name").value = "";
+                getInput("email").value = "";
+                getInput("password").value = "";
+                getInput("confirm").value = "";
+            }
+        })
+}
+
+function getInput(name: string) {
+    return (document.getElementsByName(name)[0] as HTMLInputElement);
 }
 
 export default PortalUsers;
