@@ -2,7 +2,7 @@ import React from "react";
 import "./PortalUsers.css";
 import backend from "../../constants/backend";
 
-const { apiUrl } = backend;
+const { apiUrl, clientUrl } = backend;
 
 function PortalUsers() {
    
@@ -67,8 +67,23 @@ function PortalUsersScript() {
 }
 
 function checkName() {
+
+    fetch(`${apiUrl}/user/api/check`, {
+        method : "POST",
+        headers : { "Content-Type" : "application/json" },
+        body : JSON.stringify({ email : sessionStorage.getItem("email"), password : sessionStorage.getItem("password") })
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log(data.admin);
+        if (data.admin === undefined) window.location.href = `${clientUrl}/user`;
+    })
+
     const input = document.getElementsByName("name")[0] as HTMLInputElement;
-    fetch(`${apiUrl}/user/api/checkName/${input.value}`)
+    fetch(`${apiUrl}/user/api/checkName/${input.value}`, {
+        method : "get",
+        credentials : "include"
+    })
         .then(response => response.json())
         .then(data => {
             const { taken } = data;

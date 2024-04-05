@@ -21,6 +21,8 @@ function UserSection() {
         e.preventDefault();
         // Perform login logic here using formData
         axios.post(apiUrl+'/auth', inputs).then(res=>{     
+            sessionStorage.setItem("email", inputs.email);
+            sessionStorage.setItem("password", inputs.password);
             navigate('/portal');
         }).catch(err=>{
             console.log(err);
