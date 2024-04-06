@@ -22,7 +22,7 @@ app.use(cors(
     {
         origin: (origin, callback)=>{
             
-            if ('http://localhost:3000' !== -1 ||  'https://ace-detailing.uw.r.appspot.com/' != -1 || null){
+            if ('http://localhost:3000' !== -1 ||  'https://ace-detailing.uw.r.appspot.com/' != -1 ){
                 callback(null, true);
             } else {
                 callback(new Error('Not allowed by CORS'));
