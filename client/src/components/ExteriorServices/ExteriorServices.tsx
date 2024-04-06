@@ -91,7 +91,7 @@ function ExteriorServices()
                     </div>
                     <div className="col-lg-4 col-sm-12 hoverable">
                         <video className="video" autoPlay loop muted>
-                            <source src={interior}></source>
+                            <source src={ceramic}></source>
                         </video>
                         <div className="overlay-text text-center header garmond">
                             INTERIOR SERVICES

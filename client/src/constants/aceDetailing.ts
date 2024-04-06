@@ -3,19 +3,19 @@ const services = [
         name: "EXTERIOR SERVICES",
         description: "Transform your car's exterior with our precision detailing, keeping it looking sleek and protected.",
         imagePath: "",
-        relativeUrl: "/exterior-services"
+        relativeUrl: "/services"
     },
     {
         name: "INTERIOR SERVICES",
         description: "Elevate your driving experience with our meticulous interior detailing, ensuring a fresh, clean, and comfortable ride.",
         imagePath: "",
-        relativeUrl: "/interior-services"
+        relativeUrl: "/services"
     },
     {
         name: "CERAMIC COATING",
         description: "Upgrade your car's exterior with our durable ceramic coating, delivering lasting protection and a sleek, professional finish.",
         imagePath: "",
-        relativeUrl: "/ceramic-coating"
+        relativeUrl: "/services"
     }
 ];
 
