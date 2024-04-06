@@ -25,6 +25,7 @@ function App() {
                     <Route path = "/user" element = {<UserSection />} />
                     <Route path = "/maps" element= {<MapSection/>}></Route>
                     <Route path = "/faq" element= {<FAQSection/>}></Route>
+                    <Route path='/portal' element= {<Portal />}></Route>
                     <Route path='/admin-blog' element= {<AdminBlog/>}></Route>
                     <Route path='/services' element= {<ExteriorServices/>}></Route>
                 </Routes>

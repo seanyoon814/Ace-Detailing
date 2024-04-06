@@ -1,6 +1,6 @@
 import "./PortalVehicles.css";
 
-import { useEffect, useState } from "react";
+import { useEffect, useLayoutEffect, useState } from "react";
 import axios from "axios";
 import backend from "../../constants/backend";
 
@@ -26,8 +26,31 @@ function PortalVehicles() {
     const [data, setData] = useState([]);
     const [pagination, setPagination] = useState({
         pageIndex: 0, // initial page index
-        pageSize: 12, // default page size
+        pageSize: 10, // default page size
     });
+
+    function updatePagination() {
+        const container = document.getElementsByClassName("vehicles-table-container")[0] as Element;
+        container.style.height = "100%";
+
+        const containerStyle = getComputedStyle(container);
+        const containerEm = parseFloat(containerStyle.fontSize);
+        
+        const tableHeight = parseFloat(containerStyle.height) - 3 * containerEm;
+        const pageSize = Math.floor((tableHeight - 2 * containerEm) / (6 * containerEm));
+        
+        setPagination({
+            pageIndex: 0,
+            pageSize
+        });
+
+        container.style.height = "fit-content";
+    }
+
+    useLayoutEffect(() => {
+        updatePagination();
+        window.addEventListener('resize', updatePagination);
+    }, []);
 
     const columnHelper = createColumnHelper<any>();
     const columns = [
@@ -40,7 +63,7 @@ function PortalVehicles() {
         }),
         columnHelper.accessor("imageUrls", {
             header: "IMAGE",
-            cell: info => <img src={info.getValue()[0]} />,
+            cell: info => info.getValue()[0] ? <img src={info.getValue()[0]} /> : <img />,
             footer: info => info.column.id,
         }),
         columnHelper.accessor("stockNumber", {
