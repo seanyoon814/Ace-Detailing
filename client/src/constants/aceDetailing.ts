@@ -1,34 +1,22 @@
 const services = [
     {
-        name: "Service 1",
-        description: "Description",
+        name: "EXTERIOR SERVICES",
+        description: "Transform your car's exterior with our precision detailing, keeping it looking sleek and protected.",
         imagePath: "",
+        relativeUrl: "/exterior-services"
     },
     {
-        name: "Service 2",
-        description: "Description",
+        name: "INTERIOR SERVICES",
+        description: "Elevate your driving experience with our meticulous interior detailing, ensuring a fresh, clean, and comfortable ride.",
         imagePath: "",
+        relativeUrl: "/interior-services"
     },
     {
-        name: "Service 3",
-        description: "Description",
+        name: "CERAMIC COATING",
+        description: "Upgrade your car's exterior with our durable ceramic coating, delivering lasting protection and a sleek, professional finish.",
         imagePath: "",
-    },
-    {
-        name: "Service 4",
-        description: "Description",
-        imagePath: "",
-    },
-    {
-        name: "Service 5",
-        description: "Description",
-        imagePath: "",
-    },
-    {
-        name: "Service 6",
-        description: "Description",
-        imagePath: "",
-    },
+        relativeUrl: "/ceramic-coating"
+    }
 ];
 
 const questions = [

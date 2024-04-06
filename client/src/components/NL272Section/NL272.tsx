@@ -1,5 +1,6 @@
 import React from 'react'
 import nl272img from '../../images/nl272.png';
+import {useNavigate} from 'react-router-dom'
 function NL272(){
     return(
         <>

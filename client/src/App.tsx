@@ -9,6 +9,9 @@ import MapSection from './components/MapSection/MapSection';
 import DisplayVehicleSection from './components/DisplayVehicleSection/DisplayVehicleSection';
 import FAQSection from './components/FAQSection/FAQSection';
 import AdminBlog from './components/AdminBlog/AdminBlog'
+import ServicesSection from './components/ServicesSection/ServicesSection';
+import ExteriorServices from './components/ExteriorServices/ExteriorServices';
+import React from 'react';
 function App() {
     return (
         <div className="App">
@@ -23,6 +26,7 @@ function App() {
                     <Route path = "/maps" element= {<MapSection/>}></Route>
                     <Route path = "/faq" element= {<FAQSection/>}></Route>
                     <Route path='/admin-blog' element= {<AdminBlog/>}></Route>
+                    <Route path='/exterior-services' element={<ExteriorServices/>}></Route>
                 </Routes>
             </BrowserRouter>
         </div>

@@ -2,7 +2,7 @@ section{
     background-color: black;
 }
 .panelImg{
-    height:auto;
+    height:100%;
     width:100%;
     filter:brightness(60%);
 }
@@ -95,10 +95,9 @@ section{
     background-size: 100%; /* Increasing the size of the background image */
     transition: background 0s; /* Removing the transition from the background color */
 }
-
 .reveal-text,
 .reveal-text::after {
-	animation-delay: var(--animation-delay, 2s);
+	animation-delay: var(--animation-delay, 0.5s);
 	animation-iteration-count: var(--iterations, 1);
 	animation-duration: var(--duration, 800ms);
 	animation-fill-mode: both;
@@ -106,6 +105,7 @@ section{
 }
 
 .reveal-text {
+    opacity: 0;
 	--animation-delay: var(--delay, 0);
 	--animation-duration: var(--duration, 800ms);
 	--animation-iterations: var(--iterations, 1);
@@ -113,7 +113,6 @@ section{
 	animation-name: clip-text;
 	color: #FFF;
 	cursor: default;
-	
 	&::after {
 		content: "";
 		position: absolute;
@@ -136,6 +135,7 @@ section{
 		clip-path: inset(0 100% 0 0);
 	}
 	to {
+        opacity:1;
 		clip-path: inset(0 0 0 0);
 	}
 }
