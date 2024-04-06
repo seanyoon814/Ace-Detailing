@@ -62,24 +62,39 @@
     justify-content: center;
     align-items: center;
     height: auto;
-    width:50%;
+    width: 45%;
 }
 #faq-image{
+    flex: 1;
     padding: 50px;
-    height:100%;
-    width: 100%;
+    max-height:100%;
+    max-width: 100%;
+    object-fit: contain;
 }
 
 #faq-section{
-   color:white;
-   width:50%;
-   padding:50px;
-   display:flex;
-   flex-direction: column;
+    position: relative;
+    width: 50%;
 }
 
-#faq-section > p{
-    padding-right:50px;
+#faq-section h3{
+    color:white;
+    width:80%;
+    padding-left:50px;
+    display:flex;
+    flex-direction: column;
+}
+
+#faq-section > li{
+    padding-left:50px;
+    color: white;
+    width:90%;
+    display:flex;
+    flex-direction: column;
+}
+
+#faq-section .icon {
+    position:fixed;
 }
 
 
