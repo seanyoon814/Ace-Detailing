@@ -26,6 +26,7 @@ function App() {
                     <Route path = "/maps" element= {<MapSection/>}></Route>
                     <Route path = "/faq" element= {<FAQSection/>}></Route>
                     <Route path='/admin-blog' element= {<AdminBlog/>}></Route>
+                    <Route path='/exterior-services' element= {<ExteriorServices/>}></Route>
                 </Routes>
             </BrowserRouter>
             <ToastContainer/>

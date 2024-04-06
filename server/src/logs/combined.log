@@ -171,3 +171,7 @@
 {"label":"server.js","level":"info","message":"Testing Cloud Storage connection.","metadata":{},"timestamp":"2024-04-02 23:05:47"}
 {"label":"server.js","level":"info","message":"Server is running on port 5000.","metadata":{},"timestamp":"2024-04-02 23:05:47"}
 {"label":"server.js","level":"info","message":"Cloud Storage connection confirmed.","metadata":{},"timestamp":"2024-04-02 23:05:47"}
+{"label":"server.js","level":"info","message":"Connecting to MongoDB cluster.","metadata":{},"timestamp":"2024-04-05 21:20:25"}
+{"label":"server.js","level":"info","message":"Testing Cloud Storage connection.","metadata":{},"timestamp":"2024-04-05 21:20:26"}
+{"label":"server.js","level":"info","message":"Server is running on port 5000.","metadata":{},"timestamp":"2024-04-05 21:20:26"}
+{"label":"server.js","level":"error","message":"Application default credentials failed.","metadata":{},"timestamp":"2024-04-05 21:20:26"}

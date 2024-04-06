@@ -2,3 +2,7 @@
     height:60em;
     width:auto;
 }
+.row{
+    border-top: '1px solid white' !important;
+    border-bottom: '1px solid white';
+}
