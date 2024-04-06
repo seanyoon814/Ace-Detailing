@@ -6,6 +6,7 @@ import Labocosmetica from '../Labocosmetica/Labocosmetica';
 import car1 from '../../images/car_1.jpg';
 import car2 from '../../images/car_2.jpg';
 import car3 from '../../images/car_3.jpg';
+import toyota from '../../images/toyota.jpg'
 import pfp from '../../images/pfp.png';
 import nl272img from '../../images/nl272.png';
 import { useState } from 'react';
@@ -37,7 +38,8 @@ function AboutSection() {
     <div className='container-fluid' style={{ backgroundColor: "black" }}>
         <div className='row justify-content-center' style={{marginTop:'5vh'}}>
             <div className="col-12 text-center pb-5">
-            <h1 className='quote header instrument-sans'>WE BUILT A TEAM OF <span className='highlight'><i>CERTIFIED &amp; DEDICATED</i></span> DETAILERS.</h1>
+            <p className='paragraph-noanim lato-light' style={{fontSize:'2em'}}>WHO WE ARE</p>
+            <h1 className='quote header instrument-sans'>A TEAM OF <span className='highlight'><i>CERTIFIED &amp; DEDICATED</i></span> DETAILERS.</h1>
             </div>
             <div className="col-4">
                 <p className="paragraph-noanim instrument-sans">Ace Detailing consists of industry-experienced + multiaccredited ceramic coating installers. Our team delivers
@@ -109,7 +111,8 @@ function AboutSection() {
             </div>
             
             <div className='col-12 text-center pb-5' style={{marginTop:'5vh'}}>
-                <h1 className='quote header instrument-sans'>WE OFFER A WIDE RANGE OF  <span className='highlight'><i>PREMIUM DETAILING SERVICES.</i></span></h1>
+            <p className='paragraph-noanim lato-light' style={{fontSize:'2em'}}>WHAT WE OFFER</p>
+                <h1 className='quote header instrument-sans'>A WIDE RANGE OF  <span className='highlight'><i>PREMIUM DETAILING SERVICES.</i></span></h1>
             </div>
             <div className='col-4'>
                 <p className='paragraph-noanim instrument-sans' style={{float:'left'}}>Our team of detailing specialists provide over 10+ years of
@@ -142,7 +145,6 @@ function AboutSection() {
         <div className="col-6 mt-5" style={{padding:'0'}}>
                 <img className="panelImg" src={car1} alt="Card image cap"></img>
                 <div className="text-overlay">
-                    <p className='paragraph-noanim instrument-sans' style={{marginBottom:'0'}}>Premium Quality</p>
                     <h1 className="header garmond">SERVICES</h1>
                     <p className='paragraph-noanim instrument-sans'><i>Discover More <i className="fa-solid fa-circle-arrow-right"></i></i></p>
                 </div>
@@ -150,15 +152,29 @@ function AboutSection() {
             <div className="col-6 mt-5" style={{padding:'0'}}>
                 <img className="panelImg" src={car2} alt="Card image cap"></img>
                 <div className="text-overlay">
-                        <p className='paragraph-noanim instrument-sans' style={{marginBottom:'0'}}>Professional Grade</p>
                         <h1 className="header garmond">PRODUCTS</h1>
+                        <p className='paragraph-noanim instrument-sans'><i>Discover More <i className="fa-solid fa-circle-arrow-right"></i></i></p>
+                    </div>
+            </div>
+            <div className="col-6" style={{padding:'0'}}>
+                <img className="panelImg" src={toyota} alt="Card image cap"></img>
+                <div className="text-overlay">
+                        <h1 className="header garmond">USER BLOG</h1>
+                        <p className='paragraph-noanim instrument-sans'><i>Discover More <i className="fa-solid fa-circle-arrow-right"></i></i></p>
+                    </div>
+            </div>
+            <div className="col-6" style={{padding:'0'}}>
+                <img className="panelImg" src={car3} alt="Card image cap"></img>
+                <div className="text-overlay">
+                        <h1 className="header garmond">FAQs</h1>
                         <p className='paragraph-noanim instrument-sans'><i>Discover More <i className="fa-solid fa-circle-arrow-right"></i></i></p>
                     </div>
             </div>
         </div>
         <div className='row justify-content-center'>             
         <div className='col-12 text-center pb-5' style={{marginTop:'10vh'}}>
-                <h1 className='quote header instrument-sans'>WE UTILIZE <span className='highlight'><i>WORLD-CLASS</i></span> PRODUCTS.</h1>
+        <p className='paragraph-noanim lato-light' style={{fontSize:'2em'}}>OUR PRODUCTS</p>
+                <h1 className='quote header instrument-sans'>UTILIZE <span className='highlight'><i>WORLD-CLASS</i></span> STANDARDS.</h1>
             </div>
             <div className='col-12 text-center'>
                 <button onClick={showNL272} className='btn btn-danger'>NL272</button>
