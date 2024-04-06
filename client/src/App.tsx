@@ -1,6 +1,8 @@
 import './App.css';
 
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import Main from './components/Main/Main';
 import Portal from "./components/Portal/Portal";
 import UserSection from "./components/UserSection/UserSection";
@@ -9,8 +11,6 @@ import MapSection from './components/MapSection/MapSection';
 import DisplayVehicleSection from './components/DisplayVehicleSection/DisplayVehicleSection';
 import FAQSection from './components/FAQSection/FAQSection';
 import AdminBlog from './components/AdminBlog/AdminBlog'
-import { ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
 import Prefetch from './features/auth/prefetch';
 import ServicesSection from './components/ServicesSection/ServicesSection';
 import ExteriorServices from './components/ExteriorServices/ExteriorServices';
