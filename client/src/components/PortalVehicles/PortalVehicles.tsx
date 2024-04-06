@@ -40,7 +40,7 @@ function PortalVehicles() {
         const pageSize = Math.floor((tableHeight - 2 * containerEm) / (6 * containerEm));
         
         setPagination({
-            pageIndex: 0,
+            pageIndex: Math.floor((pagination.pageIndex * pagination.pageIndex) / pageSize),
             pageSize
         });
 
@@ -97,7 +97,6 @@ function PortalVehicles() {
         }),
     ];
 
-    // todo: add pagination and fix vehicle schema in backend
     const table = useReactTable({
         columns,
         data,
