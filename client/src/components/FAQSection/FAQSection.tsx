@@ -38,11 +38,13 @@ function FAQSection() {
                     <Slide direction="right" in={slide} mountOnEnter unmountOnExit>  
                         <h3>{aceDetailing.questions[index].question}</h3>
                     </Slide>
-                        <IconButton id='' onClick={handleChange}>
+                        <IconButton id='icon' onClick={handleChange}>
                             <ArrowForwardIosIcon/>
                         </IconButton>
                     </div>
-                    <p>{aceDetailing.questions[index].answer}</p>
+                    {
+                    aceDetailing.questions[index].answer.split("\n").map((item, key) => (<li key={key}> {item.trim()}</li>))
+                    }
                 </div>
                 <div id="faq-imagecontainer">
                     <img id="faq-image" src={images[index]} alt={`Car Image ${index}`}  />

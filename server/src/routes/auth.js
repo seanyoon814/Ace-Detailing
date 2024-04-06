@@ -5,7 +5,6 @@ const router = express.Router();
 var mongoose = require("mongoose");
 const path = require("path");
 
-
 // For Auth Controller
 const User = require("../models/User"); // using user model
 const loginLimiter = require("../utils/loginLimiter"); // For login
@@ -22,6 +21,12 @@ router.use(bodyParser.urlencoded({extended : true}));
     email: 'Admin@Admin.com',
     password: 'pwd',
     admin: true,
+
+    id: 6,
+    name: 'test',
+    email: 'test@test.com',
+    password: 'test',
+    admin: false,
 */
 
 // Helper Functions 
@@ -33,21 +38,17 @@ const login = asyncHandler(async (req, res) => {
     
     // get user data
     const {email, password} = req.body;
-    
+
     if(email === undefined || password === undefined){
-        return res.status(400).send("email or password is not defined");
+        return res.status(400).json({message:"email or password is not defined"});
     }
     
     // find email and password
-    const query = {email: email};
-    const foundUser = await collection.findOne(query);
-    // console.log("await User.find() : ", foundUser);
-
+    const foundUser = await User.findOne({email}).exec();
     //  Authentication process: TODO decrypt password if encryption added
-    if(foundUser.password != password){
-        return res.status(401).json({message:"Unauthorized Password does not match"});
+    if(!foundUser || foundUser.password != password){
+        return res.status(401).json({message:"Unauthorized: email or password does not match"});
     }
-
     // Adding tokens and http cookie
     const accessToken = jwt.sign(
         {   
@@ -55,12 +56,11 @@ const login = asyncHandler(async (req, res) => {
                 "id": foundUser.id,
                 "name": foundUser.name,
                 "email": foundUser.email,
-                "password": foundUser.password,
                 "admin": foundUser.admin
             }
         },
         process.env.ACCESS_TOKEN_SECRET,
-        {expiresIn: "60s"}
+        {expiresIn: "10s"}
     );
     
     const refreshToken = jwt.sign(
@@ -71,7 +71,7 @@ const login = asyncHandler(async (req, res) => {
             "admin": foundUser.admin
         },
         process.env.REFRESH_TOKEN_SECRET,
-        { expiresIn: "1d"}
+        { expiresIn: "20s"}
     );
     
     // cookie for refresh token
@@ -83,10 +83,13 @@ const login = asyncHandler(async (req, res) => {
     });
 
     // send accessToken
-    res.json({accessToken: accessToken});
+    res.json({accessToken});
 });
 
-router.post('/', loginLimiter, login);
+// @desc   Login user
+// @route  POST /auth
+// @access Public
+router.post('/', login);
 
 // refresh for get /auth/refresh when access token is expired
 const refresh = (req, res) => {
@@ -130,23 +133,29 @@ const refresh = (req, res) => {
     ));
 };
 
+// @desc   Refresh user token
+// @route  GET /auth/refresh
+// @access Public
 router.get('/refresh', refresh);
 
 // logout for post /auth/logout, delete cookies
 const logout = asyncHandler(async (req, res) => {
     const cookies = req.cookies;
     if(!cookies?.jwt){
-        return res.sendStatus(400).json({error: "Bad Request"});
+        return res.sendStatus(204)
     }
     res.clearCookie('jwt', {
         httpOnly:true, 
-        secure: true, 
         sameSite: 'None',
+        secure: true, 
     });
 
     res.json({message: "Logged out, cookies cleared"});
 });
 
+// @desc   Logout user
+// @route  POST /auth/logout
+// @access Public
 router.post('/logout', logout);
 
 module.exports = router;

@@ -9,6 +9,9 @@ import MapSection from './components/MapSection/MapSection';
 import DisplayVehicleSection from './components/DisplayVehicleSection/DisplayVehicleSection';
 import FAQSection from './components/FAQSection/FAQSection';
 import AdminBlog from './components/AdminBlog/AdminBlog'
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import Prefetch from './features/auth/prefetch';
 import ServicesSection from './components/ServicesSection/ServicesSection';
 import ExteriorServices from './components/ExteriorServices/ExteriorServices';
 import React from 'react';
@@ -20,15 +23,12 @@ function App() {
                     <Route index element={<Main />} />
                     <Route path="/" element={<Main />} />
                     <Route path = "/user" element = {<UserSection />} />
-                    <Route path = "/user/register" element = {<RegisterSection />} />
-                    <Route path = "/portal" element = {<Portal />} />
-                    <Route path = "/portal/vehicles" element = {<DisplayVehicleSection />} />
                     <Route path = "/maps" element= {<MapSection/>}></Route>
                     <Route path = "/faq" element= {<FAQSection/>}></Route>
                     <Route path='/admin-blog' element= {<AdminBlog/>}></Route>
-                    <Route path='/exterior-services' element={<ExteriorServices/>}></Route>
                 </Routes>
             </BrowserRouter>
+            <ToastContainer/>
         </div>
     );
 }

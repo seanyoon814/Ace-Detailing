@@ -50,12 +50,7 @@ module.exports = class User {
         const user = await newUser.findOne({ email : email });
         return (user != null);
     }
-
-    static async findByLogin(email, password) {
-        console.log(email);
-        console.log(password);
-        const result = await newUser.findOne({ email, password });
-        console.log(result);
-        return result;
-    }
 }
+
+const User = mongoose.model("User", schema);
+module.exports = User;
