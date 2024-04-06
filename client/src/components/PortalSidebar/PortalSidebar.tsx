@@ -5,41 +5,9 @@ import { useNavigate } from "react-router-dom";
 
 import { useSendLogoutMutation } from "../../features/auth/authApiSlice";
 import { toast } from "react-toastify";
-function PortalSidebar(
-        props: {
-                page: string,
-                setPage: Function,
-                browseItems: string[],
-                adminItems: string[] 
-        }
-    ) {
-    const { page, setPage, browseItems, adminItems } = props;
-
-    // remove admin components if not
-    // useEffect(() => {
-    //     fetch(`${apiUrl}/user/api/check`, {
-    //         method : "POST",
-    //         headers : { "Content-Type" : "application/json" },
-    //         body : JSON.stringify({ email : sessionStorage.getItem("email"), password : sessionStorage.getItem("password") })
-    //     })
-    //         .then(response => response.json())
-    //         .then(data => {
-    //             if (data.admin == undefined) {
-    //                 window.location.href = `${clientUrl}/user`;
-    //             }
-    //             else if (data.admin == false) {
-    //                 for (var element of Array.from(document.getElementsByClassName("adminItems"))) {
-    //                     (element as HTMLElement).style.visibility = "hidden";
-    //                 }
-    //             }
-    //         })
-    // })
-
-    // function logout() {
-    //     sessionStorage.removeItem("email");
-    //     sessionStorage.removeItem("password");
-    //     window.location.href = `${clientUrl}/user`;
-    // }
+function PortalSidebar({ page, setPage }: { page: string, setPage: Function}) {
+    const browseItems = ["Dashboard", "Vehicles", "Notifications"];
+    const adminItems = ["Reports", "Users"];
     
     const navigate = useNavigate();
     
@@ -89,8 +57,15 @@ function PortalSidebar(
                 {
                     adminItems.map(item =>
                         <button
-                            className={page === item ? "selected adminitems" : "adminItems"}
-                            onClick = { () => setPage(item) }
+                            className={page === item ? "selected" : ""}
+                            onClick = { () => {
+                                setPage(item);
+                                switch (item) {
+                                    case "Users":
+                                        window.location.href = "/portal/user/register";
+                                        break;
+                                }
+                            }}
                         >
                             {item}
                         </button>

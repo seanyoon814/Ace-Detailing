@@ -14,7 +14,7 @@ const verifyJWT = (req, res, next) => {
         process.env.ACCESS_TOKEN_SECRET,
         (err, user) => {
             if(err) {
-                return res.status(403).send('Forbidden');
+                return res.status(403).send('Forbidden, invalid token.');
             }
             req.id = user.UserInfo.id;
             req.email = user.UserInfo.email;

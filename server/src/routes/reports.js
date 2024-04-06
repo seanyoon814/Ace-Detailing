@@ -8,6 +8,9 @@ const { uploadImage } = require("../utils/cloudStorageHelper");
 
 const router = express.Router();
 
+//@desc    Get all reports
+//@route   GET /reports
+//@access  Private to admin
 // todo: use query params to specify user/vehicle id
 router.get("/", async (req, res, next) => {
     logger.info("Reading all documents from collection 'reports'.");
@@ -22,6 +25,10 @@ router.get("/", async (req, res, next) => {
     }
 });
 
+
+//@desc    Create a report
+//@route   POST /reports
+//@access  Private
 router.post("/", multerConfig.array("images"), async (req, res, next) => {
     const imageUrls = !req.files ? [] : await Promise.all(req.files.map(file => uploadImage(file)));
     const document = new Report({
@@ -39,6 +46,9 @@ router.post("/", multerConfig.array("images"), async (req, res, next) => {
     }
 });
 
+//@desc    Get a report by id
+//@route   GET /reports/:id
+//@access  Private to user and Admin
 router.get("/:id", async (req, res, next) => {
     const { id } = req.params;
 
