@@ -59,14 +59,19 @@ function UserSection() {
             setEmail('');
             setPassword('');
             navigate('/portal');
-        }.catch(err=>{
-            console.log(err);
-            window.alert('Error logging in. Invalid credentials. Please try again.');
-        });
-        setInputs({email:'', password:''});
-        console.log('Login data:', inputs);
-      };
-
+        } catch (err){
+            if(!err.status){
+                toast.error('No Server Response. Please try again later.');
+            } else if(err.status === 400){
+                toast.error('Missing Username or Password. Please try again.');
+            }else if(err.status === 401){
+                toast.error('Unauthorized: Invalid Credentials. Please try again.');
+            } else {
+                setError(err.data?.message);
+            }
+            errRef.current.focus();
+        }
+    }
     return (
         <div className="login-background">
             <Header/>
