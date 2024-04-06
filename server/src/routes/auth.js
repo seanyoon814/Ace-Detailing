@@ -60,7 +60,7 @@ const login = asyncHandler(async (req, res) => {
             }
         },
         process.env.ACCESS_TOKEN_SECRET,
-        {expiresIn: "10s"}
+        {expiresIn: "6h"} // CHANGE IF U WANT LONGER OR SHORTER
     );
     
     const refreshToken = jwt.sign(

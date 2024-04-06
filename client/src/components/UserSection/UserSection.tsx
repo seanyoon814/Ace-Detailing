@@ -55,7 +55,7 @@ function UserSection() {
         // Perform login logic here using formData
         try{
             const {accessToken} = await login({email, password}).unwrap();
-            dispatch(setCredentials({accessToken}));
+            await dispatch(setCredentials({accessToken}));
             setEmail('');
             setPassword('');
             navigate('/portal');

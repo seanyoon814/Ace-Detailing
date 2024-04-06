@@ -41,7 +41,7 @@ const verifyJWT = require("./utils/verifyJWT");
 // routes
 app.use("/user", verifyJWT, usersRoutes);
 app.use("/reports", verifyJWT, reportsRoutes);
-app.use("/vehicles", verifyJWT, vehiclesRoutes);
+app.use("/vehicles",verifyJWT, vehiclesRoutes);
 app.use("/auth", authRoutes);
 app.use("/blog", blogRoutes);
 

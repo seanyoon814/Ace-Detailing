@@ -3,7 +3,9 @@ import "./PortalVehicles.css";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import backend from "../../constants/backend";
-
+import httpClient  from '../../features/httpClient';
+import { useSelector } from "react-redux";
+import { selectCurrentToken } from "../../features/auth/authSlice";
 import {
     createColumnHelper,
     flexRender,
@@ -13,15 +15,16 @@ import {
     getPaginationRowModel,
     getSortedRowModel,
 } from "@tanstack/react-table";
+import { toast } from "react-toastify";
+import { useNavigate } from "react-router-dom";
+import { nextTick } from "process";
 
 const { apiUrl } = backend;
 
-async function getData(setData: Function) {
-    const result = await axios(`${apiUrl}/vehicles`);
-    setData(result.data);
-}
 
 function PortalVehicles() {
+    const navigate = useNavigate();
+    
 
     const [data, setData] = useState([]);
     const [pagination, setPagination] = useState({
@@ -87,6 +90,21 @@ function PortalVehicles() {
         },
     });
 
+    async function getData(setData: Function) {
+        try {
+            const result = await httpClient.get(`${apiUrl}/vehicles`);
+            setData(result.data);
+        } catch(error) { // Catch invalid token
+            if(error?.response.status === 401 || error?.response.status === 403){ 
+                // 401 Unauthorized wrong header or 403 Invalid, token expired
+                await toast.error("Unauthorized.");
+                navigate('/user');
+            } else {
+                console.error("Error:", error);
+            }
+        }
+    }
+
     function applyFilter(e: Event) {
         e.preventDefault();
 
@@ -109,6 +127,7 @@ function PortalVehicles() {
     }
 
     useEffect(() => {
+        // httpClient.getVehiclesData(setData);
         getData(setData);
     }, []);
 

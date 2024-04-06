@@ -1,5 +1,7 @@
 import { logOut } from "../auth/authSlice"; 
 import { apiSlice } from "../apiSlice";
+
+// Backend Calls for Auth
 export const authApiSlice = apiSlice.injectEndpoints({
     endpoints: builder => ({
         login: builder.mutation({
@@ -32,7 +34,7 @@ export const authApiSlice = apiSlice.injectEndpoints({
                 url: '/auth/refresh',
                 method: 'GET'
             })
-        })
+        }),
     })
 });
 
