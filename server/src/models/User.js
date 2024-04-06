@@ -51,3 +51,6 @@ module.exports = class User {
         return (user != null);
     }
 }
+
+const User = mongoose.model("User", schema);
+module.exports = User;

@@ -17,14 +17,29 @@ const app = express();
 const port = process.env.ENV == "prod" ? 8080 : 5000;
 
 // middleware
-app.use(cors());
+app.use(cors(
+    {
+        origin: (origin, callback)=>{
+            
+            if ('http://localhost:3000' !== -1 ||  'https://ace-detailing.uw.r.appspot.com/' != -1 || null){
+                callback(null, true);
+            } else {
+                callback(new Error('Not allowed by CORS'));
+            }
+
+        } ,
+        credentials: true,
+        optionsSuccessStatus: 200
+    }
+));
 app.use(express.json());
 app.use(cookieParser());
+const verifyJWT = require("./utils/verifyJWT");
 
 // routes
-app.use("/user", usersRoutes);
-app.use("/reports", reportsRoutes);
-app.use("/vehicles", vehiclesRoutes);
+app.use("/user", verifyJWT, usersRoutes);
+app.use("/reports", verifyJWT, reportsRoutes);
+app.use("/vehicles", verifyJWT, vehiclesRoutes);
 app.use("/auth", authRoutes);
 
 app.listen(port, async () => {
