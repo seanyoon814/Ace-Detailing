@@ -27,23 +27,22 @@ async function addBlogPost(event: React.FormEvent<HTMLFormElement>) {
         formData.set("image", imageFile, filename);
     }
 
-    const createdPost = {
-        title: formData.get("title") as string,
-        description: formData.get("desc") as string,
-        image: imageFile as File
-    };
-
     try {
-        await axios.post(`${apiUrl}/blog/`, createdPost);
+        await axios.post(`${apiUrl}/blog/`, formData, {
+            headers: {
+                'Content-Type': 'multipart/form-data'
+            }
+        });
     } catch (error) {
         console.error("Error adding blog post:", error);
     }
 }
 
+
 function BlogForm() {
     return (
         <div className="container-fluid">
-            <div className="row justify-content-center">
+            <div className="row justify-content-center" style={{marginTop:'10vh'}}>
                 <div className="col-12">
                     <form onSubmit={addBlogPost} encType="multipart/form-data">
                         <label htmlFor="title">
@@ -51,7 +50,7 @@ function BlogForm() {
                         </label>
                         <br />
                         <label htmlFor="desc">
-                            Description: <input name="desc" type="text" placeholder="" />
+                            Description: <input name="description" type="text" placeholder="" />
                         </label>
                         <br />
                         <label htmlFor="image">

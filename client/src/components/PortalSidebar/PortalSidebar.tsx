@@ -1,14 +1,17 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import "./PortalSidebar.css"
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
 import { useSendLogoutMutation } from "../../features/auth/authApiSlice";
 import { toast } from "react-toastify";
-function PortalSidebar({ page, setPage }: { page: string, setPage: Function}) {
-    const browseItems = ["Dashboard", "Vehicles", "Notifications"];
-    const adminItems = ["Reports", "Users"];
+import checkAdmin from "../../features/auth/checkAdmin";
+
+function PortalSidebar({ page, setPage, setSubPage }: { page: string, setPage: Function, setSubPage: Function }) {
+    const browseItems = ["Vehicles", "Notifications"];
+    const adminItems = ["Reports", "Users", "Blog"];
     
+    const [isMounted, setIsMounted] = useState(false);
     const navigate = useNavigate();
     
     const [sendLogout, {
@@ -25,6 +28,23 @@ function PortalSidebar({ page, setPage }: { page: string, setPage: Function}) {
         }
     },[isSuccess, navigate]);
 
+    // prevent checking admin when refreshing
+    useEffect(() => {
+        setIsMounted(true);
+        return () => setIsMounted(false);
+    })
+
+    useEffect(() => {
+        if (isMounted) {
+            checkAdmin(() => {
+                console.log(Array.from(document.getElementsByClassName("adminItems")));
+                for (var item of Array.from(document.getElementsByClassName("adminItems"))) {
+                    (item as HTMLElement).style.visibility = "visible";
+                }
+            }, ()=> {})
+        }
+    }, [isMounted])
+
     const onLogout = () => {
         toast.info("Logging out...");
         sendLogout()
@@ -38,6 +58,11 @@ function PortalSidebar({ page, setPage }: { page: string, setPage: Function}) {
     }
     // todo: add icons to left of buttons
 
+    function updatePage(page: string) {
+        setPage(page);
+        setSubPage("");
+    }
+
     return (
         <nav className="portal-sidebar">
             <div>
@@ -46,8 +71,8 @@ function PortalSidebar({ page, setPage }: { page: string, setPage: Function}) {
                 {
                     browseItems.map(item =>
                         <button
-                            className={page === item ? "selected" : ""}
-                            onClick = {() => setPage(item)}
+                            className={page.includes(item) ? "selected" : ""}
+                            onClick = {() => updatePage(item)}
                         >
                             {item}
                         </button>
@@ -57,14 +82,9 @@ function PortalSidebar({ page, setPage }: { page: string, setPage: Function}) {
                 {
                     adminItems.map(item =>
                         <button
-                            className={page === item ? "selected" : ""}
+                            className={page.includes(item) ? "selected adminItems" : "adminItems"}
                             onClick = { () => {
-                                setPage(item);
-                                switch (item) {
-                                    case "Users":
-                                        // window.location.href = "/portal/user/register";
-                                        // break;
-                                }
+                                updatePage(item);
                             }}
                         >
                             {item}

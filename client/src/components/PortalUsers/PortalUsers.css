@@ -9,10 +9,11 @@
     width: 64%;
     margin: auto;
     margin-top: 32px;
-    border: 1px solid white;
-    border-radius: 8px;
+    border-radius: 16px;
     font-size: 28px;
     padding-left: 4px;
+    padding-top: 4px;
+    background-color: #2b2c2e;
 }
 
 #PortalUsers > form > table {
@@ -29,16 +30,17 @@
     margin: 8px;
     margin-right: 0px;
     height: 40px;
-    width: 320px;
-    background-color: black;
+    width: 336px;
+    background-color: #3a3c3e;
     color: white;
-    border: 1px solid white;
+    border: 1px solid black;
+    border-radius: 4px;
 }
 
 #PortalUsers > form > button {
-    background-color: black;
-    color: red;
-    border: 1px solid red;
+    background-color: #7b0202;
+    color: white;
+    border: none;
     border-radius: 8px;
     width: 94%;
     margin: 16px;

@@ -2,10 +2,11 @@ import {useEffect} from 'react';
 import {Outlet} from 'react-router-dom';
 import {useSelector } from 'react-redux';
 import { selectCurrentToken } from './authSlice';
-import {useSendLogoutMutation, useGetDataQuery, useCheckTokenMutation, } from './authApiSlice';
+import {useSendLogoutMutation, useGetDataQuery, useCheckTokenMutation, authApiSlice} from './authApiSlice';
 import {useNavigate} from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import {toast} from 'react-toastify';
+import {store} from '../../store';
 // USE BASEQUERYHERE CALLS 
 const Prefetch = () => {
     const [logout, {
@@ -22,18 +23,17 @@ const Prefetch = () => {
     const token = useSelector(selectCurrentToken);
     const dispatch = useDispatch();
     
-    useEffect(() => { // PROBLEM RIGHT NOW REFRESH TOKEN ISNT SENDING
+    useEffect(() => {
         if(!token || checkError){
             toast.error("Unauthorized. Please login. Redirecting to login page...")
             logout()
             navigate('/user');
         }
-        
+        const vehicles = store.dispatch(authApiSlice.endpoints.getData.initiate('/vehicles'));
         console.log("subbing");
         
         return () => {// TODO ENOUGH TIME: Create vehicleAPI to subscribe/unscribe to the vehicle data  
             console.log("unsubbing");
-            // vehicles.unsubscribe();
         }
 
     

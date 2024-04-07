@@ -6,7 +6,9 @@ const bucket = storage.bucket(process.env.GOOGLE_CLOUD_BUCKET_NAME);
 
 async function uploadImage(file) {
     const { filename, originalname, path } = file;
-
+    console.log("uploadImage function called");
+    console.log("Received file:", file);
+    logger.log("Received file:", file);
     const blob = bucket.file(`${filename}.${originalname.split(".")[1]}`);
 
     return new Promise((resolve, reject) => {
@@ -18,12 +20,12 @@ async function uploadImage(file) {
             })
             .on('finish', function() {
                 const publicUrl = `https://storage.googleapis.com/${bucket.name}/${blob.name}`;
-                // logger.debug("publicUrl: %s", publicUrl);
+                logger.debug("publicUrl: %s", publicUrl);
                 resolve(publicUrl);
             })
     });
 }
 
 module.exports = {
-    uploadImage,
+    uploadImage
 };

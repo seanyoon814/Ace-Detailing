@@ -46,9 +46,9 @@ const PersistLogin = () => {
     } else if(isError){ // When refreshToken expires, persist = yes, token = no
         return( 
         <div style={{"color":"white"}}>
-            <h1>Unauthorized or Login Expired</h1>
+            <h1>Unauthorized, login expired</h1>
             <p>{error.data.message}</p>
-            <Link to="/user" style={{"color":"white"}} >Click here to redirect to Login Page</Link>
+            <Link to="/user" style={{"color":"white", "fontSize":"30px"}} > Click here to redirect to Login Page </Link>
         </div>)
     } else if(isSuccess && trueSuccess){ // token = yes, persist = yes
         return <Outlet />
