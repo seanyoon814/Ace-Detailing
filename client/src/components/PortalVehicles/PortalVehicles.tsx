@@ -22,9 +22,8 @@ import { nextTick } from "process";
 const { apiUrl } = backend;
 
 
-function PortalVehicles() {
+function PortalVehicles({ setPage }: { setPage: Function}) {
     const navigate = useNavigate();
-    
 
     const [data, setData] = useState([]);
     const [pagination, setPagination] = useState({
@@ -34,8 +33,10 @@ function PortalVehicles() {
 
     function updatePagination() {
         const container = document.getElementsByClassName("vehicles-table-container")[0] as Element;
-        container.style.height = "100%";
 
+        if (!container) return;
+
+        container.style.height = "100%";
         const containerStyle = getComputedStyle(container);
         const containerEm = parseFloat(containerStyle.fontSize);
         
@@ -157,7 +158,7 @@ function PortalVehicles() {
         <>
             <div>
                 <h3>Vehicles</h3>
-                <button>CREATE NEW</button>
+                <button onClick={() => setPage("Vehicles-Create")}>CREATE NEW</button>
             </div>
             <form className="vehicles-filter" onSubmit={(e) => applyFilter(e)}>
                 <div>

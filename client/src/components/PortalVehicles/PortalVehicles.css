@@ -3,6 +3,7 @@
     align-items: center;
     justify-content: space-between;
     width: calc(100% - 2em);
+    height: 3em;
     margin: 1.25em 1em;
     margin-bottom: 0.25em;
     color: white;

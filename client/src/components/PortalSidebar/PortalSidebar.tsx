@@ -5,8 +5,8 @@ import { useNavigate } from "react-router-dom";
 
 import { useSendLogoutMutation } from "../../features/auth/authApiSlice";
 import { toast } from "react-toastify";
-function PortalSidebar({ page, setPage }: { page: string, setPage: Function}) {
-    const browseItems = ["Dashboard", "Vehicles", "Notifications"];
+function PortalSidebar({ page, setPage, setSubPage }: { page: string, setPage: Function, setSubPage: Function }) {
+    const browseItems = ["Vehicles", "Notifications"];
     const adminItems = ["Reports", "Users"];
     
     const navigate = useNavigate();
@@ -38,6 +38,11 @@ function PortalSidebar({ page, setPage }: { page: string, setPage: Function}) {
     }
     // todo: add icons to left of buttons
 
+    function updatePage(page: string) {
+        setPage(page);
+        setSubPage("");
+    }
+
     return (
         <nav className="portal-sidebar">
             <div>
@@ -46,8 +51,8 @@ function PortalSidebar({ page, setPage }: { page: string, setPage: Function}) {
                 {
                     browseItems.map(item =>
                         <button
-                            className={page === item ? "selected" : ""}
-                            onClick = {() => setPage(item)}
+                            className={page.includes(item) ? "selected" : ""}
+                            onClick = {() => updatePage(item)}
                         >
                             {item}
                         </button>
@@ -57,9 +62,9 @@ function PortalSidebar({ page, setPage }: { page: string, setPage: Function}) {
                 {
                     adminItems.map(item =>
                         <button
-                            className={page === item ? "selected" : ""}
+                            className={page.includes(item) ? "selected" : ""}
                             onClick = { () => {
-                                setPage(item);
+                                updatePage(item);
                                 switch (item) {
                                     case "Users":
                                         window.location.href = "/portal/user/register";
