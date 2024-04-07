@@ -94,7 +94,7 @@ function ExteriorServices()
                             <source src={ceramic}></source>
                         </video>
                         <div className="overlay-text text-center header garmond">
-                            INTERIOR SERVICES
+                            CERAMIC COATING
                         </div>
                         <div className="information-section">
                                 <h1 className="header garmond" style={{fontSize:'1.2em'}}>The Correction Polish with 1-5 Year Exterior Protection Warranty Optionse</h1>
@@ -120,50 +120,6 @@ function ExteriorServices()
                                 </ul>
                         </div>
                     </div>
-
-                    {/* <div className="col-7">
-                        <h1 className="header lato-light text-center">EXTERIOR SERVICES</h1>
-                        <div className="row mt-5" style={{borderTop:'1px solid white', borderBottom:'1px solid white'}}>
-                            <div className="col-12 mt-5 mb-5">
-                                <h1 className="header garmond" style={{fontSize:'3em'}}>The Standard Exterior Detail Package</h1>
-                                <h1 className="header lato-light" style={{fontSize:'1.5em'}}>$80 Coupe | $90 Sedan | $110 Small SUV/Truck | $130+ Large Vehicles</h1>
-                                <ul className="paragraph-noanim instrument-sans mt-3" style={{float:'left'}}>
-                                    <li><i>Multi-stage foam hand-wash using pH-balanced soaps</i></li>
-                                    <li><i>Degrease & wash engine bay to remove dirt, oil, & other etching</i></li>
-                                    <li><i>Pressure wash wheel wells & brush fender liners</i></li>
-                                    <li><i>Rim & tire cleaning with high-gloss synthetic protectant application</i></li>
-                                    <li><i>Alkaline degreaser application on whole exterior, door jambs, & trunk jambs</i></li>
-                                    <li><i>Synthetic wax application, providing up to 3 months of UV & chemical protection</i></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div className="row" style={{borderBottom:'1px solid white'}}>
-                            <div className="col-12 mt-5 mb-5">
-                                <h1 className="header garmond" style={{fontSize:'3em'}}>The Complete Exterior Detail Package</h1>
-                                <h1 className="header lato-light" style={{fontSize:'1.5em'}}>$280 Coupe | $300 Sedan | $320 Small SUV/Truck | $340+ Large Vehicles</h1>
-                                <ul className="paragraph-noanim instrument-sans mt-3" style={{float:'left'}}>
-                                    <li><i>Advanced multi-stage foam wash using pH-balanced soaps & required surfactants</i></li>
-                                    <li><i>Pressure wash & fine-brush detailing on wheel spokes, barrel, & wells</i></li>
-                                    <li><i>Complete rim & tire detail with ceramic-based coating application</i></li>
-                                    <li><i>Clay bar treatment to remove etched & embedded contaminants (bug splatter, road
-tar, iron fallout, sap)</i></li>
-                                    <li><i>Complete one-stage DA (hologram-free) machine polish</i></li>
-                                    <li><i>Synthetic wax application, providing up to 3 months of UV & chemical protection</i></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div className="row" style={{borderBottom:'1px solid white'}}>
-                            <div className="col-12 mt-5 mb-5">
-                                <h1 className="header garmond" style={{fontSize:'3em'}}>Optional Exterior Add-ons</h1>
-                                <ul className="paragraph-noanim instrument-sans mt-3" style={{float:'left'}}>
-                                    <li><i>6 Month Ceramic Paint Sealant Upgrade - <b>$100</b></i></li>
-                                    <li><i>Windshield Rain Repellant Coating - $60</i></li>
-                                    <li><i>Headlight Restoration - $100</i></li>
-                                    <li><i>Additional Paint Correction Rate - $90/hr</i></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div> */}
                 </div>
             </div>
             <Footer/>
