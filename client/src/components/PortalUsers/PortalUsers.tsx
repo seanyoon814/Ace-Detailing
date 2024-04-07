@@ -1,4 +1,3 @@
-import React from "react";
 import "./PortalUsers.css";
 import backend from "../../constants/backend";
 import httpClient from "../../features/httpClient";
@@ -8,7 +7,7 @@ var changedName = false;
 var changedEmail = false;
 
 function PortalUsers() {
-   
+
     return (
         <div id = "PortalUsers">
 
@@ -46,8 +45,6 @@ function PortalUsers() {
 function PortalUsersScript() {
     console.log("loaded");
 
-    //TODO: check if user is admin
-
     setTimeout(() => {
         var password = document.getElementsByName("password")[0] as HTMLInputElement;
         var confirm = document.getElementsByName("confirm")[0] as HTMLInputElement;
@@ -70,8 +67,10 @@ function PortalUsersScript() {
 }
 
 async function checkName() {
-    changedName = true;
     const input = document.getElementsByName("name")[0] as HTMLInputElement;
+    if (input.value == "") return;
+    
+    changedName = true;
     // fetch(`${apiUrl}/user/api/checkName/${input.value}`, {
     //     method : "get",
     //     credentials : "include",
@@ -90,8 +89,11 @@ async function checkName() {
 }
 
 async function checkEmail() {
-    changedEmail = true;
+
     const input = document.getElementsByName("email")[0] as HTMLInputElement;
+    if (input.value == "") return;
+
+    changedEmail = true;
     // fetch(`${apiUrl}/user/api/checkEmail/${input.value}`)
     //     .then(response => response.json())
     //     .then(data => {

@@ -1,5 +1,6 @@
 const express = require("express");
 const cors = require("cors");
+const verifyJWT = require("../utils/verifyJWT");
 const bodyParser = require("body-parser");
 const router = express.Router();
 const User = require("../models/UserClass");
@@ -33,14 +34,8 @@ router.get("/api/checkEmail/:email", async (req, res) => {
     res.json({ taken });
 })
 
-router.post("/api/check", async (req, res) => {
-    var user = await User.findByLogin(req.body.email, req.body.password);
-    if (user) {
-        res.json({ admin : user.admin });
-    }
-    else {
-        res.json({ admin : undefined });
-    }
+router.get("/api/check", verifyJWT, async (req, res) => {
+    res.send(req.admin);
 })
 
 async function generateUserId() {
