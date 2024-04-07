@@ -1,14 +1,17 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import "./PortalSidebar.css"
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
 import { useSendLogoutMutation } from "../../features/auth/authApiSlice";
 import { toast } from "react-toastify";
+import checkAdmin from "../../features/auth/checkAdmin";
+
 function PortalSidebar({ page, setPage, setSubPage }: { page: string, setPage: Function, setSubPage: Function }) {
     const browseItems = ["Vehicles", "Notifications"];
     const adminItems = ["Reports", "Users", "Blog"];
     
+    const [isMounted, setIsMounted] = useState(false);
     const navigate = useNavigate();
     
     const [sendLogout, {
@@ -24,6 +27,23 @@ function PortalSidebar({ page, setPage, setSubPage }: { page: string, setPage: F
             navigate('/user');
         }
     },[isSuccess, navigate]);
+
+    // prevent checking admin when refreshing
+    useEffect(() => {
+        setIsMounted(true);
+        return () => setIsMounted(false);
+    })
+
+    useEffect(() => {
+        if (isMounted) {
+            checkAdmin(() => {
+                console.log(Array.from(document.getElementsByClassName("adminItems")));
+                for (var item of Array.from(document.getElementsByClassName("adminItems"))) {
+                    (item as HTMLElement).style.visibility = "visible";
+                }
+            }, ()=> {})
+        }
+    }, [isMounted])
 
     const onLogout = () => {
         toast.info("Logging out...");
@@ -62,14 +82,9 @@ function PortalSidebar({ page, setPage, setSubPage }: { page: string, setPage: F
                 {
                     adminItems.map(item =>
                         <button
-                            className={page.includes(item) ? "selected" : ""}
+                            className={page.includes(item) ? "selected adminItems" : "adminItems"}
                             onClick = { () => {
                                 updatePage(item);
-                                switch (item) {
-                                    case "Users":
-                                        window.location.href = "/portal/user/register";
-                                        break;
-                                }
                             }}
                         >
                             {item}
