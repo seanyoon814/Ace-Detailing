@@ -60,7 +60,7 @@ const login = asyncHandler(async (req, res) => {
             }
         },
         process.env.ACCESS_TOKEN_SECRET,
-        {expiresIn: "10s"} // CHANGE IF U WANT LONGER OR SHORTER
+        {expiresIn: "15m"} // CHANGE IF U WANT LONGER OR SHORTER
     );
     
     const refreshToken = jwt.sign(
@@ -71,7 +71,7 @@ const login = asyncHandler(async (req, res) => {
             "admin": foundUser.admin
         },
         process.env.REFRESH_TOKEN_SECRET,
-        { expiresIn: "20s"}
+        { expiresIn: "7d"} 
     );
     
     // cookie for refresh token
@@ -79,7 +79,7 @@ const login = asyncHandler(async (req, res) => {
         httpOnly:true, 
         secure: true, 
         sameSite: 'None',
-        maxAge: 1000 * 60 * 60 * 24 * 1 // 1 day cookie before expiration
+        maxAge: 1000 * 60 * 60 * 24 * 7 // 1 day cookie before expiration
     });
 
     // send accessToken
@@ -126,7 +126,7 @@ const refresh = (req, res) => {
                     }
                 },
                 process.env.ACCESS_TOKEN_SECRET,
-                {expiresIn: "20s"}
+                {expiresIn: "7d"}
             );
             res.json({accessToken});
         }
