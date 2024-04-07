@@ -18,14 +18,14 @@ router.get("/", async (req, res, next) => {
     });
 });
 
-router.post("/", multerConfig.single("image"), async (req, res, next) => {
+router.post("/", multerConfig.single("image"), async (req, res) => {
     try {
-        console.log(req.files)
+        console.log(req.file)
         console.log(req.body)
-        const imageUrls = !req.files ? [] : await Promise.all(req.files.map(file => uploadImage(file)));
+        const imageUrl = req.file ? await uploadImage(req.file) : null;
         const document = new AdminBlog({
             ...req.body,
-            imageUrls
+            imageUrl
         });
         await document.save();
         res.status(201).send(document);

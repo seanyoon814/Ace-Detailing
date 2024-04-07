@@ -35,7 +35,6 @@ app.use(cors(
 ));
 app.use(express.json());
 app.use(cookieParser());
-app.use(fileUpload());
 const verifyJWT = require("./utils/verifyJWT");
 
 // routes

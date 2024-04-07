@@ -7,7 +7,7 @@ import { useSendLogoutMutation } from "../../features/auth/authApiSlice";
 import { toast } from "react-toastify";
 function PortalSidebar({ page, setPage, setSubPage }: { page: string, setPage: Function, setSubPage: Function }) {
     const browseItems = ["Vehicles", "Notifications"];
-    const adminItems = ["Reports", "Users"];
+    const adminItems = ["Reports", "Users", "Blog"];
     
     const navigate = useNavigate();
     
