@@ -1,5 +1,4 @@
-import { getToken, selectCurrentToken } from "./auth/authSlice";
-import { useDispatch } from "react-redux";
+import {selectCurrentToken } from "./auth/authSlice";
 import axios from "axios";
 import backend from "../constants/backend"
 import {store} from "../store";

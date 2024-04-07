@@ -25,10 +25,24 @@ function App() {
                     <Route path = "/user" element = {<UserSection />} />
                     <Route path = "/maps" element= {<MapSection/>}></Route>
                     <Route path = "/faq" element= {<FAQSection/>}></Route>
-                    <Route path='/portal' element= {<Portal />}></Route>
                     <Route path='/admin-blog' element= {<AdminBlog/>}></Route>
                     <Route path='/services' element= {<ExteriorServices/>}></Route>
-                </Routes>
+                    {/* Protected Routes start  */}
+                    <Route element ={<Prefetch/>}>
+                        <Route path = "/portal">
+                            <Route index element = {<Portal />} />
+                            
+                            <Route path = "vehicles"> {/* This redirects to /portal/vehicles */} 
+                                <Route index element = {<DisplayVehicleSection />} />
+                            </Route>
+
+                            <Route path = "user/register">
+                                <Route index element = {<RegisterSection />} />
+                            </Route>
+                        </Route> {/* End of /portal */}
+                    </Route>{/* End of Protected*/}
+
+                </Routes> 
             </BrowserRouter>
             <ToastContainer/>
         </div>
