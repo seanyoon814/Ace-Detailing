@@ -60,7 +60,7 @@ const login = asyncHandler(async (req, res) => {
             }
         },
         process.env.ACCESS_TOKEN_SECRET,
-        {expiresIn: "6h"} // CHANGE IF U WANT LONGER OR SHORTER
+        {expiresIn: "10s"} // CHANGE IF U WANT LONGER OR SHORTER
     );
     
     const refreshToken = jwt.sign(
@@ -105,7 +105,7 @@ const refresh = (req, res) => {
         process.env.REFRESH_TOKEN_SECRET, 
         asyncHandler(async (err, user) => {
             if(err){
-                return res.sendStatus(401).json({message: "Forbidden"});
+                return res.status(401).json({message: "Forbidden"});
             }
             // Check if user exists
             // console.log("user: ", user)
@@ -113,7 +113,7 @@ const refresh = (req, res) => {
             const foundUser = await mongoose.connection.collection(collectionName).findOne({email: user.email});
             // console.log(foundUser);
             if(!foundUser){
-                return res.sendStatus(401).json({error: "Unauthorized User not found"});
+                return res.status(401).json({error: "Unauthorized User not found"});
             }
 
             const accessToken = jwt.sign(
@@ -126,7 +126,7 @@ const refresh = (req, res) => {
                     }
                 },
                 process.env.ACCESS_TOKEN_SECRET,
-                {expiresIn: "60s"}
+                {expiresIn: "20s"}
             );
             res.json({accessToken});
         }
@@ -157,5 +157,17 @@ const logout = asyncHandler(async (req, res) => {
 // @route  POST /auth/logout
 // @access Public
 router.post('/logout', logout);
+
+router.post('/checkToken', asyncHandler(
+    async (req, res) => {
+        const token = req.body.accessToken;
+        console.log("Token: ", token);
+        if(!token){
+            return res.status(400).json({message: "Token is null"});
+        }
+        return res.status(200).json({message: "Token is valid"});    
+    }
+    
+));
 
 module.exports = router;

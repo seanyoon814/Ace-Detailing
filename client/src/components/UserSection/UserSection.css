@@ -58,7 +58,6 @@ a {
 #login {
     flex:1;
     padding: 30px; /* Add padding for better spacing */
-  
     transform: translateY(-10px);
 }
 
@@ -75,4 +74,7 @@ a {
     object-fit: 100%;
     border-top-right-radius: 2%;
     border-bottom-right-radius: 2%;
+}
+.form-check{
+    margin-top: 10px;
 }

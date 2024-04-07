@@ -62,8 +62,8 @@ function PortalSidebar({ page, setPage }: { page: string, setPage: Function}) {
                                 setPage(item);
                                 switch (item) {
                                     case "Users":
-                                        window.location.href = "/portal/user/register";
-                                        break;
+                                        // window.location.href = "/portal/user/register";
+                                        // break;
                                 }
                             }}
                         >

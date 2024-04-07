@@ -7,6 +7,7 @@ const url = backend.apiUrl;
 
 function getClient() {
     const token = selectCurrentToken(store.getState())
+    
     // console.log(token)
     return axios.create({
         baseURL: url,
@@ -16,20 +17,6 @@ function getClient() {
     });
 }
 
-async function getVehiclesData(setData) {
-    try {
-        const result = await get(`${url}/vehicles`);
-        return result.data;
-    } catch(error) { // Catch invalid token
-        if(error?.response.status === 401){ // 401 Unauthorized wrong header
-            toast.error("Unauthorized");
-            
-        } else if(error?.response.status === 403){
-            toast.error("Session expired or unauthorized login. Please login again");
-        }
-        return error?.response.data;
-    }
-}
 
 // GET method
 async function get(path) {
@@ -52,7 +39,6 @@ async function deleteRequest(path) {
 }
 
 const httpClient = {
-    getVehiclesData,
     getClient,
     get,
     post,
