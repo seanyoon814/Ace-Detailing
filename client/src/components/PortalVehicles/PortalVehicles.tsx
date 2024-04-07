@@ -17,14 +17,12 @@ import {
 } from "@tanstack/react-table";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
-import { nextTick } from "process";
-
+import { useGetDataQuery} from "../../features/auth/authApiSlice";
 const { apiUrl } = backend;
 
-
-function PortalVehicles({ setPage }: { setPage: Function}) {
+function PortalVehicles() {
     const navigate = useNavigate();
-
+    
     const [data, setData] = useState([]);
     const [pagination, setPagination] = useState({
         pageIndex: 0, // initial page index
@@ -33,10 +31,8 @@ function PortalVehicles({ setPage }: { setPage: Function}) {
 
     function updatePagination() {
         const container = document.getElementsByClassName("vehicles-table-container")[0] as Element;
-
-        if (!container) return;
-
         container.style.height = "100%";
+
         const containerStyle = getComputedStyle(container);
         const containerEm = parseFloat(containerStyle.fontSize);
         
@@ -113,20 +109,40 @@ function PortalVehicles({ setPage }: { setPage: Function}) {
         },
     });
 
-    async function getData(setData: Function) {
-        try {
-            const result = await httpClient.get(`${apiUrl}/vehicles`);
-            setData(result.data);
-        } catch(error) { // Catch invalid token
-            if(error?.response.status === 401 || error?.response.status === 403){ 
-                // 401 Unauthorized wrong header or 403 Invalid, token expired
-                await toast.error("Unauthorized.");
-                navigate('/user');
-            } else {
-                console.error("Error:", error);
-            }
-        }
-    }
+    // async function getData(setData: Function) {
+    //     try {
+    //         // const result = await httpClient.get(`${apiUrl}/vehicles`);
+    //         // console.log("HTTPCLIENT RESPONSE: ", result.data)
+    //         // setData(vehicleData.data);
+    //     } catch(error) { // Catch invalid token
+    //         if(error?.response.status === 401){ 
+    //             // 401 Unauthorized wrong header
+    //             await toast.error("Unauthorized.");
+    //             navigate('/user');
+    //         }else if (error?.response.status === 403){
+    //             // REFERSH TOKEN
+    //             console.log("Error", error);
+    //         } else {
+    //             console.error("Error:", error);
+    //         }
+    //     }
+    // }
+
+    
+    const {
+        data: vehicleData,
+        isSuccess,
+        isLoading,
+        isError,
+        error: vehicleErrmsg
+      } = useGetDataQuery('/vehicles',{
+        pollingInterval: 5000, // Refetch every 5 seconds
+        refetchOnMountOrArgChange: true,
+        refetchOnFocus: true,
+      });
+    
+        
+       
 
     function applyFilter(e: Event) {
         e.preventDefault();
@@ -149,16 +165,33 @@ function PortalVehicles({ setPage }: { setPage: Function}) {
         table.setColumnFilters(filters);
     }
 
+    // useEffect(() => {
+    //     const data = selectData(store.getState())
+    //     setData(data);
+    // },[]);
     useEffect(() => {
-        // httpClient.getVehiclesData(setData);
-        getData(setData);
-    }, []);
+        if(isLoading){
+            <p>Loading...</p>
+        } 
+        if(isError){
+            if((vehicleErrmsg?.originalStatus === 401 || vehicleErrmsg?.status=== 401)
+                ||(vehicleErrmsg?.originalStatus === 403 || vehicleErrmsg?.status === 403)
+            ){
+                toast.error("Token expired. Please Login.");
+                navigate('/user');
+            }
+        }
+        if(isSuccess){
+                setData(vehicleData);
+        }
+        // getData(setData);
+    }, [isSuccess, isLoading, isError, vehicleData, vehicleErrmsg]);
 
     return (
         <>
             <div>
                 <h3>Vehicles</h3>
-                <button onClick={() => setPage("Vehicles-Create")}>CREATE NEW</button>
+                <button>CREATE NEW</button>
             </div>
             <form className="vehicles-filter" onSubmit={(e) => applyFilter(e)}>
                 <div>

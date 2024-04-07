@@ -15,6 +15,7 @@ import Prefetch from './features/auth/prefetch';
 import ServicesSection from './components/ServicesSection/ServicesSection';
 import ExteriorServices from './components/ExteriorServices/ExteriorServices';
 import React from 'react';
+import PersistLogin from './features/auth/PersistLogin';
 function App() {
     return (
         <div className="App">
@@ -28,20 +29,17 @@ function App() {
                     <Route path='/blog' element= {<AdminBlog/>}></Route>
                     <Route path='/services' element= {<ExteriorServices/>}></Route>
                     {/* Protected Routes start  */}
+                    <Route element ={<PersistLogin/>}>
                     <Route element ={<Prefetch/>}>
                         <Route path = "/portal">
                             <Route index element = {<Portal />} />
                             
                             <Route path = "vehicles"> {/* This redirects to /portal/vehicles */} 
                                 <Route index element = {<DisplayVehicleSection />} />
-                            </Route>
-
-                            <Route path = "user/register">
-                                <Route index element = {<RegisterSection />} />
-                            </Route>
+                            </Route>                            
                         </Route> {/* End of /portal */}
                     </Route>{/* End of Protected*/}
-
+                    </Route>
                 </Routes> 
             </BrowserRouter>
             <ToastContainer/>

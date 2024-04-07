@@ -8,7 +8,7 @@ import { Helmet } from "react-helmet";
 import Header from '../Header/Header';
 import backend from "../../constants/backend";
 import { useLoginMutation } from '../../features/auth/authApiSlice';
-
+import usePersist from '../../hooks/usePersist';
 
 function UserSection() {
     const { apiUrl } = backend;
@@ -17,7 +17,8 @@ function UserSection() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
-    
+    const [persist, setPersist] = usePersist();
+
     const navigate = useNavigate()
     const dispatch = useDispatch()
 
@@ -41,13 +42,9 @@ function UserSection() {
     // }
 
     // Inputs change handle:
-    const handleEmailChange = (e:React.ChangeEvent<HTMLInputElement>) => {
-        setEmail(e.target.value);
-    }
-
-    const handlePwdChange = (e:React.ChangeEvent<HTMLInputElement>) => {
-        setPassword(e.target.value);
-    }
+    const handleEmailChange = (e:React.ChangeEvent<HTMLInputElement>) => {setEmail(e.target.value);}
+    const handlePwdChange = (e:React.ChangeEvent<HTMLInputElement>) => {setPassword(e.target.value);}
+    const handleToggle = () => setPersist(prev => !prev);
 
     // OnSubmit handle:
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -106,8 +103,21 @@ function UserSection() {
                             </label>
                             <br></br>
                             <button type="submit" className="btn btn-primary">Login</button>
+                            
+                            <div className="form-check">
+                                <label className="form-check-label" htmlFor="persist">
+                                <input 
+                                    type="checkbox"
+                                    className="form-check-input"
+                                    id="persist"
+                                    onChange={handleToggle}
+                                    checked={persist}
+                                    />
+                                    Trust This Device?
+                                </label>
+                            </div>
                         </form>
-                            <a href="/user/forgot_password" className="btn btn-link">Forgot password?</a>
+                            {/* <a href="/user/forgot_password" className="btn btn-link">Forgot password?</a> */}
                             <p ref={errRef} className={errClass} aria-live="assertive">{error}</p>
                     </div> 
                     <div className="login-img">

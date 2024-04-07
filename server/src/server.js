@@ -42,7 +42,7 @@ app.use("/user", verifyJWT, usersRoutes);
 app.use("/reports", verifyJWT, reportsRoutes);
 app.use("/vehicles",verifyJWT, vehiclesRoutes);
 app.use("/auth", authRoutes);
-app.use("/blog", blogRoutes);
+app.use("/blog", verifyJWT, blogRoutes);
 
 app.listen(port, async () => {
     logger.info(`Server is running on port ${port}.`);  
