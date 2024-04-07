@@ -65,11 +65,6 @@ function PortalSidebar({ page, setPage, setSubPage }: { page: string, setPage: F
                             className={page.includes(item) ? "selected" : ""}
                             onClick = { () => {
                                 updatePage(item);
-                                switch (item) {
-                                    case "Users":
-                                        window.location.href = "/portal/user/register";
-                                        break;
-                                }
                             }}
                         >
                             {item}
