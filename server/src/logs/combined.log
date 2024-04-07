@@ -320,3 +320,73 @@
 {"label":"server.js","level":"debug","message":"publicUrl: https://storage.googleapis.com/ace-detailing-testing/1712454690459_download-removebg-preview.png.png","metadata":{},"timestamp":"2024-04-06 18:51:31"}
 {"label":"server.js","level":"info","message":"Saving document to collection 'reports'.","metadata":{},"timestamp":"2024-04-06 18:51:31"}
 {"label":"server.js","level":"info","message":"Saved document with id '6611fc2383c57dd997853999' to collection 'reports'.","metadata":{},"timestamp":"2024-04-06 18:51:31"}
+{"label":"server.js","level":"info","message":"Connecting to MongoDB cluster.","metadata":{},"timestamp":"2024-04-07 14:28:38"}
+{"label":"server.js","level":"info","message":"Testing Cloud Storage connection.","metadata":{},"timestamp":"2024-04-07 14:28:38"}
+{"label":"server.js","level":"info","message":"Server is running on port 5000.","metadata":{},"timestamp":"2024-04-07 14:28:38"}
+{"label":"server.js","level":"error","message":"Application default credentials failed.","metadata":{},"timestamp":"2024-04-07 14:28:39"}
+{"label":"server.js","level":"info","message":"Connecting to MongoDB cluster.","metadata":{},"timestamp":"2024-04-07 14:31:09"}
+{"label":"server.js","level":"info","message":"Testing Cloud Storage connection.","metadata":{},"timestamp":"2024-04-07 14:31:09"}
+{"label":"server.js","level":"info","message":"Server is running on port 5000.","metadata":{},"timestamp":"2024-04-07 14:31:09"}
+{"label":"server.js","level":"error","message":"Application default credentials failed.","metadata":{},"timestamp":"2024-04-07 14:31:09"}
+{"label":"server.js","level":"info","message":"Connecting to MongoDB cluster.","metadata":{},"timestamp":"2024-04-07 14:31:16"}
+{"label":"server.js","level":"info","message":"Testing Cloud Storage connection.","metadata":{},"timestamp":"2024-04-07 14:31:16"}
+{"label":"server.js","level":"info","message":"Server is running on port 5000.","metadata":{},"timestamp":"2024-04-07 14:31:16"}
+{"label":"server.js","level":"error","message":"Application default credentials failed.","metadata":{},"timestamp":"2024-04-07 14:31:17"}
+{"label":"server.js","level":"info","message":"Connecting to MongoDB cluster.","metadata":{},"timestamp":"2024-04-07 14:39:36"}
+{"label":"server.js","level":"info","message":"Testing Cloud Storage connection.","metadata":{},"timestamp":"2024-04-07 14:39:36"}
+{"label":"server.js","level":"info","message":"Server is running on port 5000.","metadata":{},"timestamp":"2024-04-07 14:39:37"}
+{"label":"server.js","level":"error","message":"Application default credentials failed.","metadata":{},"timestamp":"2024-04-07 14:39:37"}
+{"label":"server.js","level":"info","message":"Connecting to MongoDB cluster.","metadata":{},"timestamp":"2024-04-07 14:40:34"}
+{"label":"server.js","level":"info","message":"Testing Cloud Storage connection.","metadata":{},"timestamp":"2024-04-07 14:40:34"}
+{"label":"server.js","level":"info","message":"Server is running on port 5000.","metadata":{},"timestamp":"2024-04-07 14:40:34"}
+{"label":"server.js","level":"error","message":"Application default credentials failed.","metadata":{},"timestamp":"2024-04-07 14:40:35"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'blog'.","metadata":{},"timestamp":"2024-04-07 14:43:44"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'blog'.","metadata":{},"timestamp":"2024-04-07 15:01:47"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'blog'.","metadata":{},"timestamp":"2024-04-07 15:23:53"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'blog'.","metadata":{},"timestamp":"2024-04-07 15:24:39"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'blog'.","metadata":{},"timestamp":"2024-04-07 15:24:51"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'blog'.","metadata":{},"timestamp":"2024-04-07 15:24:54"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'blog'.","metadata":{},"timestamp":"2024-04-07 15:24:54"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'blog'.","metadata":{},"timestamp":"2024-04-07 15:24:58"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'blog'.","metadata":{},"timestamp":"2024-04-07 15:26:00"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'blog'.","metadata":{},"timestamp":"2024-04-07 15:27:01"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'blog'.","metadata":{},"timestamp":"2024-04-07 15:27:01"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'blog'.","metadata":{},"timestamp":"2024-04-07 15:32:41"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'blog'.","metadata":{},"timestamp":"2024-04-07 15:34:03"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'blog'.","metadata":{},"timestamp":"2024-04-07 15:34:28"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'blog'.","metadata":{},"timestamp":"2024-04-07 15:41:41"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'blog'.","metadata":{},"timestamp":"2024-04-07 15:41:41"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'blog'.","metadata":{},"timestamp":"2024-04-07 15:42:52"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'blog'.","metadata":{},"timestamp":"2024-04-07 15:42:52"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'blog'.","metadata":{},"timestamp":"2024-04-07 15:43:33"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'blog'.","metadata":{},"timestamp":"2024-04-07 15:43:33"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'blog'.","metadata":{},"timestamp":"2024-04-07 15:44:25"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'blog'.","metadata":{},"timestamp":"2024-04-07 15:45:54"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'blog'.","metadata":{},"timestamp":"2024-04-07 15:46:04"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'blog'.","metadata":{},"timestamp":"2024-04-07 15:47:34"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'blog'.","metadata":{},"timestamp":"2024-04-07 15:47:50"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'blog'.","metadata":{},"timestamp":"2024-04-07 15:48:45"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'blog'.","metadata":{},"timestamp":"2024-04-07 15:50:15"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'blog'.","metadata":{},"timestamp":"2024-04-07 15:50:19"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'blog'.","metadata":{},"timestamp":"2024-04-07 15:50:19"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'blog'.","metadata":{},"timestamp":"2024-04-07 16:02:50"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'blog'.","metadata":{},"timestamp":"2024-04-07 16:03:11"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'blog'.","metadata":{},"timestamp":"2024-04-07 16:03:15"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'blog'.","metadata":{},"timestamp":"2024-04-07 16:03:15"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'blog'.","metadata":{},"timestamp":"2024-04-07 16:03:48"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'blog'.","metadata":{},"timestamp":"2024-04-07 16:03:48"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'blog'.","metadata":{},"timestamp":"2024-04-07 16:06:02"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'blog'.","metadata":{},"timestamp":"2024-04-07 16:06:02"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'blog'.","metadata":{},"timestamp":"2024-04-07 16:06:53"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'blog'.","metadata":{},"timestamp":"2024-04-07 16:09:35"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'blog'.","metadata":{},"timestamp":"2024-04-07 16:09:46"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'blog'.","metadata":{},"timestamp":"2024-04-07 16:10:46"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'blog'.","metadata":{},"timestamp":"2024-04-07 16:10:48"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'blog'.","metadata":{},"timestamp":"2024-04-07 16:10:48"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'blog'.","metadata":{},"timestamp":"2024-04-07 16:11:22"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'blog'.","metadata":{},"timestamp":"2024-04-07 16:11:24"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'blog'.","metadata":{},"timestamp":"2024-04-07 16:11:24"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'blog'.","metadata":{},"timestamp":"2024-04-07 16:11:29"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'blog'.","metadata":{},"timestamp":"2024-04-07 16:11:30"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'blog'.","metadata":{},"timestamp":"2024-04-07 16:11:30"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'blog'.","metadata":{},"timestamp":"2024-04-07 16:15:08"}

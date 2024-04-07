@@ -44,6 +44,6 @@ app.use("/vehicles",verifyJWT, vehiclesRoutes);
 app.use("/auth", authRoutes);
 app.use("/blog", verifyJWT, blogRoutes);
 
-app.listen(5000, async () => {
+app.listen(port, async () => {
     logger.info(`Server is running on port ${port}.`);  
 });
