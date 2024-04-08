@@ -60,7 +60,7 @@ const login = asyncHandler(async (req, res) => {
             }
         },
         process.env.ACCESS_TOKEN_SECRET,
-        {expiresIn: "15m"} // CHANGE IF U WANT LONGER OR SHORTER
+        {expiresIn: "10s"} // CHANGE TO 15M on DEPLOy
     );
     
     const refreshToken = jwt.sign(
@@ -71,7 +71,7 @@ const login = asyncHandler(async (req, res) => {
             "admin": foundUser.admin
         },
         process.env.REFRESH_TOKEN_SECRET,
-        { expiresIn: "7d"} 
+        { expiresIn: "20s"} // CHANGE TO 7 DAYS ON DEPLOY
     );
     
     // cookie for refresh token
@@ -79,7 +79,7 @@ const login = asyncHandler(async (req, res) => {
         httpOnly:true, 
         secure: true, 
         sameSite: 'None',
-        maxAge: 1000 * 60 * 60 * 24 * 7 // 1 day cookie before expiration
+        maxAge: 1000 * 60 * 60 * 24 * 1 // 1 day cookie before expiration
     });
 
     // send accessToken
@@ -126,7 +126,7 @@ const refresh = (req, res) => {
                     }
                 },
                 process.env.ACCESS_TOKEN_SECRET,
-                {expiresIn: "7d"}
+                {expiresIn: "10s"} // CHANGE TO 15m on deploy
             );
             res.json({accessToken});
         }
@@ -157,17 +157,5 @@ const logout = asyncHandler(async (req, res) => {
 // @route  POST /auth/logout
 // @access Public
 router.post('/logout', logout);
-
-router.post('/checkToken', asyncHandler(
-    async (req, res) => {
-        const token = req.body.accessToken;
-        console.log("Token: ", token);
-        if(!token){
-            return res.status(400).json({message: "Token is null"});
-        }
-        return res.status(200).json({message: "Token is valid"});    
-    }
-    
-));
 
 module.exports = router;

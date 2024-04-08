@@ -13,6 +13,7 @@ const reportsRoutes = require("./routes/reports");
 const vehiclesRoutes = require("./routes/vehicles");
 const authRoutes = require("./routes/auth");
 const blogRoutes = require("./routes/blog");
+const checkRoutes = require("./routes/check");
 
 const app = express();
 const port = process.env.ENV == "prod" ? 8080 : 5000;
@@ -41,8 +42,9 @@ const verifyJWT = require("./utils/verifyJWT");
 app.use("/user", verifyJWT, usersRoutes);
 app.use("/reports", verifyJWT, reportsRoutes);
 app.use("/vehicles",verifyJWT, vehiclesRoutes);
-app.use("/auth", authRoutes);
 app.use("/blog", verifyJWT, blogRoutes);
+app.use("/check", verifyJWT, checkRoutes)
+app.use("/auth", authRoutes);
 
 app.listen(port, async () => {
     logger.info(`Server is running on port ${port}.`);  

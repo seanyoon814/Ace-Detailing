@@ -20,6 +20,7 @@
     "axios": "^1.6.8",
     "bootstrap": "^5.3.3",
     "cors": "^2.8.5",
+    "jwt-decode": "^4.0.0",
     "keywords": "^0.1.2",
     "leaflet": "^1.9.4",
     "particles.js": "^2.0.0",

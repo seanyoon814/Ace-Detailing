@@ -5,12 +5,12 @@ import { useNavigate } from "react-router-dom";
 
 import { useSendLogoutMutation } from "../../features/auth/authApiSlice";
 import { toast } from "react-toastify";
-import checkAdmin from "../../features/auth/checkAdmin";
-
+// import checkAdmin from "../../features/auth/checkAdmin";
+import useAuth from '../../hooks/useAuth';
 function PortalSidebar({ page, setPage, setSubPage }: { page: string, setPage: Function, setSubPage: Function }) {
     const browseItems = ["Vehicles", "Notifications"];
     const adminItems = ["Reports", "Users", "Blog"];
-    
+    const {name, admin,id} = useAuth();
     const [isMounted, setIsMounted] = useState(false);
     const navigate = useNavigate();
     
@@ -35,23 +35,29 @@ function PortalSidebar({ page, setPage, setSubPage }: { page: string, setPage: F
     })
 
     useEffect(() => {
-        if (isMounted) {
-            checkAdmin(() => {
+        // if(isMounted) {
+            if(admin){
                 console.log(Array.from(document.getElementsByClassName("adminItems")));
                 for (var item of Array.from(document.getElementsByClassName("adminItems"))) {
                     (item as HTMLElement).style.visibility = "visible";
                 }
-            }, ()=> {})
-        }
-    }, [isMounted])
+            }
+        // }
+            // checkAdmin(() => {
+            //     console.log(Array.from(document.getElementsByClassName("adminItems")));
+            //     for (var item of Array.from(document.getElementsByClassName("adminItems"))) {
+            //         (item as HTMLElement).style.visibility = "visible";
+            //     }
+            // }, ()=> {})
+        
+    }, [])
 
     const onLogout = () => {
         toast.info("Logging out...");
-        sendLogout()
+        sendLogout();
+        navigate('/user');
     };
     
-    // if (isLoading) return toast.info("Logging out...");
-
     if(isError){
         console.log("Error:", error);
         return <p>Error:{error.data?.message}</p>
@@ -66,7 +72,10 @@ function PortalSidebar({ page, setPage, setSubPage }: { page: string, setPage: F
     return (
         <nav className="portal-sidebar">
             <div>
-                <header>Ace Detailing</header>
+                <header>
+                    Ace Detailing<br/>
+                </header>
+                    <p style={{"paddingLeft":"10px", "color":"white"}}>Signed in as {name} #{id}</p>
                 <div>Browse</div>
                 {
                     browseItems.map(item =>

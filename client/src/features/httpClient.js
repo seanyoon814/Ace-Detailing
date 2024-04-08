@@ -8,7 +8,6 @@ const url = backend.apiUrl;
 function getClient() {
     const token = selectCurrentToken(store.getState())
     
-    // console.log(token)
     return axios.create({
         baseURL: url,
         headers: {
@@ -17,10 +16,16 @@ function getClient() {
     });
 }
 
-
 // GET method
-async function get(path) {
-    return getClient().get(path)
+async function get(path){
+    try{
+        const res = await getClient().get(path)
+        return res
+    } catch(err) {
+        console.log(err)
+        
+        return err;
+    }
 }
 
 // POST method, body = data
@@ -43,6 +48,6 @@ const httpClient = {
     get,
     post,
     patch,
-    deleteRequest
+    deleteRequest,
 } ;
 export default httpClient;

@@ -52,6 +52,7 @@ function UserSection() {
         // Perform login logic here using formData
         try{
             const {accessToken} = await login({email, password}).unwrap();
+            console.log('Access Token:', accessToken);
             await dispatch(setCredentials({accessToken}));
             setEmail('');
             setPassword('');

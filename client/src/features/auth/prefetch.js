@@ -2,11 +2,11 @@ import {useEffect} from 'react';
 import {Outlet} from 'react-router-dom';
 import {useSelector } from 'react-redux';
 import { selectCurrentToken } from './authSlice';
-import {useSendLogoutMutation, useGetDataQuery, useCheckTokenMutation, authApiSlice} from './authApiSlice';
+import {useSendLogoutMutation, useGetDataQuery, useCheckTokenQuery, authApiSlice} from './authApiSlice';
 import {useNavigate} from 'react-router-dom';
-import { useDispatch } from 'react-redux';
 import {toast} from 'react-toastify';
 import {store} from '../../store';
+import useAuth from '../../hooks/useAuth';
 // USE BASEQUERYHERE CALLS 
 const Prefetch = () => {
     const [logout, {
@@ -14,30 +14,34 @@ const Prefetch = () => {
         isError,
         isSuccess,
     }] = useSendLogoutMutation();
-    const [check, {
-        isLoading: checkLoading,
-        isError: checkError,
-        isSuccess: checkSuccess,
-    }] = useCheckTokenMutation();
     const navigate = useNavigate();
     const token = useSelector(selectCurrentToken);
-    const dispatch = useDispatch();
+    // const [{
+    //     isLoading: checkLoading,
+    //     isSuccess : checkSuccess,
+    //     isError : checkError,
+    //     error
+    // }] = useCheckTokenQuery(token);
     
+    const {admin, id} = useAuth();
+    
+    // IMPORT IN INDIVIDUAL COMPONENTS    
     useEffect(() => {
-        if(!token || checkError){
+        if(!token){
             toast.error("Unauthorized. Please login. Redirecting to login page...")
             logout()
             navigate('/user');
         }
-        const vehicles = store.dispatch(authApiSlice.endpoints.getData.initiate('/vehicles'));
-        console.log("subbing");
-        
-        return () => {// TODO ENOUGH TIME: Create vehicleAPI to subscribe/unscribe to the vehicle data  
-            console.log("unsubbing");
+        if(admin) {
+            const vehicles = store.dispatch(authApiSlice.util.prefetch('getData','/vehicles',{force:true}));
         }
+        //  else {
+        //     const vehicles = store.dispatch(authApiSlice.util.prefetch('getData',`/vehicles/${id}`,{force:true}));
+        // }
+        console.log("subbing");
 
     
-    },[dispatch,navigate,token])
+    },[token])
 
 
     return (

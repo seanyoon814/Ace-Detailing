@@ -140,9 +140,7 @@ function PortalVehicles() {
         refetchOnMountOrArgChange: true,
         refetchOnFocus: true,
       });
-    
-        
-       
+
 
     function applyFilter(e: Event) {
         e.preventDefault();

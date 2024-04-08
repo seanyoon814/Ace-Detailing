@@ -19,7 +19,6 @@ const verifyJWT = (req, res, next) => {
             req.id = user.UserInfo.id;
             req.email = user.UserInfo.email;
             req.name = user.UserInfo.name;
-            req.password = user.UserInfo.password;
             req.admin = user.UserInfo.admin;
             next();
         }

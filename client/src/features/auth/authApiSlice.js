@@ -1,7 +1,8 @@
 import { logOut } from "../auth/authSlice"; 
 import { apiSlice } from "../apiSlice";
 import { createSelector } from '@reduxjs/toolkit';
-import {authSlice, setCredentials} from './authSlice';
+import {authSlice, setCredentials, selectCurrentToken} from './authSlice';
+import {useSelector} from 'react-redux';
 
 // Backend Calls for Auth
 export const authApiSlice = apiSlice.injectEndpoints({
@@ -51,12 +52,16 @@ export const authApiSlice = apiSlice.injectEndpoints({
         }),
         
         checkToken: builder.mutation({
-            query: accessToken => ({
-                url: '/auth/checkToken',
+            query: token => ({
+                url: '/check/checkToken',
                 method: 'POST',
-                body: {accessToken}
+                body: {token},
             }),
-            validateStatus: (response) => {return response.status},
+            validateStatus: (response) => {
+                console.log("RESPONSE CHECKTOKEN:",response);
+                console.log("RESPONSE STATUS CHECKTOKEN:",response.status);
+                return response
+            },
         }),
 
         getData: builder.query({
@@ -73,14 +78,13 @@ export const authApiSlice = apiSlice.injectEndpoints({
                 return data;
             },
         }),
-
-        postData: builder.mutation({
-            query: (path, body) => ({
-                url: path,
-                method: 'POST',
-                body: body
-            }),
-        }),
     })
 });
-export const { useLoginMutation, useSendLogoutMutation, useRefreshMutation, useCheckTokenMutation, useGetDataQuery} = authApiSlice;
+export const {
+    useLoginMutation,
+    useSendLogoutMutation,
+    useRefreshMutation, 
+    useCheckTokenMutation, 
+    useGetDataQuery,
+
+} = authApiSlice;

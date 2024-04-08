@@ -4,12 +4,10 @@ import { selectCurrentToken } from './authSlice';
 import {useEffect, useRef, useState} from 'react';
 import usePersist from '../../hooks/usePersist';
 import {useRefreshMutation} from './authApiSlice';
-import {toast} from 'react-toastify';
 const PersistLogin = () => {
     const [persist] = usePersist();
     const token = useSelector(selectCurrentToken);
     const effectRan = useRef(false);
-
     const [trueSuccess, setTrueSuccess] = useState(false);
 
     const [refresh, {
@@ -46,9 +44,12 @@ const PersistLogin = () => {
     } else if(isError){ // When refreshToken expires, persist = yes, token = no
         return( 
         <div style={{"color":"white"}}>
-            <h1>Unauthorized, login expired</h1>
-            <p>{error.data.message}</p>
-            <Link to="/user" style={{"color":"white", "fontSize":"30px"}} > Click here to redirect to Login Page </Link>
+            <h1>Unauthorized or login expired</h1>
+            <p style={{"color":"white", "fontSize":"30px"}}> { `${error.data.message} - `}
+                <Link to="/user" style={{"color":"white", "fontSize":"30px", "textDecoration":"underline"}}> 
+                    Click here to redirect to Login Page
+                </Link>
+            </p>
         </div>)
     } else if(isSuccess && trueSuccess){ // token = yes, persist = yes
         return <Outlet />

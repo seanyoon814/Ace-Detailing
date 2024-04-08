@@ -14,7 +14,6 @@ export const authSlice = createSlice({
         },
 
     }
-        
 })
 
 export const {setCredentials, logOut, 
