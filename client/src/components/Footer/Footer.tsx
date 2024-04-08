@@ -16,7 +16,7 @@ function Footer(){
 
                 <div className="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
                     <h6 className="text-uppercase mb-4 font-weight-bold">Quick Links</h6>
-                    <p><a className="text-white" href="/maps">Maps</a></p>
+                    <p><a className="text-white" href="/services">Services</a></p>
                     <p><a className="text-white" href="/faq">FAQ</a></p>
                     <p><a className="text-white" href="/user">User Portal</a></p>
                 </div>

@@ -19,7 +19,7 @@ function Header() {
                                 <a className="nav-link" href="/faq">FAQs</a>
                             </li>
                             <li className="nav-item instrument-sans">
-                                <a className="nav-link" href="#">BLOG</a>
+                                <a className="nav-link" href="/blog">BLOG</a>
                             </li>
                             <li className="nav-item instrument-sans">
                                 <a className="nav-link" href="/maps">MAPS</a>
@@ -28,7 +28,7 @@ function Header() {
                                 <a className="nav-link" href="/user">USER PORTAL</a>
                             </li>
                             <li className="nav-item instrument-sans">
-                                <a className="nav-link" href="#">CONTACT US</a>
+                                <a className="nav-link" href="/services">SERVICES</a>
                             </li>
                             <li className="nav-item instrument-sans">
                                 <div id="header-sidebar-toggle">

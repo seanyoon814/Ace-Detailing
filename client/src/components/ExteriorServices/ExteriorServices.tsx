@@ -2,8 +2,8 @@ import React from "react";
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 import "./ExteriorServices.css"
-import exterior from "../../videos/exterior-detailing.mov"
-import interior from "../../videos/interior-detailing.mov"
+import exterior from "../../videos/exterior-detailing.mp4"
+import interior from "../../videos/interior-detailing.mp4"
 import ceramic from "../../videos/ceramic-coating.mp4"
 import car1 from '../../images/car_1.jpg';
 import car2 from '../../images/car_2.jpg';
