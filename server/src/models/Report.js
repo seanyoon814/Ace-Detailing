@@ -11,16 +11,21 @@ const ReportSchema = new Schema(
             enum: ["PENDING", "ACCEPTED", "REJECTED"], // todo: define with stakeholder
             default: "PENDING",
         },
-        title: {
+        stockNumber: {
             type: String,
             required: true,
             maxLength: 250,
         },
-        description: {
-            type: String,
-            required: true,
-            maxLength: 2500,
-        },
+        services: [{
+            name: String,
+            price: Number,
+            justification: String,
+            status: {
+                type: String,
+                enum: ["PENDING", "ACCEPTED", "REJECTED"],
+                default: "PENDING",
+            }
+        }],
         imageUrls: [{
             type: String,
             required: false,

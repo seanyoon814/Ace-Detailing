@@ -1,4 +1,4 @@
-import "./PortalVehiclesForm.css";
+import "./PortalReportsForm.css";
 
 import axios from "axios";
 import backend from "../../constants/backend";
@@ -14,10 +14,7 @@ import { store } from "../../store";
 
 const { apiUrl } = backend;
 
-function PortalVehiclesForm() {
-
-    const [users, setUsers] = useState([]);
-    const [files, setFiles] = useState<File[]>([]);
+function PortalReportsForm() {
 
     const navigate = useNavigate();
 
@@ -25,39 +22,22 @@ function PortalVehiclesForm() {
     const [sendCheckToken] = useCheckTokenMutation();
     const [sendLogout, { isError }] = useSendLogoutMutation();
     const maxRetryAttempts = 1;
-    
-    async function authRequest(formData: FormData , token: string, retries: number, cb: Promise<boolean>) {
-        try {
-            await sendCheckToken(token);
-            cb(formData, token);
-        }
-        catch (error) {
-            if (error.response && error.response.status === 403 && retries < maxRetryAttempts){
-                const newToken = selectCurrentToken(store.getState());
-                authRequest(formData, newToken, retries + 1, cb);
-            } else {
-                toast.error("Login Expired. Redirecting to login page...")
-                sendLogout();
-                navigate('/user');
-            }
-        }
-    }
+
+    const [user, setUser] = useState("");
+    const [users, setUsers] = useState([]);
+    const [vehicles, setVehicles] = useState([]);
+    const [services, setServices] = useState(1);
+
+    const [files, setFiles] = useState<File[]>([]);
 
     function submitForm(e: React.FormEvent<HTMLFormElement>) {
         e.preventDefault();
 
         const formData = new FormData(e.currentTarget);
-        formData.append("vehicle", getVehicleString(formData));
-        
-        for (const key of ["make", "model", "series", "year"]) {
-            if (!formData.has(key)) continue;
+        const services = getServices();
 
-            formData.delete(key);
-        }
-
-        for (const file of files) {
-            formData.append("images", file);
-        }
+        formData.append("services", JSON.stringify(services));
+        files.map((file) => formData.append("images", file));
 
         if (!isValidForm(formData)) {
             return;
@@ -68,28 +48,34 @@ function PortalVehiclesForm() {
             token,
             0, 
             async (formData, token) => {
-                await axios.post(`${apiUrl}/vehicles`, formData, {
+                await axios.post(`${apiUrl}/reports`, formData, {
                     headers:{
                         'Authorization': `Bearer ${token}`,
                         'Content-Type': 'multipart/form-data',
                     }
                 });
 
-                toast.success("Vehicle added successfully.");
+                toast.success("Report added successfully.");
             }
         );
+    }
+
+    function getServices(): any[] {
+        return [...Array(services).keys()].map((i) => {
+            return {
+                name: document.getElementById(`name-${i}`).value,
+                price: document.getElementById(`price-${i}`).value,
+                reason: document.getElementById(`reason-${i}`).value,
+            }
+        });
     }
 
     function isValidForm(formData: FormData): boolean {
         let valid = true;
 
-        if (!formData.get("stockNumber")) {
+        if (!formData.get("vehicleId")) {
             valid = false;
-            toast.error("Please provide a stock number.");
-        }
-        if (!formData.get("vehicle")) {
-            valid = false;
-            toast.error("Please provide a make, model, series and/or year.");
+            toast.error("Please select a vehicle.");
         }
         if (!formData.has("userId") || !formData.get("userId")) {
             valid = false;
@@ -97,18 +83,6 @@ function PortalVehiclesForm() {
         }
 
         return valid;
-    }
-
-    function getVehicleString(formData: FormData): string {
-        let vehicle = ""
-
-        for (const key of ["make", "model", "series", "year"]) {
-            if (!formData.has(key) || !formData.get(key)) continue;
-
-            vehicle += (vehicle ? " " : "") + formData.get(key);
-        }
-
-        return vehicle;
     }
 
     function handleChange(fileList: FileList) {
@@ -136,21 +110,58 @@ function PortalVehiclesForm() {
                 });
 
                 setUsers(res.data);
+                setUser(res.data[0]._id);
             }
         );
     }, []);
 
+    useEffect(() => {
+        if (!user) return;
+
+        authRequest(
+            null,
+            token,
+            0, 
+            async (formData, token) => {
+                const res = await axios.get(`${apiUrl}/vehicles?userId=${user}`, {
+                    headers: {
+                        'Authorization': `Bearer ${token}`,
+                    }
+                });
+
+                setVehicles(res.data);
+            }
+        );
+    }, [user]);
+
+    async function authRequest(formData: FormData , token: string, retries: number, cb: Promise<boolean>) {
+        try {
+            await sendCheckToken(token);
+            cb(formData, token);
+        }
+        catch (error) {
+            if (error.response && error.response.status === 403 && retries < maxRetryAttempts){
+                const newToken = selectCurrentToken(store.getState());
+                authRequest(formData, newToken, retries + 1, cb);
+            } else {
+                toast.error("Login Expired. Redirecting to login page...")
+                sendLogout();
+                navigate('/user');
+            }
+        }
+    }
+
     return (
         <>
             <div>
-                <h3>Create New Vehicle</h3>
+                <h3>Create New Report</h3>
             </div>
-            <form className="create-form vehicles-form" onSubmit={submitForm}  encType="multipart/form-data">
+            <form className="create-form reports-form" onSubmit={submitForm}  encType="multipart/form-data">
                 <h3>Vehicle Information</h3>
                 <div>
                     <div>
                         <label>User</label>
-                        <select name="userId">
+                        <select name="userId" onChange={(e) => setUser(e.target.value)}>
                             {
                                 users.map((user) => <option value={user._id}>{user.name}</option>)
                             }
@@ -158,27 +169,35 @@ function PortalVehiclesForm() {
                     </div>
                     <div>
                         <label>Stock Number</label>
-                        <input type="text" name="stockNumber" />
-                    </div>
-                    <div>
-                        <label>Make</label>
-                        <input type="text" name="make" />
-                    </div>
-                    <div>
-                        <label>Model</label>
-                        <input type="text" name="model" />
-                    </div>
-                    <div>
-                        <label>Series</label>
-                        <input type="text" name="series" />
-                    </div>
-                    <div>
-                        <label>Year</label>
-                        <input type="text" name="year" />
+                        <select name="vehicleId">
+                            {
+                                vehicles.map((vehicle) => <option value={vehicle._id}>{`${vehicle.stockNumber} (${vehicle.vehicle})`}</option>)
+                            }
+                        </select>
                     </div>
                 </div>
-                <h3>Notes</h3>
-                <textarea name="notes" />
+                <h3>Services</h3>
+                <div id="services">
+                    {
+                        [...Array(services).keys()].map((i) => (
+                            <div className="service-row" key={i}>
+                                <div>
+                                    <label>Name</label>
+                                    <input type="text"id={`name-${i}`} />
+                                </div>
+                                <div>
+                                    <label>Price</label>
+                                    <input type="number" id={`price-${i}`} />
+                                </div>
+                                <div>
+                                    <label>Reason</label>
+                                    <input type="text" id={`reason-${i}`} />
+                                </div>
+                            </div>
+                        ))
+                    }
+                    <button type="button" onClick={() => setServices(services + 1)}>+ Click here to add another service</button>
+                </div>
                 <h3>Upload Images</h3>
                 <div className="images-container">
                     {
@@ -205,4 +224,4 @@ function PortalVehiclesForm() {
     );
 }
 
-export default PortalVehiclesForm;
+export default PortalReportsForm;

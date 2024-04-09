@@ -15,7 +15,7 @@ router.get("/", async (req, res, next) => {
     logger.info("Reading all documents from collection 'vehicles'.");
 
     try {
-        const documents = await Vehicle.find();
+        const documents = await Vehicle.find(req.query);
         res.status(200).send(documents);
     }
     catch (err) {
@@ -25,7 +25,6 @@ router.get("/", async (req, res, next) => {
 });
 
 router.post("/", multerConfig.array("images"), async (req, res, next) => {
-    console.log(req);
     const imageUrls = !req.files ? [] : await Promise.all(req.files.map(file => uploadImage(file)));
     const document = new Vehicle({
         ...req.body,

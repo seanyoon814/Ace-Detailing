@@ -5,6 +5,7 @@ const logger = require("../utils/logger");
 const multerConfig = require("../config/multer");
 const Report = require("../models/Report");
 const { uploadImage } = require("../utils/cloudStorageHelper");
+const Vehicle = require("../models/Vehicle");
 
 const router = express.Router();
 
@@ -31,8 +32,15 @@ router.get("/", async (req, res, next) => {
 //@access  Private
 router.post("/", multerConfig.array("images"), async (req, res, next) => {
     const imageUrls = !req.files ? [] : await Promise.all(req.files.map(file => uploadImage(file)));
+    const services = JSON.parse(req.body.services);
+
+    const vehicle = await Vehicle.findById(req.body.vehicleId);
+    const stockNumber = vehicle.stockNumber;
+
     const document = new Report({
         ...req.body,
+        services,
+        stockNumber,
         imageUrls
     });
 

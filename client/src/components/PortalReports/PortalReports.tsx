@@ -35,7 +35,7 @@ const columns = [
     }),
     columnHelper.accessor("services", {
         header: "SERVICES",
-        cell: info => info.getValue(),
+        cell: info => info.getValue().map(item => item.name).join(", "),
         footer: info => info.column.id,
     }),
     columnHelper.accessor("createdAt", {
@@ -143,6 +143,8 @@ function PortalReports({ setPage } : { setPage: Function }) {
         if (stockNumber) filters.push({ id: "stockNumber", value: stockNumber, includesString: true });
         if (status !== "All") filters.push({ id: "status", value: status, includesString: true });
 
+        console.log(filters);
+
         table.setColumnFilters(filters);
     }
 
@@ -155,7 +157,7 @@ function PortalReports({ setPage } : { setPage: Function }) {
             <form className="portal-table-filter" onSubmit={(e) => applyFilter(e)}>
                 <div>
                     <label>Status</label>
-                    <select id="step" defaultValue="All">
+                    <select id="status" defaultValue="All">
                         <option>All</option>
                         <option>PENDING</option>
                         <option>ACCEPTED</option>

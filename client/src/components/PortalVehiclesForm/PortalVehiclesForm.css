@@ -1,24 +1,24 @@
-.vehicles-form {
+.create-form {
     justify-content: center;
     align-items: center;
     color: white;
     flex-direction: column;
 }
 
-.vehicles-form > h3 {
+.create-form > h3 {
     width: 100%;
     margin: 0;
     margin-top: 0.5em;
     font-size: 20px;
 }
 
-.vehicles-form > div {
+.create-form > div {
     display: flex;
     flex-wrap: wrap;
     width: 100%;
 }
 
-.vehicles-form > div:first-of-type > div {
+.create-form > div > div {
     display: flex;
     flex-direction: column;
     flex-basis: calc(50% - 0.5em);
@@ -26,9 +26,9 @@
     margin: 0.25em;
 }
 
-.vehicles-form > textarea,
-.vehicles-form > div > div > select,
-.vehicles-form > div > div > input {
+.create-form > textarea,
+.create-form > div > div > select,
+.create-form > div > div > input {
     font-size: 15px;
     height: 2.5rem;
     padding: 0.5em;
@@ -40,14 +40,13 @@
     border: 1px solid black;
 }
 
-
-.vehicles-form > textarea {
+.create-form > textarea {
     min-width: 100%;
     min-height: 5em;
     max-height: 25em;
 }
 
-.vehicles-form > button {
+.create-form > button {
     width: 10em;
     height: 3em;
     background-color: #7b0202;
@@ -58,7 +57,7 @@
     outline: none;
 }
 
-.vehicles-form > label {
+.create-form > label {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -69,21 +68,24 @@
     font-size: 20px;
 }
 
-.vehicles-form .images-container {
+.create-form .images-container {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     width: 100%;
     margin-top: 0.5em;
 }
 
-.vehicles-form .images-container div {
-    width: 100%;
+.create-form .images-container div {
+    display: flex;
+    flex: none;
+    flex-direction: row;
     height: fit-content;
     color: rgb(133, 133, 133);
 }
 
-.vehicles-form .images-container button {
+.create-form .images-container button {
     width: 2em;
+    height: fit-content;
     background-color: transparent;
     border: none;
     outline: none;

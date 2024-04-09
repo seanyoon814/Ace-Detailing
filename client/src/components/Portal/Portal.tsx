@@ -7,6 +7,7 @@ import PortalUsers from "../PortalUsers/PortalUsers";
 import PortalBlog from "../PortalBlog/PortalBlog";
 import PortalReports from "../PortalReports/PortalReports";
 import { useState } from "react";
+import PortalReportsForm from "../PortalReportsForm/PortalReportsForm";
 
 function Portal() {
 
@@ -15,13 +16,14 @@ function Portal() {
     const [page, setPage] = useState(browseItems[0]);
     const [subPage, setSubPage] = useState("");
 
-
     function getPageComponent(): JSX.Element {
         switch (page) {
             case "Blog":
                 return (<PortalBlog />)
             case "Reports":
                 return (<PortalReports setPage={setPage} />)
+            case "Reports-Create":
+                return (<PortalReportsForm />)
             case "Users":
                 return (<PortalUsers />)
             case "Vehicles":
