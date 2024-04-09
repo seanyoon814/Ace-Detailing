@@ -75,7 +75,6 @@ function PortalSidebar({ page, setPage, setSubPage }: { page: string, setPage: F
                 <header>
                     Ace Detailing<br/>
                 </header>
-                    <p style={{"paddingLeft":"10px", "color":"white"}}>Signed in as {name} #{id}</p>
                 <div>Browse</div>
                 {
                     browseItems.map(item =>
@@ -103,7 +102,10 @@ function PortalSidebar({ page, setPage, setSubPage }: { page: string, setPage: F
                     )
                 }
             </div>
-            <button onClick={onLogout}>Log out</button> 
+            <div>
+                <p style={{"color":"white", "margin": 0}}>Signed in as {name} #{id}</p>
+                <button onClick={onLogout}>Log out</button> 
+            </div>
         </nav>
     );
 }
