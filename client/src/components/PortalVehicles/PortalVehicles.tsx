@@ -31,8 +31,8 @@ function PortalVehicles() {
 
     function updatePagination() {
         const container = document.getElementsByClassName("vehicles-table-container")[0] as Element;
+        if (!container) return;
         container.style.height = "100%";
-
         const containerStyle = getComputedStyle(container);
         const containerEm = parseFloat(containerStyle.fontSize);
         

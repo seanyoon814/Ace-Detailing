@@ -2,7 +2,7 @@ import {useEffect} from 'react';
 import {Outlet} from 'react-router-dom';
 import {useSelector } from 'react-redux';
 import { selectCurrentToken } from './authSlice';
-import {useSendLogoutMutation, useGetDataQuery, useCheckTokenQuery, authApiSlice} from './authApiSlice';
+import {useSendLogoutMutation, authApiSlice, useCheckTokenMutation} from './authApiSlice';
 import {useNavigate} from 'react-router-dom';
 import {toast} from 'react-toastify';
 import {store} from '../../store';
@@ -16,17 +16,15 @@ const Prefetch = () => {
     }] = useSendLogoutMutation();
     const navigate = useNavigate();
     const token = useSelector(selectCurrentToken);
-    // const [{
-    //     isLoading: checkLoading,
-    //     isSuccess : checkSuccess,
-    //     isError : checkError,
-    //     error
-    // }] = useCheckTokenQuery(token);
+    const [sendCheckToken,{
+        isError : checkError,
+        error
+    }] = useCheckTokenMutation(token);
     
     const {admin, id} = useAuth();
     
-    // IMPORT IN INDIVIDUAL COMPONENTS    
     useEffect(() => {
+        sendCheckToken();
         if(!token){
             toast.error("Unauthorized. Please login. Redirecting to login page...")
             logout()
@@ -38,9 +36,6 @@ const Prefetch = () => {
         //  else {
         //     const vehicles = store.dispatch(authApiSlice.util.prefetch('getData',`/vehicles/${id}`,{force:true}));
         // }
-        console.log("subbing");
-
-    
     },[token])
 
 

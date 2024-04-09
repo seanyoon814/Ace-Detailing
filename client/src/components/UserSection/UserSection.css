@@ -78,3 +78,7 @@ a {
 .form-check{
     margin-top: 10px;
 }
+
+.login input{
+    text-align: left;
+}
