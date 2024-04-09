@@ -1,0 +1,10 @@
+.imageField{
+    width:100%;
+    height:auto;
+    resize: none;
+}
+
+.admin-containers{
+    background:'#2b2c2e' !important;
+    /* border-radius: 10px !important; */
+}

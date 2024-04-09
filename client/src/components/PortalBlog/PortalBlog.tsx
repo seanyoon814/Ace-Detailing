@@ -1,6 +1,6 @@
 import "./PortalBlog.css";
 
-import { useEffect } from "react";
+import { ReactEventHandler, useEffect, useState } from "react";
 import React from "react";
 import axios from "axios";
 import backend from "../../constants/backend";
@@ -14,6 +14,14 @@ import { useSendLogoutMutation } from "../../features/auth/authApiSlice";
 import { store } from "../../store";
 const { apiUrl } = backend;
 
+interface Post {
+    _id: string;
+    title: string;
+    description: string;
+    imageUrl: string;
+    createdAt: Date;
+  }
+  
 interface FormDataTarget extends EventTarget {
     elements: {
         title: HTMLInputElement,
@@ -24,6 +32,24 @@ interface FormDataTarget extends EventTarget {
 
 
 function BlogForm() {
+    const [posts, setPosts] = useState<Post[]>([]);
+
+    useEffect(() => {
+        const fetchData = async () => {
+        try {
+            const result = await httpClient.get<Post[]>('http://localhost:5000/blog/');
+            const postsWithDate = result.data.map(post => ({
+            ...post,
+            createdAt: new Date(post.createdAt)
+            }));
+            setPosts(postsWithDate);
+        } catch (error) {
+            console.error('Error fetching data:', error);
+        }
+        };
+
+        fetchData();
+    }, []);
     const token = useSelector(selectCurrentToken);
     const [sendCheckToken] = useCheckTokenMutation();
     const [sendLogout, {isError}] = useSendLogoutMutation();
@@ -76,30 +102,53 @@ function BlogForm() {
         // await sendCheckToken(token)
         authCheckBeforePost(formData, token, 0);
     }
+
+    const deleteBlogPost = async (event:React.FormEvent<HTMLFormElement>) => {
+        event.preventDefault();
     
+        const formData = new FormData(event.currentTarget);
+        const id = formData.get('postId');
+        
+        try {
+            const response = await axios.delete(`${apiUrl}/blog/delete/${id}`);
+            console.log(response.data); // Assuming the response contains data
+        } catch (error) {
+            console.error('Error deleting blog post:', error);
+        }
+    };
     
     return (
-        <div className="container-fluid">
             <div className="row justify-content-center" style={{marginTop:'10vh'}}>
-                <div className="col-12">
+                <div className="admin-containers col-4 pt-3 pb-3" style={{background:'#2b2c2e', borderRadius:'20px'}}>
+                    <h1 className="paragraph-noanim instrument-sans">Add a Blog Post</h1>
                     <form onSubmit={addBlogPost} encType="multipart/form-data">
                         <label htmlFor="title">
-                            Title: <input name="title" type="text" placeholder="" />
+                            Title:<br/> <textarea name="title" placeholder="Enter title.." />
                         </label>
                         <br />
-                        <label htmlFor="desc">
-                            Description: <input name="description" type="text" placeholder="" />
+                        <label htmlFor="description">
+                            Description:<br/> <textarea className="imageField" name="description" placeholder="Enter description.."/>
                         </label>
                         <br />
                         <label htmlFor="image">
-                            Image: <input name="image" type="file" accept="image/*" />
+                            Image:<br/> <input name="image" type="file" accept="image/*" />
                         </label>
                         <br/>
-                        <button type="submit">Submit</button>
+                        <button className="btn btn-danger"type="submit">Submit</button>
+                    </form>
+                </div>
+                <div className="col-4 pt-3 pb-3 ml-3" style={{background:'#2b2c2e', borderRadius:'20px'}}>
+                    <h1 className="paragraph-noanim instrument-sans">Delete a Blog Post</h1>
+                    <form onSubmit={deleteBlogPost} encType="multipart/form-data">
+                        <select name="postId">
+                            {posts.map(post => (
+                                <option key={post._id} value={post._id}>{post.title}</option>
+                            ))}
+                        </select><br/>
+                        <button type="submit" className="btn btn-danger">Delete</button>
                     </form>
                 </div>
             </div>
-        </div>
     );
 }
 

@@ -34,6 +34,23 @@ router.post("/",verifyJWT, multerConfig.single("image"), async (req, res) => {
         res.status(400).send(err);
     }
 });
+
+router.delete('/delete/:id', async (req, res) => {
+    try {
+        const id = req.params.id;
+        const result = await AdminBlog.findByIdAndDelete(id);
+        if (!result) {
+            return res.status(404).send('Document not found');
+        }
+        await result.save();
+        console.log(`Document with id ${id} deleted`);
+        res.status(200).send('Document deleted successfully');
+    } catch (err) {
+        console.error('Error deleting document:', err);
+        res.status(500).send('Error deleting document');
+    }
+});
+
 //TESTING FUNCTION
 router.get('/delete', async (req, res) => {
     try {
