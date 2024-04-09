@@ -13,7 +13,7 @@ function PortalVehiclesForm() {
     }
 
     return (
-        <div>
+        <>
             <div>
                 <h3>Create New Vehicle</h3>
             </div>
@@ -62,7 +62,7 @@ function PortalVehiclesForm() {
                 </FileUploader>
                 <button>Create</button>
             </form>
-        </div>
+        </>
     );
 }
 
