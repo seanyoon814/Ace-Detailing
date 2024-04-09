@@ -1,40 +1,3 @@
-/* Collapsible Items - Questions */
-/* .Collapsible:first-of-type {
-    margin-top: 1em;
-}
-
-.Collapsible {
-    box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    width: 80%;
-    height: fit-content;
-    border: 1px solid #E6E6E6;
-    border-bottom: none;
-    font-size: 1.5em;
-    background-color: white;
-    border-color: black;
-}
-
-.Collapsible:last-of-type {
-    border-bottom: 1px solid #E6E6E6;
-    border-color: black;
-}
-
-.Collapsible__trigger {
-    margin: 0.5em;
-}
-
-.Collapsible__contentInner {
-    box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    padding: 0.5em;
-    border-top: 1px solid #E6E6E6;
-    background-color: white;
-} */
 
 /* FAQ Display */
 #faq-container{
@@ -51,9 +14,9 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-evenly;
-    margin-top:30px;
+    margin-top:70px;
     height: 60%; 
-    width:90%; /* Adjusts the how far apart*/
+    width:87%; /* Adjusts the how far apart*/
     border-bottom: 3px solid white
 }
 
@@ -77,24 +40,44 @@
     width: 50%;
 }
 
-#faq-section h3{
+#faq-section h2{
     color:white;
-    width:80%;
+    width:90%;
     padding-left:50px;
     display:flex;
     flex-direction: column;
 }
 
-#faq-section > li{
+#faq-answer ul{
     padding-left:50px;
     color: white;
-    width:90%;
+    width:95%;
     display:flex;
     flex-direction: column;
+    font-size:25px;
+    border-left: 3px solid white;
 }
 
-#faq-section .icon {
-    position:fixed;
+
+#faq-heading{
+    display: flex;
+    flex-direction:column;
+    justify-content:space-between;
+    margin-bottom:10;
+    position: relative;
+}
+
+#question{
+    flex:3;
+}
+
+#icon-container {
+    padding-left: 30px;
+    padding-bottom: 10px;
+    flex:1;
+    display:flex;
+    direction:row;
+    /* position: fixed; */
 }
 
 

@@ -40,7 +40,7 @@ function MapSection() {
                   <td><b>Porsche Centre Vancouver</b></td>
                 </tr>
                 <tr className='paragraph-noanim instrument-sans'>
-                  <td><i className="fa-solid fa-location-dot"></i> 7488 King George Blvd Unit 320</td>
+                  <td><i className="fa-solid fa-location-dot"></i> 18446 53 Ave in Cloverdale</td>
                   <td><i className='fa-solid fa-location-dot'></i> 13460 Smallwood Plaza</td>
                   <td><i className="fa-solid fa-location-dot"></i> 688 Terminal Ave</td>
                 </tr>

@@ -123,7 +123,7 @@ function PortalVehicles() {
         isError,
         error: vehicleErrmsg
       } = useGetDataQuery(path,{
-        pollingInterval: 5000, // Refetch every 5 seconds
+        pollingInterval: 120000, // 2 minutes
         refetchOnMountOrArgChange: true,
         refetchOnFocus: true,
       });

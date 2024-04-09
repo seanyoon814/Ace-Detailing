@@ -1,6 +1,6 @@
 import "./PortalBlog.css";
 
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import React from "react";
 import axios from "axios";
 import backend from "../../constants/backend";
@@ -12,7 +12,6 @@ import { toast } from "react-toastify";
 import httpClient from "../../features/httpClient";
 import { useSendLogoutMutation } from "../../features/auth/authApiSlice"; 
 import { store } from "../../store";
-import { send } from "process";
 const { apiUrl } = backend;
 
 interface FormDataTarget extends EventTarget {
@@ -26,13 +25,8 @@ interface FormDataTarget extends EventTarget {
 
 function BlogForm() {
     const token = useSelector(selectCurrentToken);
-    const [sendCheckToken, {
-        isLoading,
-        isSuccess,
-        isError,
-        error
-    }] = useCheckTokenMutation();
-    const [sendLogout] = useSendLogoutMutation();
+    const [sendCheckToken] = useCheckTokenMutation();
+    const [sendLogout, {isError}] = useSendLogoutMutation();
     const maxRetryAttempts = 1;
     async function authCheckBeforePost(formData:FormData , token: string, retries: number){
         try{
@@ -46,13 +40,8 @@ function BlogForm() {
             });
             toast.success("Blog post added successfully.");
         } catch (error){
-            console.log("Error ResponseStat:", error?.response.status)
-            console.log("Error Res:", error.response)
-            console.log("isError:", isError)
             if(error.response && error.response.status === 403 && retries < maxRetryAttempts){
                 const newToken = selectCurrentToken(store.getState());
-                console.log("old token is: ", token)
-                console.log("New Token:", newToken);
                 authCheckBeforePost(formData, newToken, retries+1);
             } else {
                 console.log("Error:", error);
