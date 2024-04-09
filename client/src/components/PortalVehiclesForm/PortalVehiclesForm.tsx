@@ -123,20 +123,21 @@ function PortalVehiclesForm() {
         setFiles([...files.slice(0, index), ...files.slice(index + 1, files.length)]);
     }
 
-    useEffect(() => {authRequest(
-        null,
-        token,
-        0, 
-        async (formData, token) => {
-            const res = await axios.get(`${apiUrl}/user/`, {
-                headers: {
-                    'Authorization': `Bearer ${token}`,
-                }
-            });
+    useEffect(() => {
+        authRequest(
+            null,
+            token,
+            0, 
+            async (formData, token) => {
+                const res = await axios.get(`${apiUrl}/user/`, {
+                    headers: {
+                        'Authorization': `Bearer ${token}`,
+                    }
+                });
 
-            setUsers(res.data);
-        }
-    );
+                setUsers(res.data);
+            }
+        );
     }, []);
 
     return (

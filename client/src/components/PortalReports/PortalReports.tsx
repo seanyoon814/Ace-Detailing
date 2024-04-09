@@ -1,4 +1,4 @@
-import "./PortalVehicles.css";
+import "./PortalReports.css";
 
 import { useEffect, useLayoutEffect, useState } from "react";
 import { toast } from "react-toastify";
@@ -14,16 +14,14 @@ import {
     getSortedRowModel,
 } from "@tanstack/react-table";
 
-import useAuth from '../../hooks/useAuth';
+import axios from "axios";
 
 const columnHelper = createColumnHelper<any>();
 const columns = [
-    columnHelper.accessor("step", {
-        header: "STEP",
+    columnHelper.accessor("status", {
+        header: "STATUS",
         cell: info => info.getValue(),
         footer: info => info.column.id,
-        enableColumnFilter: true,
-        filterFn: "equals",
     }),
     columnHelper.accessor("imageUrls", {
         header: "IMAGE",
@@ -34,18 +32,9 @@ const columns = [
         header: "STOCK NUMBER",
         cell: info => info.getValue(),
         footer: info => info.column.id,
-        enableColumnFilter: true,
-        filterFn: "includesString",
     }),
-    columnHelper.accessor("vehicle", {
-        header: "VEHICLE",
-        cell: info => info.getValue(),
-        footer: info => info.column.id,
-        enableColumnFilter: true,
-        filterFn: "includesString",
-    }),
-    columnHelper.accessor("notes", {
-        header: "NOTES",
+    columnHelper.accessor("services", {
+        header: "SERVICES",
         cell: info => info.getValue(),
         footer: info => info.column.id,
     }),
@@ -55,17 +44,16 @@ const columns = [
         footer: info => info.column.id,
     }),
     columnHelper.accessor("updatedAt", {
-        header: "MODIFIED AT",
+        header: "LAST UPDATED",
         cell: info => new Date(info.getValue()).toLocaleString(),
         footer: info => info.column.id,
     }),
 ];
 
-function PortalVehicles({ setPage } : { setPage: Function }) {
+function PortalReports({ setPage } : { setPage: Function }) {
 
     const navigate = useNavigate();
-    const { admin, id } = useAuth();
-
+    
     const [data, setData] = useState([]);
     const [pagination, setPagination] = useState({
         pageIndex: 0, // initial page index
@@ -84,15 +72,14 @@ function PortalVehicles({ setPage } : { setPage: Function }) {
             pagination,
         },
     });
-    
-    const path = admin ? "/vehicles/" : `/vehicles/${id}`;
+
     const {
-        data: vehicleData,
+        data: reportsData,
         isSuccess,
         isLoading,
         isError,
-        error: vehicleErrmsg
-    } = useGetDataQuery(path, {
+        error: reportsError
+    } = useGetDataQuery("/reports", {
         pollingInterval: 5000, // 2 minutes
         refetchOnMountOrArgChange: true,
         refetchOnFocus: true,
@@ -106,23 +93,23 @@ function PortalVehicles({ setPage } : { setPage: Function }) {
     useEffect(() => {
         if (isError){
             if (
-                vehicleErrmsg?.originalStatus === 401
-                || vehicleErrmsg?.status === 401
-                || vehicleErrmsg?.originalStatus === 403
-                || vehicleErrmsg?.status === 403
+                reportsError?.originalStatus === 401
+                || reportsError?.status === 401
+                || reportsError?.originalStatus === 403
+                || reportsError?.status === 403
             ) {
                 toast.error("Token expired. Please Login.");
                 navigate('/user');
             }
         }
         else if (isSuccess){ 
-            setData(vehicleData);
+            setData(reportsData);
         }
-    }, [isSuccess, isLoading, isError, vehicleData, vehicleErrmsg]);
-
+    }, [isSuccess, isLoading, isError, reportsData, reportsError]);
+    
     function updatePagination() {
         const container = document.getElementsByClassName("portal-table-container")[0] as Element;
-        
+
         if (!container) return;
 
         container.style.height = "100%";
@@ -144,10 +131,9 @@ function PortalVehicles({ setPage } : { setPage: Function }) {
         e.preventDefault();
 
         const stockNumber = (document.getElementById("stockNumber") as HTMLInputElement)?.value;
-        const vehicle = (document.getElementById("vehicle") as HTMLInputElement)?.value;
-        const step = (document.getElementById("step") as HTMLSelectElement)?.value;
+        const status = (document.getElementById("status") as HTMLSelectElement)?.value;
 
-        if (!stockNumber && !vehicle && step === "All") {
+        if (!stockNumber && status === "All") {
             table.resetColumnFilters();
             return;
         }
@@ -155,8 +141,7 @@ function PortalVehicles({ setPage } : { setPage: Function }) {
         const filters = [];
 
         if (stockNumber) filters.push({ id: "stockNumber", value: stockNumber, includesString: true });
-        if (vehicle) filters.push({ id: "vehicle", value: vehicle, includesString: true });
-        if (step !== "All") filters.push({ id: "step", value: step, includesString: true });
+        if (status !== "All") filters.push({ id: "status", value: status, includesString: true });
 
         table.setColumnFilters(filters);
     }
@@ -164,26 +149,22 @@ function PortalVehicles({ setPage } : { setPage: Function }) {
     return (
         <>
             <div>
-                <h3>Vehicles</h3>
-                <button onClick={() => setPage("Vehicles-Create")}>CREATE NEW</button>
+                <h3>Reports</h3>
+                <button onClick={() => setPage("Reports-Create")}>CREATE NEW</button>
             </div>
             <form className="portal-table-filter" onSubmit={(e) => applyFilter(e)}>
                 <div>
-                    <label>Stock Number</label>
-                    <input id="stockNumber" placeholder="Search for stock number"></input>
-                </div>
-                <div>
-                    <label>Vehicle</label>
-                    <input id="vehicle" placeholder="Search for make, model, year, etc."></input>
-                </div>
-                <div>
-                    <label>Step</label>
+                    <label>Status</label>
                     <select id="step" defaultValue="All">
                         <option>All</option>
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
+                        <option>PENDING</option>
+                        <option>ACCEPTED</option>
+                        <option>REJECTED</option>
                     </select>
+                </div>
+                <div>
+                    <label>Stock Number</label>
+                    <input id="stockNumber" placeholder="Search for stock number"></input>
                 </div>
                 <div>
                     <label>Placeholder</label>
@@ -208,7 +189,7 @@ function PortalVehicles({ setPage } : { setPage: Function }) {
                         {'>'}
                     </button>
                 </div>
-                <table className="portal-table vehicles-table">
+                <table className="portal-table reports-table">
                     <thead>
                         {table.getHeaderGroups().map(headerGroup => (
                             <tr key={headerGroup.id}>
@@ -242,4 +223,4 @@ function PortalVehicles({ setPage } : { setPage: Function }) {
     );
 }
 
-export default PortalVehicles;
+export default PortalReports;
