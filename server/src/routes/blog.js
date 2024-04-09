@@ -5,7 +5,7 @@ const logger = require("../utils/logger");
 const multerConfig = require("../config/multer");
 const AdminBlog = require("../models/AdminBlog");
 const { uploadImage } = require("../utils/cloudStorageHelper");
-
+const verifyJWT = require("../utils/verifyJWT");
 const router = express.Router();
 
 router.get("/", async (req, res, next) => {
@@ -18,7 +18,7 @@ router.get("/", async (req, res, next) => {
     });
 });
 
-router.post("/", multerConfig.single("image"), async (req, res) => {
+router.post("/",verifyJWT, multerConfig.single("image"), async (req, res) => {
     try {
         console.log(req.file)
         console.log(req.body)

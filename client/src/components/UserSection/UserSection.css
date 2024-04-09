@@ -79,6 +79,7 @@ a {
     margin-top: 10px;
 }
 
-.login input{
+.input-group-text{
     text-align: left;
+    direction:ltr;
 }

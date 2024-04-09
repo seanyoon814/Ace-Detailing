@@ -18,11 +18,12 @@ import {
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 import { useGetDataQuery} from "../../features/auth/authApiSlice";
+import useAuth from '../../hooks/useAuth';
 const { apiUrl } = backend;
 
 function PortalVehicles() {
     const navigate = useNavigate();
-    
+    const {admin,id} = useAuth();
     const [data, setData] = useState([]);
     const [pagination, setPagination] = useState({
         pageIndex: 0, // initial page index
@@ -108,34 +109,20 @@ function PortalVehicles() {
             pagination,
         },
     });
-
-    // async function getData(setData: Function) {
-    //     try {
-    //         // const result = await httpClient.get(`${apiUrl}/vehicles`);
-    //         // console.log("HTTPCLIENT RESPONSE: ", result.data)
-    //         // setData(vehicleData.data);
-    //     } catch(error) { // Catch invalid token
-    //         if(error?.response.status === 401){ 
-    //             // 401 Unauthorized wrong header
-    //             await toast.error("Unauthorized.");
-    //             navigate('/user');
-    //         }else if (error?.response.status === 403){
-    //             // REFERSH TOKEN
-    //             console.log("Error", error);
-    //         } else {
-    //             console.error("Error:", error);
-    //         }
-    //     }
-    // }
-
     
+    let path
+    if(admin){
+        path = "/vehicles/";
+    } else {
+        path = `/vehicles/${id}`;
+    }
     const {
         data: vehicleData,
         isSuccess,
         isLoading,
         isError,
         error: vehicleErrmsg
-      } = useGetDataQuery('/vehicles',{
+      } = useGetDataQuery(path,{
         pollingInterval: 5000, // Refetch every 5 seconds
         refetchOnMountOrArgChange: true,
         refetchOnFocus: true,

@@ -11,6 +11,8 @@ import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import httpClient from "../../features/httpClient";
 import { useSendLogoutMutation } from "../../features/auth/authApiSlice"; 
+import { store } from "../../store";
+import { send } from "process";
 const { apiUrl } = backend;
 
 interface FormDataTarget extends EventTarget {
@@ -31,6 +33,35 @@ function BlogForm() {
         error
     }] = useCheckTokenMutation();
     const [sendLogout] = useSendLogoutMutation();
+    const maxRetryAttempts = 1;
+    async function authCheckBeforePost(formData:FormData , token: string, retries: number){
+        try{
+            await sendCheckToken(token);
+            
+            const err = await axios.post(`${apiUrl}/blog/`, formData, {
+                headers:{
+                    'Authorization': `Bearer ${token}`,
+                    'Content-Type': 'multipart/form-data',
+                }
+            });
+            toast.success("Blog post added successfully.");
+        } catch (error){
+            console.log("Error ResponseStat:", error?.response.status)
+            console.log("Error Res:", error.response)
+            console.log("isError:", isError)
+            if(error.response && error.response.status === 403 && retries < maxRetryAttempts){
+                const newToken = selectCurrentToken(store.getState());
+                console.log("old token is: ", token)
+                console.log("New Token:", newToken);
+                authCheckBeforePost(formData, newToken, retries+1);
+            } else {
+                console.log("Error:", error);
+                toast.error("Login Expired. Redirecting to login page...")
+                sendLogout();
+                navigate('/user');
+            }
+        }
+    }
     
     const navigate = useNavigate();
 
@@ -53,17 +84,8 @@ function BlogForm() {
             const filename = `${Date.now()}_${imageFile.name}`;
             formData.set("image", imageFile, filename);
         }
-    
-        await sendCheckToken(token);  
-        const err = await httpClient.get(apiUrl + "/vehicles");
-        console.log(err);
-        console.log(err?.response?.status);
-        console.log(isError);
-        if(isError && (err?.response.status !== 200)){ // CAN CHANGE TO ERR CODE 401 or 403 idk which one it sends
-            toast.error("Token Invalid. Please log in again.");
-            await sendLogout();
-            navigate('/user');
-        } 
+        // await sendCheckToken(token)
+        authCheckBeforePost(formData, token, 0);
     }
     
     

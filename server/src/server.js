@@ -42,7 +42,7 @@ const verifyJWT = require("./utils/verifyJWT");
 app.use("/user", verifyJWT, usersRoutes);
 app.use("/reports", verifyJWT, reportsRoutes);
 app.use("/vehicles",verifyJWT, vehiclesRoutes);
-app.use("/blog", verifyJWT, blogRoutes);
+app.use("/blog", blogRoutes); // Only post is protected with verifyJWT
 app.use("/check", verifyJWT, checkRoutes)
 app.use("/auth", authRoutes);
 

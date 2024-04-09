@@ -1,6 +1,5 @@
 import {createSlice, createAsyncThunk} from '@reduxjs/toolkit'
 
-
 export const authSlice = createSlice({
     name: 'auth',
     initialState: {token: null},
@@ -16,9 +15,7 @@ export const authSlice = createSlice({
     }
 })
 
-export const {setCredentials, logOut, 
-    // setData
-} = authSlice.actions;
+export const {setCredentials, logOut, } = authSlice.actions;
 export default authSlice.reducer;
 export const selectCurrentToken = (state) => state.auth.token;
 export const selectData = (state) => state.auth.data;

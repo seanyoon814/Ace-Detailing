@@ -16,15 +16,10 @@ const Prefetch = () => {
     }] = useSendLogoutMutation();
     const navigate = useNavigate();
     const token = useSelector(selectCurrentToken);
-    const [sendCheckToken,{
-        isError : checkError,
-        error
-    }] = useCheckTokenMutation(token);
     
     const {admin, id} = useAuth();
     
     useEffect(() => {
-        sendCheckToken();
         if(!token){
             toast.error("Unauthorized. Please login. Redirecting to login page...")
             logout()
@@ -32,6 +27,7 @@ const Prefetch = () => {
         }
         if(admin) {
             const vehicles = store.dispatch(authApiSlice.util.prefetch('getData','/vehicles',{force:true}));
+            // const check = store.dispatch(authApiSlice.util.fetch('checkToken','/check/checkToken',{force:true}));
         }
         //  else {
         //     const vehicles = store.dispatch(authApiSlice.util.prefetch('getData',`/vehicles/${id}`,{force:true}));
