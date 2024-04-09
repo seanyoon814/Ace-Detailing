@@ -39,6 +39,13 @@ router.get("/api/check", verifyJWT, async (req, res) => {
     res.send(req.admin);
 })
 
+router.get("/api/getObjectId/:id", async (req, res) => {
+    const { id } = req.params;
+    const user = await User.findById(id);
+    console.log(user);
+    res.send(user._id);
+})
+
 router.get("/", async (req, res, next) => {
     logger.info("Reading all documents from collection 'users'.");
 

@@ -8,6 +8,7 @@ import PortalBlog from "../PortalBlog/PortalBlog";
 import PortalReports from "../PortalReports/PortalReports";
 import { useState } from "react";
 import PortalReportsForm from "../PortalReportsForm/PortalReportsForm";
+import PortalNotifications from "../PortalNotifications/PortalNotifications";
 
 function Portal() {
 
@@ -20,6 +21,8 @@ function Portal() {
         switch (page) {
             case "Blog":
                 return (<PortalBlog />)
+            case "Notifications":
+                return (<PortalNotifications />)
             case "Reports":
                 return (<PortalReports setPage={setPage} />)
             case "Reports-Create":

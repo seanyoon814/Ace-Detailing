@@ -13,7 +13,7 @@ const VehicleSchema = new Schema(
         },
         stockNumber: {
             type: String,
-            required: true
+            // required: true
         },
         vehicle: {
             type: String,
@@ -35,6 +35,11 @@ const VehicleSchema = new Schema(
             required: true,
             ref: "users",
         },
+        approved: {
+            type: Boolean,
+            required: true,
+            default: false
+        }
     },
     {
         timestamps: true

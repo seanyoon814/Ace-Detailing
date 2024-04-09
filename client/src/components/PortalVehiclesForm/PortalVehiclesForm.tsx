@@ -2,6 +2,7 @@ import "./PortalVehiclesForm.css";
 
 import axios from "axios";
 import backend from "../../constants/backend";
+import useAuth from "../../hooks/useAuth";
 import { useEffect, useState } from "react";
 import { FileUploader } from "react-drag-drop-files";
 import { selectCurrentToken } from "../../features/auth/authSlice";
@@ -11,6 +12,7 @@ import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { useSendLogoutMutation } from "../../features/auth/authApiSlice"; 
 import { store } from "../../store";
+import httpClient from "../../features/httpClient";
 
 const { apiUrl } = backend;
 
@@ -25,7 +27,8 @@ function PortalVehiclesForm() {
     const [sendCheckToken] = useCheckTokenMutation();
     const [sendLogout, { isError }] = useSendLogoutMutation();
     const maxRetryAttempts = 1;
-    
+    const user = useAuth();
+
     async function authRequest(formData: FormData , token: string, retries: number, cb: Promise<boolean>) {
         try {
             await sendCheckToken(token);
@@ -83,10 +86,10 @@ function PortalVehiclesForm() {
     function isValidForm(formData: FormData): boolean {
         let valid = true;
 
-        if (!formData.get("stockNumber")) {
-            valid = false;
-            toast.error("Please provide a stock number.");
-        }
+        // if (!formData.get("stockNumber")) {
+        //     valid = false;
+        //     toast.error("Please provide a stock number.");
+        // }
         if (!formData.get("vehicle")) {
             valid = false;
             toast.error("Please provide a make, model, series and/or year.");
@@ -123,6 +126,11 @@ function PortalVehiclesForm() {
         setFiles([...files.slice(0, index), ...files.slice(index + 1, files.length)]);
     }
 
+    async function getUserId() {
+        const result: any = await httpClient.get(`${apiUrl}/user/api/getObjectId/${user.id}`);
+        (document.getElementsByName("userId")[0] as HTMLInputElement).value = result.data;
+    }
+
     useEffect(() => {
         authRequest(
             null,
@@ -138,6 +146,8 @@ function PortalVehiclesForm() {
                 setUsers(res.data);
             }
         );
+
+        getUserId();
     }, []);
 
     return (
@@ -148,18 +158,19 @@ function PortalVehiclesForm() {
             <form className="create-form vehicles-form" onSubmit={submitForm}  encType="multipart/form-data">
                 <h3>Vehicle Information</h3>
                 <div>
-                    <div>
+                    <input name = "userId" style = {{position: "absolute", visibility: "hidden"}}></input>
+                    {/* <div>
                         <label>User</label>
                         <select name="userId">
                             {
                                 users.map((user) => <option value={user._id}>{user.name}</option>)
                             }
                         </select>
-                    </div>
-                    <div>
+                    </div> */}
+                    {/* <div>
                         <label>Stock Number</label>
                         <input type="text" name="stockNumber" />
-                    </div>
+                    </div> */}
                     <div>
                         <label>Make</label>
                         <input type="text" name="make" />
