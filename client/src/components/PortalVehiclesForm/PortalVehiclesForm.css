@@ -26,15 +26,10 @@
     margin: 0.25em;
 }
 
-.vehicles-form > div > div:first-of-type {
-    flex-basis: calc(100% - 0.5em);
-}
-
+.vehicles-form > textarea,
+.vehicles-form > div > div > select,
 .vehicles-form > div > div > input {
     font-size: 15px;
-}
-
-.vehicles-form > div > div > input {
     height: 2.5rem;
     padding: 0.5em;
     border-radius: 5px;
@@ -43,6 +38,13 @@
     color: white;
     outline: none;
     border: 1px solid black;
+}
+
+
+.vehicles-form > textarea {
+    min-width: 100%;
+    min-height: 5em;
+    max-height: 25em;
 }
 
 .vehicles-form > button {
@@ -61,7 +63,7 @@
     align-items: center;
     justify-content: center;
     width: 100%;
-    height: 7.5em;
+    height: 5em;
     margin: 1em;
     border: dotted 5px grey;
     font-size: 20px;
@@ -78,4 +80,11 @@
     width: 100%;
     height: fit-content;
     color: rgb(133, 133, 133);
+}
+
+.vehicles-form .images-container button {
+    width: 2em;
+    background-color: transparent;
+    border: none;
+    outline: none;
 }

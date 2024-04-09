@@ -51,4 +51,8 @@ module.exports = class User {
         const user = await newUser.findOne({ email : email });
         return (user != null);
     }
+
+    static async find() {
+        return newUser.find();
+    }
 }

@@ -7,6 +7,7 @@ const User = require("../models/UserClass");
 const { apiUrl, clientUrl } = require("../utils/constants");
 
 var mongoose = require("mongoose");
+const logger = require("../utils/logger");
 
 router.use(bodyParser.urlencoded({extended : true}));
 
@@ -37,6 +38,19 @@ router.get("/api/checkEmail/:email", async (req, res) => {
 router.get("/api/check", verifyJWT, async (req, res) => {
     res.send(req.admin);
 })
+
+router.get("/", async (req, res, next) => {
+    logger.info("Reading all documents from collection 'users'.");
+
+    try {
+        const documents = await User.find();
+        res.status(200).send(documents);
+    }
+    catch (err) {
+        logger.error(err.message);
+        res.status(503).send(err);
+    }
+});
 
 async function generateUserId() {
     const collectionName = "userCounter";

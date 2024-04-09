@@ -143,10 +143,12 @@
 
 .vehicles-table th,
 .vehicles-table td {
+    max-height: calc(5em + 1em);
     padding: 0.5em 0;
     font-weight: 100;
     font-size: 15px;
     text-align: center;
+    white-space: pre-wrap;
 }
 
 .vehicles-table thead {

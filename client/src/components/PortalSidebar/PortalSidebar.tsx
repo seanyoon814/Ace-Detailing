@@ -80,6 +80,7 @@ function PortalSidebar({ page, setPage, setSubPage }: { page: string, setPage: F
                 {
                     browseItems.map(item =>
                         <button
+                            key={item}
                             className={page.includes(item) ? "selected" : ""}
                             onClick = {() => updatePage(item)}
                         >
@@ -91,6 +92,7 @@ function PortalSidebar({ page, setPage, setSubPage }: { page: string, setPage: F
                 {
                     adminItems.map(item =>
                         <button
+                            key={item}
                             className={page.includes(item) ? "selected adminItems" : "adminItems"}
                             onClick = { () => {
                                 updatePage(item);

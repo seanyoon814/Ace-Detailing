@@ -37,7 +37,7 @@ function PortalVehicles({ setPage } : { setPage: Function }) {
         const containerStyle = getComputedStyle(container);
         const containerEm = parseFloat(containerStyle.fontSize);
         
-        const tableHeight = parseFloat(containerStyle.height) - 3 * containerEm;
+        const tableHeight = parseFloat(containerStyle.height) - 3.05 * containerEm;
         const pageSize = Math.floor((tableHeight - 2 * containerEm) / (6 * containerEm));
         
         setPagination({
@@ -104,6 +104,7 @@ function PortalVehicles({ setPage } : { setPage: Function }) {
         getCoreRowModel: getCoreRowModel(),
         getFilteredRowModel: getFilteredRowModel(),
         getPaginationRowModel: getPaginationRowModel(),
+        getSortedRowModel: getSortedRowModel(),
         onPaginationChange: setPagination,
         state: {
             pagination,
