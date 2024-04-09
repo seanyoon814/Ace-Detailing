@@ -21,7 +21,7 @@ import { useGetDataQuery} from "../../features/auth/authApiSlice";
 import useAuth from '../../hooks/useAuth';
 const { apiUrl } = backend;
 
-function PortalVehicles() {
+function PortalVehicles({ setPage } : { setPage: Function }) {
     const navigate = useNavigate();
     const {admin,id} = useAuth();
     const [data, setData] = useState([]);
@@ -172,11 +172,15 @@ function PortalVehicles() {
         // getData(setData);
     }, [isSuccess, isLoading, isError, vehicleData, vehicleErrmsg]);
 
+    function setForm() {
+        setPage("Vehicles-Create");
+    }
+
     return (
         <>
             <div>
                 <h3>Vehicles</h3>
-                <button>CREATE NEW</button>
+                <button onClick={setForm}>CREATE NEW</button>
             </div>
             <form className="vehicles-filter" onSubmit={(e) => applyFilter(e)}>
                 <div>
