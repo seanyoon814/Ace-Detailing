@@ -34,6 +34,25 @@ function AboutSection() {
         setDetailGarage(true);
     }
 
+    const redirect = (url:string) => {
+        switch(url){
+            case 'services':
+                window.location.href = '/services';
+                break;
+            case 'locations':
+                window.location.href = '/maps';
+                break;
+            case 'blog':
+                window.location.href = '/blog';
+                break;
+            case 'faq':
+                window.location.href = '/faq';
+                break;
+            default:
+                window.location.href = '/';
+                break;
+        }
+    }
     return (
     <div className='container-fluid' style={{ backgroundColor: "black" }}>
         <div className='row justify-content-center' style={{marginTop:'5vh'}}>
@@ -144,30 +163,30 @@ function AboutSection() {
         <div className='row justify-content-center'>
         <div className="col-6 mt-5" style={{padding:'0'}}>
                 <img className="panelImg" src={car1} alt="Card image cap"></img>
-                <div className="text-overlay">
+                <div className="text-overlay" onClick={() => redirect('services')}>
                     <h1 className="header garmond">SERVICES</h1>
-                    <p className='paragraph-noanim instrument-sans'><i>Discover More <i className="fa-solid fa-circle-arrow-right"></i></i></p>
+                    <p className='paragraph instrument-sans fade-right'><i>Discover More <i className="fa-solid fa-circle-arrow-right"></i></i></p>
                 </div>
             </div>
             <div className="col-6 mt-5" style={{padding:'0'}}>
                 <img className="panelImg" src={car2} alt="Card image cap"></img>
-                <div className="text-overlay">
-                        <h1 className="header garmond">PRODUCTS</h1>
-                        <p className='paragraph-noanim instrument-sans'><i>Discover More <i className="fa-solid fa-circle-arrow-right"></i></i></p>
+                <div className="text-overlay" onClick={() => redirect('locations')}>
+                        <h1 className="header garmond">LOCATIONS</h1>
+                        <p className='paragraph instrument-sans fade-right'><i>Discover More <i className="fa-solid fa-circle-arrow-right"></i></i></p>
                     </div>
             </div>
             <div className="col-6" style={{padding:'0'}}>
                 <img className="panelImg" src={toyota} alt="Card image cap"></img>
-                <div className="text-overlay">
+                <div className="text-overlay" onClick={() => redirect('blog')}>
                         <h1 className="header garmond">USER BLOG</h1>
-                        <p className='paragraph-noanim instrument-sans'><i>Discover More <i className="fa-solid fa-circle-arrow-right"></i></i></p>
+                        <p className='paragraph instrument-sans fade-right'><i>Discover More <i className="fa-solid fa-circle-arrow-right"></i></i></p>
                     </div>
             </div>
             <div className="col-6" style={{padding:'0'}}>
                 <img className="panelImg" src={car3} alt="Card image cap"></img>
-                <div className="text-overlay">
+                <div className="text-overlay" onClick={() => redirect('faq')}>
                         <h1 className="header garmond">FAQs</h1>
-                        <p className='paragraph-noanim instrument-sans'><i>Discover More <i className="fa-solid fa-circle-arrow-right"></i></i></p>
+                        <p className='paragraph instrument-sans fade-right'><i>Discover More <i className="fa-solid fa-circle-arrow-right"></i></i></p>
                     </div>
             </div>
         </div>

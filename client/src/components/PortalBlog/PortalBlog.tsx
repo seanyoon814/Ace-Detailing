@@ -119,33 +119,33 @@ function BlogForm() {
     
     return (
             <div className="row justify-content-center" style={{marginTop:'10vh'}}>
-                <div className="admin-containers col-4 pt-3 pb-3" style={{background:'#2b2c2e', borderRadius:'20px'}}>
+                <div className="admin-containers col-7 pt-3 pb-3" style={{background:'#2b2c2e', borderRadius:'20px'}}>
                     <h1 className="paragraph-noanim instrument-sans">Add a Blog Post</h1>
                     <form onSubmit={addBlogPost} encType="multipart/form-data">
-                        <label htmlFor="title">
-                            Title:<br/> <textarea name="title" placeholder="Enter title.." />
+                        <label htmlFor="title" className="imageField">
+                            Title:<br/> <textarea className="imageField" name="title" placeholder="Enter title.." />
                         </label>
                         <br />
-                        <label htmlFor="description">
+                        <label htmlFor="description" className="imageField">
                             Description:<br/> <textarea className="imageField" name="description" placeholder="Enter description.."/>
                         </label>
                         <br />
-                        <label htmlFor="image">
+                        <label htmlFor="image" className="imageField">
                             Image:<br/> <input name="image" type="file" accept="image/*" />
                         </label>
                         <br/>
                         <button className="btn btn-danger"type="submit">Submit</button>
                     </form>
                 </div>
-                <div className="col-4 pt-3 pb-3 ml-3" style={{background:'#2b2c2e', borderRadius:'20px'}}>
+                <div className="col-7 pt-3 pb-3 mt-5" style={{background:'#2b2c2e', borderRadius:'20px'}}>
                     <h1 className="paragraph-noanim instrument-sans">Delete a Blog Post</h1>
                     <form onSubmit={deleteBlogPost} encType="multipart/form-data">
-                        <select name="postId">
+                        <select name="postId" style={{width: '100%'}}>
                             {posts.map(post => (
                                 <option key={post._id} value={post._id}>{post.title}</option>
                             ))}
                         </select><br/>
-                        <button type="submit" className="btn btn-danger">Delete</button>
+                        <button type="submit" className="btn btn-danger mt-2">Delete</button>
                     </form>
                 </div>
             </div>
