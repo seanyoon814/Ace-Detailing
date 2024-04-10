@@ -1,0 +1,15 @@
+#PortalViewReport {
+    background-color: #2b2c2e;
+    border-radius: 32px;
+    display: inline-block;
+    height: 75%;
+    padding: 16px;
+}
+
+#PortalViewReport > span {
+    font-size: 16px;
+}
+
+#PortalViewReport > section {
+    background-color: #2b2c2e;
+}

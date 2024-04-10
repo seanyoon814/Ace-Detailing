@@ -59,6 +59,20 @@ router.get("/", async (req, res, next) => {
     }
 });
 
+router.get("/:_id", async (req, res) => {
+    const { _id } = req.params;
+    
+    try {
+        const user = await User.findBy_id(_id);
+        res.status(200).send(user);
+    }
+    catch (err) {
+        logger.error(err.message);
+        res.status(503).send(err);
+    }
+
+})
+
 async function generateUserId() {
     const collectionName = "userCounter";
     const collection = mongoose.connection.collection(collectionName);

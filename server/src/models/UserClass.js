@@ -59,4 +59,8 @@ module.exports = class User {
     static async findById(id) {
         return newUser.findOne({ id });
     } 
+
+    static async findBy_id(_id) {
+        return newUser.findOne({ _id });
+    }
 }

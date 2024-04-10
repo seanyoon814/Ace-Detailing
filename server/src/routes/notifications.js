@@ -29,4 +29,18 @@ router.get("/reports", async (req, res) => {
     }
 })
 
+router.get("/reports/:userId", async (req, res) => {
+    const { userId } = req.params;
+    logger.info("Reading all documents from collection 'notifications'.");
+
+    try {
+        const documents = await Notification.find({ type : "Report", userId });
+        res.status(200).send(documents);
+    }
+    catch (err) {
+        logger.error(err.message);
+        res.status(503).send(err);
+    }
+})
+
 module.exports = router;

@@ -12,16 +12,17 @@ const token = selectCurrentToken(store.getState());
 function PortalNotifications( { setPage, setReportId } : { setPage: Function, setReportId: Function }) {
 
     const user = useAuth();
+    var loaded = false;
 
-    useEffect(() => {
-        if (user.admin) {
-            getReports();
-        }
+    useEffect(() => { if (loaded) return;
+
+        getReports();
+        loaded = true;
+
     }, [])
 
     async function getReports() {
-        const result = await axios.get(`${apiUrl}/notifications/reports`, { headers : { Authorization : `Bearer ${token}`}});
-        console.log(result.data);
+        const result = await axios.get(`${apiUrl}/notifications/reports/${user.id}`, { headers : { Authorization : `Bearer ${token}`}});
         var div = document.getElementById("PortalNotifications");
         for (var notification of result.data) {
             var button = document.createElement("button");

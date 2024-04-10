@@ -70,4 +70,17 @@ router.get("/:id", async (req, res, next) => {
     }
 });
 
+// change existing report
+router.post("/change", async (req, res) => {
+    const report = req.body;
+    
+    try {
+        Report.findOneAndUpdate({ _id : report._id }, report, { new : true });
+        res.status(204).send();
+    } catch (err) {
+        logger.error(err.message);
+        res.status(400).send(err);
+    }
+})
+
 module.exports = router;
