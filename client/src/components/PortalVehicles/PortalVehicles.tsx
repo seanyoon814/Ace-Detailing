@@ -85,7 +85,7 @@ function PortalVehicles({ setPage } : { setPage: Function }) {
         },
     });
     
-    const path = admin ? "/vehicles/" : `/vehicles/${id}`;
+    const path = admin ? "/vehicles/" : `/vehicles?userId=${id}`;
     const {
         data: vehicleData,
         isSuccess,

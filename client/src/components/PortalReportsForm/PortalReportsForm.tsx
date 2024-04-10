@@ -5,11 +5,10 @@ import backend from "../../constants/backend";
 import { useEffect, useState } from "react";
 import { FileUploader } from "react-drag-drop-files";
 import { selectCurrentToken } from "../../features/auth/authSlice";
-import { useCheckTokenMutation } from "../../features/auth/authApiSlice";
+import { useCheckTokenMutation, useSendLogoutMutation } from "../../features/auth/authApiSlice";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
-import { useSendLogoutMutation } from "../../features/auth/authApiSlice"; 
 import { store } from "../../store";
 
 const { apiUrl } = backend;
@@ -20,7 +19,7 @@ function PortalReportsForm() {
 
     const token = useSelector(selectCurrentToken);
     const [sendCheckToken] = useCheckTokenMutation();
-    const [sendLogout, { isError }] = useSendLogoutMutation();
+    const [sendLogout] = useSendLogoutMutation();
     const maxRetryAttempts = 1;
 
     const [user, setUser] = useState("");
@@ -29,7 +28,7 @@ function PortalReportsForm() {
     const [services, setServices] = useState(1);
 
     const [files, setFiles] = useState<File[]>([]);
-
+    
     function submitForm(e: React.FormEvent<HTMLFormElement>) {
         e.preventDefault();
 
@@ -43,21 +42,7 @@ function PortalReportsForm() {
             return;
         }
 
-        authRequest(
-            formData,
-            token,
-            0, 
-            async (formData, token) => {
-                await axios.post(`${apiUrl}/reports`, formData, {
-                    headers:{
-                        'Authorization': `Bearer ${token}`,
-                        'Content-Type': 'multipart/form-data',
-                    }
-                });
-
-                toast.success("Report added successfully.");
-            }
-        );
+        authCheckBeforePost(formData, token, 0);
     }
 
     function getServices(): any[] {
@@ -97,52 +82,38 @@ function PortalReportsForm() {
         setFiles([...files.slice(0, index), ...files.slice(index + 1, files.length)]);
     }
 
+    // Updates users List
     useEffect(() => {
-        authRequest(
-            null,
-            token,
-            0, 
-            async (formData, token) => {
-                const res = await axios.get(`${apiUrl}/user/`, {
-                    headers: {
-                        'Authorization': `Bearer ${token}`,
-                    }
-                });
-
-                setUsers(res.data);
-                setUser(res.data[0]._id);
-            }
-        );
+        const res = authCheckBeforeRequest("user", token, 0);
     }, []);
 
+    // Gets vehicles for selected user
     useEffect(() => {
         if (!user) return;
-
-        authRequest(
-            null,
-            token,
-            0, 
-            async (formData, token) => {
-                const res = await axios.get(`${apiUrl}/vehicles?userId=${user}`, {
-                    headers: {
-                        'Authorization': `Bearer ${token}`,
-                    }
-                });
-
-                setVehicles(res.data);
-            }
-        );
+        authCheckBeforeRequest(`vehicles?userId=${user}`, token, 0);
     }, [user]);
 
-    async function authRequest(formData: FormData , token: string, retries: number, cb: Promise<boolean>) {
+
+    async function authCheckBeforeRequest(path:string , token: string, retries: number){
         try {
             await sendCheckToken(token);
-            cb(formData, token);
+            const res = await axios.get(`${apiUrl}/${path}`, {
+                headers: {
+                    'Authorization': `Bearer ${token}`,
+                }
+            });
+            if(path === "user"){
+                setUsers(res.data);
+                setUser(res.data[0]._id);
+            } else {
+                setVehicles(res.data);
+            
+            }
         }
         catch (error) {
             if (error.response && error.response.status === 403 && retries < maxRetryAttempts){
                 const newToken = selectCurrentToken(store.getState());
-                authRequest(formData, newToken, retries + 1, cb);
+                authCheckBeforeRequest(path, newToken, retries + 1);
             } else {
                 toast.error("Login Expired. Redirecting to login page...")
                 sendLogout();
@@ -150,6 +121,31 @@ function PortalReportsForm() {
             }
         }
     }
+    async function authCheckBeforePost(formData:FormData , token: string, retries: number){
+        try{
+            await sendCheckToken(token);
+            
+            await axios.post(`${apiUrl}/reports`, formData, {
+                headers:{
+                    'Authorization': `Bearer ${token}`,
+                    'Content-Type': 'multipart/form-data',
+                }
+            });
+
+            toast.success("Report added successfully.");
+        } catch (error){
+            if(error.response && error.response.status === 403 && retries < maxRetryAttempts){
+                const newToken = selectCurrentToken(store.getState());
+                authCheckBeforePost(formData, newToken, retries+1);
+            } else {
+                console.log("Error:", error);
+                toast.error("Login Expired. Redirecting to login page...")
+                sendLogout();
+                navigate('/user');
+            }
+        }
+    }
+    
 
     return (
         <>

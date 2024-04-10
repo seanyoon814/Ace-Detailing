@@ -27,11 +27,10 @@ const Prefetch = () => {
         }
         if(admin) {
             const vehicles = store.dispatch(authApiSlice.util.prefetch('getData','/vehicles',{force:true}));
-            // const check = store.dispatch(authApiSlice.util.fetch('checkToken','/check/checkToken',{force:true}));
         }
-        //  else {
-        //     const vehicles = store.dispatch(authApiSlice.util.prefetch('getData',`/vehicles/${id}`,{force:true}));
-        // }
+         else {
+            const vehicles = store.dispatch(authApiSlice.util.prefetch('getData',`/vehicles?userId=${id}`,{force:true}));
+        }
     },[token])
 
 

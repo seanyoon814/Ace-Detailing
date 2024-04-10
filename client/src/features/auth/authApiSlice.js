@@ -23,7 +23,6 @@ export const authApiSlice = apiSlice.injectEndpoints({
             async onQueryStarted(arg, {dispatch, queryFulfilled}){
                 try{
                     const {data} = await queryFulfilled;
-                    console.log("Displaying:", {data});
                     await dispatch(logOut());
                     setTimeout(() => {
                         dispatch(apiSlice.util.resetApiState());
@@ -71,7 +70,6 @@ export const authApiSlice = apiSlice.injectEndpoints({
             }),
             keepUnusedDataFor: 5,
             transformResponse: (response) => {
-                // console.log("FROM AUTHAPISLICE:", response)
                 const data = response.map((v) => {
                     return v;
                 })
