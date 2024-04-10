@@ -57,7 +57,7 @@ function MapSection() {
               <TileLayer
                 url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
               />
-              <Marker position={[49.13903569586126, -122.84474168281632]}>
+              <Marker position={[49.09861553187082, -122.71152008890876]}>
                 <Popup>
                   Detail Garage Surrey
                 </Popup>
