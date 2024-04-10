@@ -627,3 +627,235 @@
 {"label":"server.js","level":"info","message":"Saving document to collection 'reports'.","metadata":{},"timestamp":"2024-04-09 14:37:20"}
 {"label":"server.js","level":"info","message":"Reading all documents from collection 'blog'.","metadata":{},"timestamp":"2024-04-09 14:37:30"}
 {"label":"server.js","level":"info","message":"Reading all documents from collection 'blog'.","metadata":{},"timestamp":"2024-04-09 14:37:31"}
+{"label":"server.js","level":"info","message":"Connecting to MongoDB cluster.","metadata":{},"timestamp":"2024-04-09 19:45:32"}
+{"label":"server.js","level":"info","message":"Testing Cloud Storage connection.","metadata":{},"timestamp":"2024-04-09 19:45:32"}
+{"label":"server.js","level":"info","message":"Server is running on port 5000.","metadata":{},"timestamp":"2024-04-09 19:45:32"}
+{"label":"server.js","level":"info","message":"Cloud Storage connection confirmed.","metadata":{},"timestamp":"2024-04-09 19:45:33"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'vehicles'.","metadata":{},"timestamp":"2024-04-09 19:47:52"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'reports'.","metadata":{},"timestamp":"2024-04-09 19:47:54"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'blog'.","metadata":{},"timestamp":"2024-04-09 19:47:54"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'blog'.","metadata":{},"timestamp":"2024-04-09 19:47:54"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'blog'.","metadata":{},"timestamp":"2024-04-09 19:48:09"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'blog'.","metadata":{},"timestamp":"2024-04-09 19:48:18"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'blog'.","metadata":{},"timestamp":"2024-04-09 19:48:23"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'blog'.","metadata":{},"timestamp":"2024-04-09 19:48:38"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'blog'.","metadata":{},"timestamp":"2024-04-09 19:49:11"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'blog'.","metadata":{},"timestamp":"2024-04-09 19:49:45"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'vehicles'.","metadata":{},"timestamp":"2024-04-09 19:50:55"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'reports'.","metadata":{},"timestamp":"2024-04-09 19:50:56"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'blog'.","metadata":{},"timestamp":"2024-04-09 19:50:58"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'blog'.","metadata":{},"timestamp":"2024-04-09 19:50:58"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'blog'.","metadata":{},"timestamp":"2024-04-09 19:51:36"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'blog'.","metadata":{},"timestamp":"2024-04-09 19:51:46"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'blog'.","metadata":{},"timestamp":"2024-04-09 19:51:50"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'blog'.","metadata":{},"timestamp":"2024-04-09 19:51:58"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'blog'.","metadata":{},"timestamp":"2024-04-09 19:52:03"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'blog'.","metadata":{},"timestamp":"2024-04-09 19:52:15"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'blog'.","metadata":{},"timestamp":"2024-04-09 19:52:22"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'blog'.","metadata":{},"timestamp":"2024-04-09 19:52:30"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'blog'.","metadata":{},"timestamp":"2024-04-09 19:52:45"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'blog'.","metadata":{},"timestamp":"2024-04-09 19:52:50"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'blog'.","metadata":{},"timestamp":"2024-04-09 19:53:02"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'blog'.","metadata":{},"timestamp":"2024-04-09 19:53:09"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'blog'.","metadata":{},"timestamp":"2024-04-09 20:02:11"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'blog'.","metadata":{},"timestamp":"2024-04-09 20:02:11"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'blog'.","metadata":{},"timestamp":"2024-04-09 20:02:52"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'blog'.","metadata":{},"timestamp":"2024-04-09 20:02:52"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'vehicles'.","metadata":{},"timestamp":"2024-04-09 20:09:34"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'vehicles'.","metadata":{},"timestamp":"2024-04-09 20:09:36"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'users'.","metadata":{},"timestamp":"2024-04-09 20:09:38"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'users'.","metadata":{},"timestamp":"2024-04-09 20:09:38"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'vehicles'.","metadata":{},"timestamp":"2024-04-09 20:09:40"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'vehicles'.","metadata":{},"timestamp":"2024-04-09 20:09:40"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'reports'.","metadata":{},"timestamp":"2024-04-09 20:09:43"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'reports'.","metadata":{},"timestamp":"2024-04-09 20:09:48"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'reports'.","metadata":{},"timestamp":"2024-04-09 20:09:53"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'reports'.","metadata":{},"timestamp":"2024-04-09 20:09:56"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'blog'.","metadata":{},"timestamp":"2024-04-09 20:09:58"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'blog'.","metadata":{},"timestamp":"2024-04-09 20:09:58"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'reports'.","metadata":{},"timestamp":"2024-04-09 20:10:11"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'blog'.","metadata":{},"timestamp":"2024-04-09 20:10:11"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'blog'.","metadata":{},"timestamp":"2024-04-09 20:10:11"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'reports'.","metadata":{},"timestamp":"2024-04-09 20:10:13"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'vehicles'.","metadata":{},"timestamp":"2024-04-09 20:10:14"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'vehicles'.","metadata":{},"timestamp":"2024-04-09 20:10:14"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'vehicles'.","metadata":{},"timestamp":"2024-04-09 20:10:14"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'vehicles'.","metadata":{},"timestamp":"2024-04-09 20:10:19"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'vehicles'.","metadata":{},"timestamp":"2024-04-09 20:10:24"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'vehicles'.","metadata":{},"timestamp":"2024-04-09 20:10:29"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'reports'.","metadata":{},"timestamp":"2024-04-09 20:10:29"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'reports'.","metadata":{},"timestamp":"2024-04-09 20:10:34"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'reports'.","metadata":{},"timestamp":"2024-04-09 20:10:39"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'reports'.","metadata":{},"timestamp":"2024-04-09 20:10:44"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'reports'.","metadata":{},"timestamp":"2024-04-09 20:10:49"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'reports'.","metadata":{},"timestamp":"2024-04-09 20:10:54"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'reports'.","metadata":{},"timestamp":"2024-04-09 20:10:59"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'reports'.","metadata":{},"timestamp":"2024-04-09 20:11:04"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'reports'.","metadata":{},"timestamp":"2024-04-09 20:11:10"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'reports'.","metadata":{},"timestamp":"2024-04-09 20:11:15"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'reports'.","metadata":{},"timestamp":"2024-04-09 20:11:20"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'reports'.","metadata":{},"timestamp":"2024-04-09 20:11:25"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'reports'.","metadata":{},"timestamp":"2024-04-09 20:11:30"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'reports'.","metadata":{},"timestamp":"2024-04-09 20:11:35"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'reports'.","metadata":{},"timestamp":"2024-04-09 20:11:36"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'reports'.","metadata":{},"timestamp":"2024-04-09 20:11:41"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'reports'.","metadata":{},"timestamp":"2024-04-09 20:11:46"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'reports'.","metadata":{},"timestamp":"2024-04-09 20:11:51"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'reports'.","metadata":{},"timestamp":"2024-04-09 20:11:56"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'reports'.","metadata":{},"timestamp":"2024-04-09 20:12:01"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'reports'.","metadata":{},"timestamp":"2024-04-09 20:12:06"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'reports'.","metadata":{},"timestamp":"2024-04-09 20:12:11"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'reports'.","metadata":{},"timestamp":"2024-04-09 20:12:16"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'reports'.","metadata":{},"timestamp":"2024-04-09 20:12:21"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'reports'.","metadata":{},"timestamp":"2024-04-09 20:12:26"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'reports'.","metadata":{},"timestamp":"2024-04-09 20:12:31"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'reports'.","metadata":{},"timestamp":"2024-04-09 20:12:36"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'reports'.","metadata":{},"timestamp":"2024-04-09 20:12:41"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'reports'.","metadata":{},"timestamp":"2024-04-09 20:12:46"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'reports'.","metadata":{},"timestamp":"2024-04-09 20:12:52"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'reports'.","metadata":{},"timestamp":"2024-04-09 20:12:58"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'reports'.","metadata":{},"timestamp":"2024-04-09 20:13:04"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'reports'.","metadata":{},"timestamp":"2024-04-09 20:13:10"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'reports'.","metadata":{},"timestamp":"2024-04-09 20:13:16"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'reports'.","metadata":{},"timestamp":"2024-04-09 20:13:22"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'blog'.","metadata":{},"timestamp":"2024-04-09 20:13:23"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'blog'.","metadata":{},"timestamp":"2024-04-09 20:13:23"}
+{"label":"server.js","level":"info","message":"Saving document to collection 'reports'.","metadata":{},"timestamp":"2024-04-09 20:13:31"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'vehicles'.","metadata":{},"timestamp":"2024-04-09 20:14:00"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'blog'.","metadata":{},"timestamp":"2024-04-09 20:14:03"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'blog'.","metadata":{},"timestamp":"2024-04-09 20:14:03"}
+{"label":"server.js","level":"info","message":"Connecting to MongoDB cluster.","metadata":{},"timestamp":"2024-04-09 20:16:20"}
+{"label":"server.js","level":"info","message":"Testing Cloud Storage connection.","metadata":{},"timestamp":"2024-04-09 20:16:20"}
+{"label":"server.js","level":"info","message":"Server is running on port 5000.","metadata":{},"timestamp":"2024-04-09 20:16:21"}
+{"label":"server.js","level":"info","message":"Cloud Storage connection confirmed.","metadata":{},"timestamp":"2024-04-09 20:16:21"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'vehicles'.","metadata":{},"timestamp":"2024-04-09 20:16:27"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'blog'.","metadata":{},"timestamp":"2024-04-09 20:16:31"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'blog'.","metadata":{},"timestamp":"2024-04-09 20:16:31"}
+{"label":"server.js","level":"debug","message":"publicUrl: https://storage.googleapis.com/ace-detailing-testing/1712718995756_logo.png.png","metadata":{},"timestamp":"2024-04-09 20:16:36"}
+{"label":"server.js","level":"info","message":"Saving document to collection 'reports'.","metadata":{},"timestamp":"2024-04-09 20:16:36"}
+{"label":"server.js","level":"info","message":"Saved document with id '661604946aaabd002ba17be1' to collection 'reports'.","metadata":{},"timestamp":"2024-04-09 20:16:36"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'vehicles'.","metadata":{},"timestamp":"2024-04-09 20:16:38"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'blog'.","metadata":{},"timestamp":"2024-04-09 20:16:39"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'blog'.","metadata":{},"timestamp":"2024-04-09 20:16:39"}
+{"label":"server.js","level":"info","message":"Saving document to collection 'reports'.","metadata":{},"timestamp":"2024-04-09 20:16:41"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'vehicles'.","metadata":{},"timestamp":"2024-04-09 20:16:47"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'blog'.","metadata":{},"timestamp":"2024-04-09 20:16:49"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'blog'.","metadata":{},"timestamp":"2024-04-09 20:16:49"}
+{"label":"server.js","level":"info","message":"Connecting to MongoDB cluster.","metadata":{},"timestamp":"2024-04-09 20:17:28"}
+{"label":"server.js","level":"info","message":"Testing Cloud Storage connection.","metadata":{},"timestamp":"2024-04-09 20:17:28"}
+{"label":"server.js","level":"info","message":"Server is running on port 5000.","metadata":{},"timestamp":"2024-04-09 20:17:28"}
+{"label":"server.js","level":"info","message":"Cloud Storage connection confirmed.","metadata":{},"timestamp":"2024-04-09 20:17:28"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'vehicles'.","metadata":{},"timestamp":"2024-04-09 20:17:31"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'blog'.","metadata":{},"timestamp":"2024-04-09 20:17:34"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'blog'.","metadata":{},"timestamp":"2024-04-09 20:17:34"}
+{"label":"server.js","level":"info","message":"Saving document to collection 'reports'.","metadata":{},"timestamp":"2024-04-09 20:17:36"}
+{"label":"server.js","level":"info","message":"Saved document with id '661604d033f4b3d0cdfeabbb' to collection 'reports'.","metadata":{},"timestamp":"2024-04-09 20:17:36"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'vehicles'.","metadata":{},"timestamp":"2024-04-09 20:17:41"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'blog'.","metadata":{},"timestamp":"2024-04-09 20:17:45"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'blog'.","metadata":{},"timestamp":"2024-04-09 20:17:46"}
+{"label":"server.js","level":"info","message":"Saving document to collection 'reports'.","metadata":{},"timestamp":"2024-04-09 20:17:47"}
+{"label":"server.js","level":"info","message":"Connecting to MongoDB cluster.","metadata":{},"timestamp":"2024-04-09 20:18:33"}
+{"label":"server.js","level":"info","message":"Testing Cloud Storage connection.","metadata":{},"timestamp":"2024-04-09 20:18:33"}
+{"label":"server.js","level":"info","message":"Server is running on port 5000.","metadata":{},"timestamp":"2024-04-09 20:18:33"}
+{"label":"server.js","level":"info","message":"Cloud Storage connection confirmed.","metadata":{},"timestamp":"2024-04-09 20:18:33"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'vehicles'.","metadata":{},"timestamp":"2024-04-09 20:18:37"}
+{"label":"server.js","level":"info","message":"Saving document to collection 'reports'.","metadata":{},"timestamp":"2024-04-09 20:18:37"}
+{"label":"server.js","level":"info","message":"Saved document with id '6616050dd30c53d36e0b8690' to collection 'reports'.","metadata":{},"timestamp":"2024-04-09 20:18:37"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'vehicles'.","metadata":{},"timestamp":"2024-04-09 20:18:40"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'blog'.","metadata":{},"timestamp":"2024-04-09 20:18:41"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'blog'.","metadata":{},"timestamp":"2024-04-09 20:18:41"}
+{"label":"server.js","level":"info","message":"Saving document to collection 'reports'.","metadata":{},"timestamp":"2024-04-09 20:18:43"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'blog'.","metadata":{},"timestamp":"2024-04-09 20:18:55"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'blog'.","metadata":{},"timestamp":"2024-04-09 20:20:54"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'blog'.","metadata":{},"timestamp":"2024-04-09 20:21:08"}
+{"label":"server.js","level":"info","message":"Connecting to MongoDB cluster.","metadata":{},"timestamp":"2024-04-09 20:21:10"}
+{"label":"server.js","level":"info","message":"Testing Cloud Storage connection.","metadata":{},"timestamp":"2024-04-09 20:21:10"}
+{"label":"server.js","level":"info","message":"Server is running on port 5000.","metadata":{},"timestamp":"2024-04-09 20:21:10"}
+{"label":"server.js","level":"info","message":"Cloud Storage connection confirmed.","metadata":{},"timestamp":"2024-04-09 20:21:10"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'vehicles'.","metadata":{},"timestamp":"2024-04-09 20:21:15"}
+{"label":"server.js","level":"info","message":"Saving document to collection 'reports'.","metadata":{},"timestamp":"2024-04-09 20:21:15"}
+{"label":"server.js","level":"info","message":"Saved document with id '661605ab569cfa0e597dc5c1' to collection 'reports'.","metadata":{},"timestamp":"2024-04-09 20:21:15"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'vehicles'.","metadata":{},"timestamp":"2024-04-09 20:21:18"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'blog'.","metadata":{},"timestamp":"2024-04-09 20:21:21"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'blog'.","metadata":{},"timestamp":"2024-04-09 20:21:21"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'blog'.","metadata":{},"timestamp":"2024-04-09 20:21:32"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'blog'.","metadata":{},"timestamp":"2024-04-09 20:21:39"}
+{"label":"server.js","level":"info","message":"Connecting to MongoDB cluster.","metadata":{},"timestamp":"2024-04-09 20:22:02"}
+{"label":"server.js","level":"info","message":"Testing Cloud Storage connection.","metadata":{},"timestamp":"2024-04-09 20:22:02"}
+{"label":"server.js","level":"info","message":"Server is running on port 5000.","metadata":{},"timestamp":"2024-04-09 20:22:02"}
+{"label":"server.js","level":"info","message":"Cloud Storage connection confirmed.","metadata":{},"timestamp":"2024-04-09 20:22:02"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'vehicles'.","metadata":{},"timestamp":"2024-04-09 20:22:07"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'blog'.","metadata":{},"timestamp":"2024-04-09 20:22:10"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'blog'.","metadata":{},"timestamp":"2024-04-09 20:22:10"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'blog'.","metadata":{},"timestamp":"2024-04-09 20:22:37"}
+{"label":"server.js","level":"info","message":"Connecting to MongoDB cluster.","metadata":{},"timestamp":"2024-04-09 20:22:54"}
+{"label":"server.js","level":"info","message":"Testing Cloud Storage connection.","metadata":{},"timestamp":"2024-04-09 20:22:54"}
+{"label":"server.js","level":"info","message":"Server is running on port 5000.","metadata":{},"timestamp":"2024-04-09 20:22:54"}
+{"label":"server.js","level":"info","message":"Cloud Storage connection confirmed.","metadata":{},"timestamp":"2024-04-09 20:22:55"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'vehicles'.","metadata":{},"timestamp":"2024-04-09 20:22:59"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'blog'.","metadata":{},"timestamp":"2024-04-09 20:23:01"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'blog'.","metadata":{},"timestamp":"2024-04-09 20:23:01"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'blog'.","metadata":{},"timestamp":"2024-04-09 20:23:08"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'blog'.","metadata":{},"timestamp":"2024-04-09 20:23:09"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'vehicles'.","metadata":{},"timestamp":"2024-04-09 20:23:12"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'blog'.","metadata":{},"timestamp":"2024-04-09 20:23:13"}
+{"label":"server.js","level":"info","message":"Connecting to MongoDB cluster.","metadata":{},"timestamp":"2024-04-09 20:23:34"}
+{"label":"server.js","level":"info","message":"Testing Cloud Storage connection.","metadata":{},"timestamp":"2024-04-09 20:23:35"}
+{"label":"server.js","level":"info","message":"Server is running on port 5000.","metadata":{},"timestamp":"2024-04-09 20:23:35"}
+{"label":"server.js","level":"info","message":"Cloud Storage connection confirmed.","metadata":{},"timestamp":"2024-04-09 20:23:35"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'vehicles'.","metadata":{},"timestamp":"2024-04-09 20:23:39"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'blog'.","metadata":{},"timestamp":"2024-04-09 20:23:39"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'blog'.","metadata":{},"timestamp":"2024-04-09 20:23:39"}
+{"label":"server.js","level":"info","message":"Saving document to collection 'reports'.","metadata":{},"timestamp":"2024-04-09 20:23:42"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'blog'.","metadata":{},"timestamp":"2024-04-09 20:23:47"}
+{"label":"server.js","level":"info","message":"Connecting to MongoDB cluster.","metadata":{},"timestamp":"2024-04-09 20:29:58"}
+{"label":"server.js","level":"info","message":"Testing Cloud Storage connection.","metadata":{},"timestamp":"2024-04-09 20:29:58"}
+{"label":"server.js","level":"info","message":"Server is running on port 5000.","metadata":{},"timestamp":"2024-04-09 20:29:59"}
+{"label":"server.js","level":"info","message":"Cloud Storage connection confirmed.","metadata":{},"timestamp":"2024-04-09 20:29:59"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'vehicles'.","metadata":{},"timestamp":"2024-04-09 20:30:04"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'blog'.","metadata":{},"timestamp":"2024-04-09 20:30:04"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'blog'.","metadata":{},"timestamp":"2024-04-09 20:30:04"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'vehicles'.","metadata":{},"timestamp":"2024-04-09 20:30:08"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'vehicles'.","metadata":{},"timestamp":"2024-04-09 20:30:08"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'blog'.","metadata":{},"timestamp":"2024-04-09 20:30:08"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'blog'.","metadata":{},"timestamp":"2024-04-09 20:30:09"}
+{"label":"server.js","level":"info","message":"Saving document to collection 'reports'.","metadata":{},"timestamp":"2024-04-09 20:30:11"}
+{"label":"server.js","level":"info","message":"Saved document with id '661607c3f4a1e1edfe4769c6' to collection 'reports'.","metadata":{},"timestamp":"2024-04-09 20:30:11"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'vehicles'.","metadata":{},"timestamp":"2024-04-09 20:30:14"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'blog'.","metadata":{},"timestamp":"2024-04-09 20:30:14"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'blog'.","metadata":{},"timestamp":"2024-04-09 20:30:14"}
+{"label":"server.js","level":"info","message":"Saving document to collection 'reports'.","metadata":{},"timestamp":"2024-04-09 20:30:16"}
+{"label":"server.js","level":"info","message":"Connecting to MongoDB cluster.","metadata":{},"timestamp":"2024-04-09 20:31:47"}
+{"label":"server.js","level":"info","message":"Testing Cloud Storage connection.","metadata":{},"timestamp":"2024-04-09 20:31:48"}
+{"label":"server.js","level":"info","message":"Server is running on port 5000.","metadata":{},"timestamp":"2024-04-09 20:31:48"}
+{"label":"server.js","level":"info","message":"Cloud Storage connection confirmed.","metadata":{},"timestamp":"2024-04-09 20:31:48"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'vehicles'.","metadata":{},"timestamp":"2024-04-09 20:31:52"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'blog'.","metadata":{},"timestamp":"2024-04-09 20:31:54"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'blog'.","metadata":{},"timestamp":"2024-04-09 20:31:54"}
+{"label":"server.js","level":"info","message":"Saving document to collection 'reports'.","metadata":{},"timestamp":"2024-04-09 20:31:58"}
+{"label":"server.js","level":"info","message":"Saved document with id '6616082e3d69577052946e5d' to collection 'reports'.","metadata":{},"timestamp":"2024-04-09 20:31:58"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'vehicles'.","metadata":{},"timestamp":"2024-04-09 20:32:00"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'blog'.","metadata":{},"timestamp":"2024-04-09 20:32:02"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'blog'.","metadata":{},"timestamp":"2024-04-09 20:32:02"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'blog'.","metadata":{},"timestamp":"2024-04-09 20:32:09"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'blog'.","metadata":{},"timestamp":"2024-04-09 20:32:11"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'vehicles'.","metadata":{},"timestamp":"2024-04-09 20:32:16"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'blog'.","metadata":{},"timestamp":"2024-04-09 20:32:20"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'blog'.","metadata":{},"timestamp":"2024-04-09 20:32:20"}
+{"label":"server.js","level":"info","message":"Saving document to collection 'reports'.","metadata":{},"timestamp":"2024-04-09 20:32:24"}
+{"label":"server.js","level":"info","message":"Saved document with id '661608483d69577052946e6c' to collection 'reports'.","metadata":{},"timestamp":"2024-04-09 20:32:24"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'vehicles'.","metadata":{},"timestamp":"2024-04-09 20:32:28"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'blog'.","metadata":{},"timestamp":"2024-04-09 20:32:31"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'blog'.","metadata":{},"timestamp":"2024-04-09 20:32:31"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'blog'.","metadata":{},"timestamp":"2024-04-09 20:32:40"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'vehicles'.","metadata":{},"timestamp":"2024-04-09 20:34:11"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'vehicles'.","metadata":{},"timestamp":"2024-04-09 20:34:23"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'blog'.","metadata":{},"timestamp":"2024-04-09 20:34:24"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'blog'.","metadata":{},"timestamp":"2024-04-09 20:34:24"}
+{"label":"server.js","level":"info","message":"Saving document to collection 'reports'.","metadata":{},"timestamp":"2024-04-09 20:34:26"}
+{"label":"server.js","level":"info","message":"Saved document with id '661608c23d69577052946e7d' to collection 'reports'.","metadata":{},"timestamp":"2024-04-09 20:34:26"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'vehicles'.","metadata":{},"timestamp":"2024-04-09 20:34:28"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'blog'.","metadata":{},"timestamp":"2024-04-09 20:34:30"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'blog'.","metadata":{},"timestamp":"2024-04-09 20:34:30"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'vehicles'.","metadata":{},"timestamp":"2024-04-09 20:34:35"}
+{"label":"server.js","level":"info","message":"Reading all documents from collection 'blog'.","metadata":{},"timestamp":"2024-04-09 20:34:38"}

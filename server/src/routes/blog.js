@@ -39,10 +39,6 @@ router.delete('/delete/:id',verifyJWT, async (req, res) => {
     try {
         const id = req.params.id;
         const result = await AdminBlog.findByIdAndDelete(id);
-        if (!result) {
-            return res.status(404).send('Document not found');
-        }
-        await result.save();
         console.log(`Document with id ${id} deleted`);
         res.status(200).send('Document deleted successfully');
     } catch (err) {

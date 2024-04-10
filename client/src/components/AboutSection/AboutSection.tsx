@@ -86,24 +86,12 @@ function AboutSection() {
                 <div className="carousel-inner">
                     <div className="carousel-item active">
                         <img src={car1} className="d-block w-100 img-rounded" alt="..."></img>
-                        <div className="carousel-caption d-none d-md-block">
-                            <h5 style={{color:'black'}}>PERFECTION.</h5>
-                            <p style={{color:'black'}}>At our company, perfection is not just a goal; it's our standard</p>
-                        </div>
                     </div>
                     <div className="carousel-item">
                         <img src={car2} className="d-block w-100 img-rounded" alt="..."></img>
-                        <div className="carousel-caption d-none d-md-block">
-                                <h5>Second slide label</h5>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                        </div>
                     </div>
                     <div className="carousel-item">
                         <img src={car3} className="d-block w-100 img-rounded" alt="..."></img>
-                        <div className="carousel-caption d-none d-md-block">
-                                <h5>Second slide label</h5>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                        </div>
                     </div>
                 </div>
                 <a className="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -204,8 +192,6 @@ function AboutSection() {
         {nl272 && <NL272/>}
         {labo && <Labocosmetica/>}
         {detailGarage && <DetailGarage/>}
-        {/* <DetailGarage/>
-        <Labocosmetica/> */}
     </div>
 
     );

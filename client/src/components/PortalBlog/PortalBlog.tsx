@@ -120,8 +120,8 @@ function BlogForm() {
         const id = formData.get('postId');
         // authCheckBeforePost(formData, token, 0,id);
         try {
-            const response = await axios.delete(`${apiUrl}/blog/delete/${id}`, {headers:{'Authorization': `Bearer ${token}`}});
-            console.log(response.data); // Assuming the response contains data
+            await axios.delete(`${apiUrl}/blog/delete/${id}`, {headers:{'Authorization': `Bearer ${token}`}});
+            toast.success("Blog post deleted successfully.");
         } catch (error) {
             console.error('Error deleting blog post:', error);
         }

@@ -76,4 +76,4 @@ setTimeout(() =>{
 
 }, 500);
 
-$('.carousel').carousel();
+// $('.carousel').carousel();
