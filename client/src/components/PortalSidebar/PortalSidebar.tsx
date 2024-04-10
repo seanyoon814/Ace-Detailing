@@ -37,7 +37,7 @@ function PortalSidebar({ page, setPage, setSubPage }: { page: string, setPage: F
     useEffect(() => {
         // if(isMounted) {
             if(admin){
-                console.log(Array.from(document.getElementsByClassName("adminItems")));
+                // console.log(Array.from(document.getElementsByClassName("adminItems")));
                 for (var item of Array.from(document.getElementsByClassName("adminItems"))) {
                     (item as HTMLElement).style.visibility = "visible";
                 }

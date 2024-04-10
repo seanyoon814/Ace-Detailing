@@ -9,6 +9,7 @@ import PortalReports from "../PortalReports/PortalReports";
 import { useState } from "react";
 import PortalReportsForm from "../PortalReportsForm/PortalReportsForm";
 import PortalNotifications from "../PortalNotifications/PortalNotifications";
+import PortalViewReport from "../PortalViewReport/PortalViewReport";
 
 function Portal() {
 
@@ -16,13 +17,14 @@ function Portal() {
     const adminItems = ["Reports", "Users", "Blog"];
     const [page, setPage] = useState(browseItems[0]);
     const [subPage, setSubPage] = useState("");
+    const [reportId, setReportId] = useState("");
 
     function getPageComponent(): JSX.Element {
         switch (page) {
             case "Blog":
                 return (<PortalBlog />)
             case "Notifications":
-                return (<PortalNotifications />)
+                return (<PortalNotifications setPage = {setPage} setReportId = {setReportId} />)
             case "Reports":
                 return (<PortalReports setPage={setPage} />)
             case "Reports-Create":
@@ -33,6 +35,8 @@ function Portal() {
                 return <PortalVehicles setPage={setPage} />
             case "Vehicles-Create":
                 return <PortalVehiclesForm />
+            case "View-Report":
+                return <PortalViewReport reportId = {reportId} />
             default:
                 return (<></>);
         }

@@ -14,6 +14,7 @@ const vehiclesRoutes = require("./routes/vehicles");
 const authRoutes = require("./routes/auth");
 const blogRoutes = require("./routes/blog");
 const checkRoutes = require("./routes/check");
+const notificationRoutes = require("./routes/notifications");
 
 const app = express();
 const port = process.env.ENV == "prod" ? 8080 : 5000;
@@ -45,6 +46,7 @@ app.use("/vehicles",verifyJWT, vehiclesRoutes);
 app.use("/blog", blogRoutes); // Only post is protected with verifyJWT
 app.use("/check", verifyJWT, checkRoutes)
 app.use("/auth", authRoutes);
+app.use("/notifications", notificationRoutes);
 
 app.listen(port, async () => {
     logger.info(`Server is running on port ${port}.`);  
