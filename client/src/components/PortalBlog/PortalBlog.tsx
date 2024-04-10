@@ -33,7 +33,6 @@ interface FormDataTarget extends EventTarget {
 
 function BlogForm() {
     const [posts, setPosts] = useState<Post[]>([]);
-
     useEffect(() => {
         const fetchData = async () => {
         try {
@@ -47,8 +46,13 @@ function BlogForm() {
             console.error('Error fetching data:', error);
         }
         };
-
-        fetchData();
+        let postLen = posts.length;
+        if(!posts.length){
+            fetchData();
+            if(postLen !== posts.length){
+                console.log("Posts updated")
+            }
+        }
     }, []);
     const token = useSelector(selectCurrentToken);
     const [sendCheckToken] = useCheckTokenMutation();
@@ -60,7 +64,8 @@ function BlogForm() {
             if(id !== null){
                 console.log("Deleting post")
                 const id = formData.get('postId');
-                const response = await axios.delete(`${apiUrl}/blog/delete/${id}`,{headers:{'Authorization': `Bearer ${token}`}});
+                const response = await axios.delete(`${apiUrl}/blog/delete/${id}`, {headers:{'Authorization': `Bearer ${token}`}});
+                console.log("response",response)
                 toast.success("Blog post deleted successfully.");
             }else{
                 console.log("Adding post")    
@@ -74,8 +79,6 @@ function BlogForm() {
             }
 
         } catch (error){
-            console.log("error",error)
-            console.log("error.response",error.response)
             if(error.response && error.response.status === 403 && retries < maxRetryAttempts){
                 const newToken = selectCurrentToken(store.getState());
                 authCheckBeforePost(formData, newToken, retries+1,id);
@@ -118,13 +121,13 @@ function BlogForm() {
     
         const formData = new FormData(event.currentTarget);
         const id = formData.get('postId');
-        // authCheckBeforePost(formData, token, 0,id);
-        try {
-            await axios.delete(`${apiUrl}/blog/delete/${id}`, {headers:{'Authorization': `Bearer ${token}`}});
-            toast.success("Blog post deleted successfully.");
-        } catch (error) {
-            console.error('Error deleting blog post:', error);
-        }
+        authCheckBeforePost(formData, token, 0,id);
+        // try {
+        //     await axios.delete(`${apiUrl}/blog/delete/${id}`, {headers:{'Authorization': `Bearer ${token}`}});
+        //     toast.success("Blog post deleted successfully.");
+        // } catch (error) {
+        //     console.error('Error deleting blog post:', error);
+        // }
     };
     
     return (

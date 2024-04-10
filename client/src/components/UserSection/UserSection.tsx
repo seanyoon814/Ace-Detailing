@@ -64,7 +64,7 @@ function UserSection() {
             }else if(err.status === 401){
                 toast.error('Unauthorized: Invalid Credentials. Please try again.');
             } else {
-                setError(err.data?.message);
+                toast.error(err.data?.message);
             }
             errRef.current.focus();
         }
