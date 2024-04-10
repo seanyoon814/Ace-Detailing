@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 const logger = require("../utils/logger");
+const Notification = require("./Notification");
 
 const { ObjectId } = mongoose.Types;
 const Schema = mongoose.Schema;
@@ -53,6 +54,13 @@ VehicleSchema.pre("save", (next) => {
 
 VehicleSchema.post("save", (document) => {
     logger.info("Saved document with id '%s' to collection 'vehicles'.", document._id);
+    
+    const notification = new Notification({
+        type : "Vehicle",
+        userId : document.userId,
+        vehicleId : document._id
+    })
+    notification.save();
 });
 
 module.exports = mongoose.model("vehicles", VehicleSchema);
