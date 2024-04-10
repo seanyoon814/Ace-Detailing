@@ -80,7 +80,7 @@ function PortalReports({ setPage } : { setPage: Function }) {
         isError,
         error: reportsError
     } = useGetDataQuery("/reports", {
-        pollingInterval: 5000, // 2 minutes
+        pollingInterval: 120000, // 2 minutes
         refetchOnMountOrArgChange: true,
         refetchOnFocus: true,
     });
