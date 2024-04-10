@@ -151,19 +151,18 @@ function PortalVehiclesForm() {
             <form className="create-form vehicles-form" onSubmit={submitForm}  encType="multipart/form-data">
                 <h3>Vehicle Information</h3>
                 <div>
-                    <input name = "userId" style = {{position: "absolute", visibility: "hidden"}}></input>
-                    {/* <div>
+                    <div>
                         <label>User</label>
                         <select name="userId">
                             {
                                 users.map((user) => <option value={user._id}>{user.name}</option>)
                             }
                         </select>
-                    </div> */}
-                    {/* <div>
+                    </div>
+                    <div>
                         <label>Stock Number</label>
                         <input type="text" name="stockNumber" />
-                    </div> */}
+                    </div>
                     <div>
                         <label>Make</label>
                         <input type="text" name="make" />
