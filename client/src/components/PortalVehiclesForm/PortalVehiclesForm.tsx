@@ -46,6 +46,33 @@ function PortalVehiclesForm() {
         }
     }
 
+    async function authCheckBeforePost(formData:FormData , token: string, retries: number){
+        try{
+            await sendCheckToken(token);
+            
+            await axios.post(`${apiUrl}/vehicles`, formData, {
+                headers:{
+                    'Authorization': `Bearer ${token}`,
+                    'Content-Type': 'multipart/form-data',
+                }
+            });
+
+            toast.success("Vehicle added successfully.");
+        } catch (error){
+            if(error.response && error.response.status === 403 && retries < maxRetryAttempts){
+                const newToken = selectCurrentToken(store.getState());
+                authCheckBeforePost(formData, newToken, retries+1);
+            } else {
+                console.log("Error:", error);
+                toast.error("Login Expired. Redirecting to login page...")
+                sendLogout();
+                navigate('/user');
+            }
+        }
+    }
+
+
+
     function submitForm(e: React.FormEvent<HTMLFormElement>) {
         e.preventDefault();
 
@@ -66,21 +93,8 @@ function PortalVehiclesForm() {
             return;
         }
 
-        authRequest(
-            formData,
-            token,
-            0, 
-            async (formData, token) => {
-                await axios.post(`${apiUrl}/vehicles`, formData, {
-                    headers:{
-                        'Authorization': `Bearer ${token}`,
-                        'Content-Type': 'multipart/form-data',
-                    }
-                });
-
-                toast.success("Vehicle added successfully.");
-            }
-        );
+        authCheckBeforePost(formData, token, 0);
+        
     }
 
     function isValidForm(formData: FormData): boolean {
@@ -126,6 +140,7 @@ function PortalVehiclesForm() {
         setFiles([...files.slice(0, index), ...files.slice(index + 1, files.length)]);
     }
 
+    // get list of users
     useEffect(() => {
         authRequest(
             null,

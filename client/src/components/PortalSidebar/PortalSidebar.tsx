@@ -10,7 +10,7 @@ import useAuth from '../../hooks/useAuth';
 function PortalSidebar({ page, setPage, setSubPage }: { page: string, setPage: Function, setSubPage: Function }) {
     const browseItems = ["Vehicles", "Notifications"];
     const adminItems = ["Reports", "Users", "Blog"];
-    const {name, admin,id} = useAuth();
+    const {name, admin} = useAuth();
     const [isMounted, setIsMounted] = useState(false);
     const navigate = useNavigate();
     
@@ -103,7 +103,7 @@ function PortalSidebar({ page, setPage, setSubPage }: { page: string, setPage: F
                 }
             </div>
             <div>
-                <p style={{"color":"white", "margin": 0}}>Signed in as {name} #{id}</p>
+                <p style={{"color":"white", "margin": 0}}>Signed in as {name}</p>
                 <button onClick={onLogout}>Log out</button> 
             </div>
         </nav>

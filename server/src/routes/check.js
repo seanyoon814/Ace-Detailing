@@ -14,7 +14,6 @@ router.use(bodyParser.urlencoded({extended : true}));
 router.post('/checkToken', asyncHandler(
     async (req, res) => {
         const token = req.body;
-        console.log("Token: ", token);
         if(!token){
             return res.status(401).json({message: "Token is Invalid"});
         }

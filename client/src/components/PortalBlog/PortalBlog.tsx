@@ -37,7 +37,7 @@ function BlogForm() {
     useEffect(() => {
         const fetchData = async () => {
         try {
-            const result = await httpClient.get<Post[]>('http://localhost:5000/blog/');
+            const result = await axios.get(`${apiUrl}/blog/`);
             const postsWithDate = result.data.map(post => ({
             ...post,
             createdAt: new Date(post.createdAt)
@@ -54,21 +54,31 @@ function BlogForm() {
     const [sendCheckToken] = useCheckTokenMutation();
     const [sendLogout, {isError}] = useSendLogoutMutation();
     const maxRetryAttempts = 1;
-    async function authCheckBeforePost(formData:FormData , token: string, retries: number){
+    async function authCheckBeforePost(formData:FormData, token: string, retries: number, id: FormDataEntryValue | null){
         try{
             await sendCheckToken(token);
-            
-            const err = await axios.post(`${apiUrl}/blog/`, formData, {
-                headers:{
-                    'Authorization': `Bearer ${token}`,
-                    'Content-Type': 'multipart/form-data',
-                }
-            });
-            toast.success("Blog post added successfully.");
+            if(id !== null){
+                console.log("Deleting post")
+                const id = formData.get('postId');
+                const response = await axios.delete(`${apiUrl}/blog/delete/${id}`,{headers:{'Authorization': `Bearer ${token}`}});
+                toast.success("Blog post deleted successfully.");
+            }else{
+                console.log("Adding post")    
+                const err = await axios.post(`${apiUrl}/blog/`, formData, {
+                    headers:{
+                        'Authorization': `Bearer ${token}`,
+                        'Content-Type': 'multipart/form-data',
+                    }
+                });
+                toast.success("Blog post added successfully.");
+            }
+
         } catch (error){
+            console.log("error",error)
+            console.log("error.response",error.response)
             if(error.response && error.response.status === 403 && retries < maxRetryAttempts){
                 const newToken = selectCurrentToken(store.getState());
-                authCheckBeforePost(formData, newToken, retries+1);
+                authCheckBeforePost(formData, newToken, retries+1,id);
             } else {
                 console.log("Error:", error);
                 toast.error("Login Expired. Redirecting to login page...")
@@ -100,7 +110,7 @@ function BlogForm() {
             formData.set("image", imageFile, filename);
         }
         // await sendCheckToken(token)
-        authCheckBeforePost(formData, token, 0);
+        authCheckBeforePost(formData, token, 0,null);
     }
 
     const deleteBlogPost = async (event:React.FormEvent<HTMLFormElement>) => {
@@ -108,9 +118,9 @@ function BlogForm() {
     
         const formData = new FormData(event.currentTarget);
         const id = formData.get('postId');
-        
+        // authCheckBeforePost(formData, token, 0,id);
         try {
-            const response = await axios.delete(`${apiUrl}/blog/delete/${id}`);
+            const response = await axios.delete(`${apiUrl}/blog/delete/${id}`, {headers:{'Authorization': `Bearer ${token}`}});
             console.log(response.data); // Assuming the response contains data
         } catch (error) {
             console.error('Error deleting blog post:', error);

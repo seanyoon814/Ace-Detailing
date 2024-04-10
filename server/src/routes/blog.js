@@ -35,7 +35,7 @@ router.post("/",verifyJWT, multerConfig.single("image"), async (req, res) => {
     }
 });
 
-router.delete('/delete/:id', async (req, res) => {
+router.delete('/delete/:id',verifyJWT, async (req, res) => {
     try {
         const id = req.params.id;
         const result = await AdminBlog.findByIdAndDelete(id);
