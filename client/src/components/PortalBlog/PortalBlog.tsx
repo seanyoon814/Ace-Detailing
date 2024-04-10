@@ -30,7 +30,6 @@ interface FormDataTarget extends EventTarget {
     }
 }
 
-
 function BlogForm() {
     const [posts, setPosts] = useState<Post[]>([]);
     useEffect(() => {
@@ -110,7 +109,12 @@ function BlogForm() {
         const formData = new FormData(event.currentTarget);
         const imageInput = event.currentTarget.elements.namedItem("image") as HTMLInputElement;
         const imageFile = imageInput.files?.[0];
-    
+        const title = formData.get('title') as string;
+        const description = formData.get('description') as string;
+        if (validateInput(title, description)) {
+            toast.error("Please fill out all fields.");
+            return;
+        }
         if (imageFile) {
             const filename = `${Date.now()}_${imageFile.name}`;
             formData.set("image", imageFile, filename);
@@ -127,6 +131,9 @@ function BlogForm() {
         authCheckBeforePost(formData, token, 0,id);
     };
     
+    const validateInput = (title: string, description:string) => {
+        return !title.trim() || !description.trim();
+    }
     return (
             <div className="row justify-content-center" style={{marginTop:'10vh'}}>
                 <div className="admin-containers col-7 pt-3 pb-3" style={{background:'#2b2c2e', borderRadius:'20px'}}>
