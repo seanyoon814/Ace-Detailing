@@ -86,10 +86,10 @@ function PortalVehiclesForm() {
     function isValidForm(formData: FormData): boolean {
         let valid = true;
 
-        // if (!formData.get("stockNumber")) {
-        //     valid = false;
-        //     toast.error("Please provide a stock number.");
-        // }
+        if (!formData.get("stockNumber")) {
+            valid = false;
+            toast.error("Please provide a stock number.");
+        }
         if (!formData.get("vehicle")) {
             valid = false;
             toast.error("Please provide a make, model, series and/or year.");
@@ -126,11 +126,6 @@ function PortalVehiclesForm() {
         setFiles([...files.slice(0, index), ...files.slice(index + 1, files.length)]);
     }
 
-    async function getUserId() {
-        const result: any = await httpClient.get(`${apiUrl}/user/api/getObjectId/${user.id}`);
-        (document.getElementsByName("userId")[0] as HTMLInputElement).value = result.data;
-    }
-
     useEffect(() => {
         authRequest(
             null,
@@ -146,8 +141,6 @@ function PortalVehiclesForm() {
                 setUsers(res.data);
             }
         );
-
-        getUserId();
     }, []);
 
     return (

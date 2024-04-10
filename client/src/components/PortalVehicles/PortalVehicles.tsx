@@ -165,7 +165,7 @@ function PortalVehicles({ setPage } : { setPage: Function }) {
         <>
             <div>
                 <h3>Vehicles</h3>
-                { !admin ? <button onClick={() => setPage("Vehicles-Create")}>REQUEST NEW</button> : <></> }
+                { admin ? <button onClick={() => setPage("Vehicles-Create")}>CREATE NEW</button> : <></> }
             </div>
             <form className="portal-table-filter" onSubmit={(e) => applyFilter(e)}>
                 <div>
