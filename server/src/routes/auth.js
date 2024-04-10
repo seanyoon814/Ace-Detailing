@@ -60,7 +60,7 @@ const login = asyncHandler(async (req, res) => {
             }
         },
         process.env.ACCESS_TOKEN_SECRET,
-        {expiresIn: "15m"} // CHANGE TO 15M on DEPLOy
+        {expiresIn: "50d"} // CHANGE TO 15M on DEPLOy
     );
     
     const refreshToken = jwt.sign(
@@ -71,7 +71,7 @@ const login = asyncHandler(async (req, res) => {
             "admin": foundUser.admin
         },
         process.env.REFRESH_TOKEN_SECRET,
-        { expiresIn: "7d"} // CHANGE TO 7 DAYS ON DEPLOY
+        { expiresIn: "50d"} // CHANGE TO 7 DAYS ON DEPLOY
     );
     
     // cookie for refresh token
@@ -89,7 +89,7 @@ const login = asyncHandler(async (req, res) => {
 // @desc   Login user
 // @route  POST /auth
 // @access Public
-router.post('/', login);
+router.post('/',loginLimiter, login);
 
 // refresh for get /auth/refresh when access token is expired
 const refresh = (req, res) => {
@@ -126,7 +126,7 @@ const refresh = (req, res) => {
                     }
                 },
                 process.env.ACCESS_TOKEN_SECRET,
-                {expiresIn: "15m"} // CHANGE TO 15m on deploy
+                {expiresIn: "50d"} // CHANGE TO 15m on deploy
             );
             res.json({accessToken});
         }

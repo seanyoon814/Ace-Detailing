@@ -82,6 +82,9 @@ function BlogForm() {
             if(error.response && error.response.status === 403 && retries < maxRetryAttempts){
                 const newToken = selectCurrentToken(store.getState());
                 authCheckBeforePost(formData, newToken, retries+1,id);
+            } else if(error.response && error.response.status === 400){
+                console.log("Error:", error);
+                toast.error("Invalid input. Please try again.")
             } else {
                 console.log("Error:", error);
                 toast.error("Login Expired. Redirecting to login page...")
@@ -122,12 +125,6 @@ function BlogForm() {
         const formData = new FormData(event.currentTarget);
         const id = formData.get('postId');
         authCheckBeforePost(formData, token, 0,id);
-        // try {
-        //     await axios.delete(`${apiUrl}/blog/delete/${id}`, {headers:{'Authorization': `Bearer ${token}`}});
-        //     toast.success("Blog post deleted successfully.");
-        // } catch (error) {
-        //     console.error('Error deleting blog post:', error);
-        // }
     };
     
     return (

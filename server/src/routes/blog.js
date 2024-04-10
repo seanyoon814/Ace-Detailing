@@ -20,6 +20,9 @@ router.get("/", async (req, res, next) => {
 
 router.post("/",verifyJWT, multerConfig.single("image"), async (req, res) => {
     try {
+        if(req.body.title === undefined || req.body.content === undefined){
+            return res.status(400).json({message:"title or content is not defined"});
+        }
         console.log(req.file)
         console.log(req.body)
         const imageUrl = req.file ? await uploadImage(req.file) : null;
