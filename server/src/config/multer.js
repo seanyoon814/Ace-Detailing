@@ -1,7 +1,13 @@
 const multer = require("multer");
 const path = require("path");
+const fs = require("fs");
 
-const dest = process.env.ENV == "prod" ? "/tmp/uploads" : path.join(__dirname, "..", "..", "/public/uploads/");
+let dest = path.join(__dirname, "..", "..", "/public/uploads/");
+
+if (process.env.ENV === "prod") {
+    dest = "/tmp/uploads";
+    fs.mkdirSync(dest);
+}
 
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
